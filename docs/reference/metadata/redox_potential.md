@@ -1,31 +1,109 @@
-
-# Slot: redox_potential
-
-
-Redox potential, measured relative to a hydrogen cell, indicating oxidation or reduction potential
-
-URI: [nmdc:redox_potential](https://microbiomedata/meta/redox_potential)
+# Slot: redox potential (redox_potential)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [QuantityValue](QuantityValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Redox potential, measured relative to a hydrogen cell, indicating oxidation or reduction potential_
 
 
-## Used by
 
- * [Biosample](Biosample.md)
+URI: [MIXS:0000182](https://w3id.org/mixs/0000182)
 
-## Other properties
 
-|  |  |  |
+
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **redox_potential**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | redox potential |
-| **Mappings:** | | mixs:redox_potential |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [QuantityValue](QuantityValue.md)
+
+
+
+## Aliases
+
+
+* redox potential
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| 300 millivolt |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | measurement value || preferred_unit | millivolt || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: redox_potential
+annotations:
+  expected_value:
+    tag: expected_value
+    value: measurement value
+  preferred_unit:
+    tag: preferred_unit
+    value: millivolt
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: Redox potential, measured relative to a hydrogen cell, indicating oxidation
+  or reduction potential
+title: redox potential
+examples:
+- value: 300 millivolt
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- redox potential
+rank: 1000
+is_a: core field
+slot_uri: MIXS:0000182
+multivalued: false
+alias: redox_potential
+domain_of:
+- Biosample
+range: QuantityValue
+
+```
+</details>

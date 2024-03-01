@@ -1,150 +1,898 @@
-
-# Class: metatranscriptome assembly
-
+# Class: MetatranscriptomeAssembly
 
 
 
-URI: [nmdc:MetatranscriptomeAssembly](https://microbiomedata/meta/MetatranscriptomeAssembly)
+URI: [nmdc:MetatranscriptomeAssembly](https://w3id.org/nmdc/MetatranscriptomeAssembly)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[NamedThing],[WorkflowExecutionActivity]^-[MetatranscriptomeAssembly&#124;asm_score:float%20%3F;scaffolds:float%20%3F;scaf_logsum:float%20%3F;scaf_powsum:float%20%3F;scaf_max:float%20%3F;scaf_bp:float%20%3F;scaf_N50:float%20%3F;scaf_N90:float%20%3F;scaf_L50:float%20%3F;scaf_L90:float%20%3F;scaf_n_gt50K:float%20%3F;scaf_l_gt50K:float%20%3F;scaf_pct_gt50K:float%20%3F;contigs:float%20%3F;contig_bp:float%20%3F;ctg_N50:float%20%3F;ctg_L50:float%20%3F;ctg_N90:float%20%3F;ctg_L90:float%20%3F;ctg_logsum:float%20%3F;ctg_powsum:float%20%3F;ctg_max:float%20%3F;gap_pct:float%20%3F;gc_std:float%20%3F;gc_avg:float%20%3F;num_input_reads:float%20%3F;num_aligned_reads:float%20%3F;INSDC_assembly_identifiers:string%20%3F;execution_resource(i):string;git_url(i):string;type(i):string;started_at_time(i):datetime;ended_at_time(i):datetime;id(i):string;name(i):string%20%3F;used(i):string%20%3F],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[NamedThing],[WorkflowExecutionActivity]^-[MetatranscriptomeAssembly&#124;asm_score:float%20%3F;scaffolds:float%20%3F;scaf_logsum:float%20%3F;scaf_powsum:float%20%3F;scaf_max:float%20%3F;scaf_bp:float%20%3F;scaf_N50:float%20%3F;scaf_N90:float%20%3F;scaf_L50:float%20%3F;scaf_L90:float%20%3F;scaf_n_gt50K:float%20%3F;scaf_l_gt50K:float%20%3F;scaf_pct_gt50K:float%20%3F;contigs:float%20%3F;contig_bp:float%20%3F;ctg_N50:float%20%3F;ctg_L50:float%20%3F;ctg_N90:float%20%3F;ctg_L90:float%20%3F;ctg_logsum:float%20%3F;ctg_powsum:float%20%3F;ctg_max:float%20%3F;gap_pct:float%20%3F;gc_std:float%20%3F;gc_avg:float%20%3F;num_input_reads:float%20%3F;num_aligned_reads:float%20%3F;INSDC_assembly_identifiers:string%20%3F;execution_resource(i):string;git_url(i):string;type(i):string;started_at_time(i):datetime;ended_at_time(i):datetime;id(i):string;name(i):string%20%3F;used(i):string%20%3F],[Activity])
-
-## Parents
-
- *  is_a: [WorkflowExecutionActivity](WorkflowExecutionActivity.md) - Represents an instance of an execution of a particular workflow
-
-## Attributes
 
 
-### Own
 
- * [asm_score](asm_score.md)  <sub>0..1</sub>
-     * Description: A score for comparing metagenomic assembly quality from same sample.
-     * Range: [Float](types/Float.md)
- * [scaffolds](scaffolds.md)  <sub>0..1</sub>
-     * Description: Total sequence count of all scaffolds.
-     * Range: [Float](types/Float.md)
- * [scaf_logsum](scaf_logsum.md)  <sub>0..1</sub>
-     * Description: The sum of the (length*log(length)) of all scaffolds, times some constant.  Increase the contiguity, the score will increase
-     * Range: [Float](types/Float.md)
- * [scaf_powsum](scaf_powsum.md)  <sub>0..1</sub>
-     * Description: Powersum of all scaffolds is the same as logsum except that it uses the sum of (length*(length^P)) for some power P (default P=0.25).
-     * Range: [Float](types/Float.md)
- * [scaf_max](scaf_max.md)  <sub>0..1</sub>
-     * Description: Maximum scaffold length.
-     * Range: [Float](types/Float.md)
- * [scaf_bp](scaf_bp.md)  <sub>0..1</sub>
-     * Description: Total size in bp of all scaffolds.
-     * Range: [Float](types/Float.md)
- * [scaf_N50](scaf_N50.md)  <sub>0..1</sub>
-     * Description: Given a set of scaffolds, each with its own length, the N50 count is defined as the smallest number of scaffolds whose length sum makes up half of genome size.
-     * Range: [Float](types/Float.md)
- * [scaf_N90](scaf_N90.md)  <sub>0..1</sub>
-     * Description: Given a set of scaffolds, each with its own length, the N90 count is defined as the smallest number of scaffolds whose length sum makes up 90% of genome size.
-     * Range: [Float](types/Float.md)
- * [scaf_L50](scaf_L50.md)  <sub>0..1</sub>
-     * Description: Given a set of scaffolds, the L50 is defined as the sequence length of the shortest scaffold at 50% of the total genome length.
-     * Range: [Float](types/Float.md)
- * [scaf_L90](scaf_L90.md)  <sub>0..1</sub>
-     * Description: The L90 statistic is less than or equal to the L50 statistic; it is the length for which the collection of all scaffolds of that length or longer contains at least 90% of the sum of the lengths of all scaffolds.
-     * Range: [Float](types/Float.md)
- * [scaf_n_gt50K](scaf_n_gt50K.md)  <sub>0..1</sub>
-     * Description: Total sequence count of scaffolds greater than 50 KB.
-     * Range: [Float](types/Float.md)
- * [scaf_l_gt50K](scaf_l_gt50K.md)  <sub>0..1</sub>
-     * Description: Total size in bp of all scaffolds greater than 50 KB.
-     * Range: [Float](types/Float.md)
- * [scaf_pct_gt50K](scaf_pct_gt50K.md)  <sub>0..1</sub>
-     * Description: Total sequence size percentage of scaffolds greater than 50 KB.
-     * Range: [Float](types/Float.md)
- * [contigs](contigs.md)  <sub>0..1</sub>
-     * Description: The sum of the (length*log(length)) of all contigs, times some constant.  Increase the contiguity, the score will increase
-     * Range: [Float](types/Float.md)
- * [contig_bp](contig_bp.md)  <sub>0..1</sub>
-     * Description: Total size in bp of all contigs.
-     * Range: [Float](types/Float.md)
- * [ctg_N50](ctg_N50.md)  <sub>0..1</sub>
-     * Description: Given a set of contigs, each with its own length, the N50 count is defined as the smallest number of contigs whose length sum makes up half of genome size.
-     * Range: [Float](types/Float.md)
- * [ctg_L50](ctg_L50.md)  <sub>0..1</sub>
-     * Description: Given a set of contigs, the L50 is defined as the sequence length of the shortest contig at 50% of the total genome length.
-     * Range: [Float](types/Float.md)
- * [ctg_N90](ctg_N90.md)  <sub>0..1</sub>
-     * Description: Given a set of contigs, each with its own length, the N90 count is defined as the smallest number of contigs whose length sum makes up 90% of genome size.
-     * Range: [Float](types/Float.md)
- * [ctg_L90](ctg_L90.md)  <sub>0..1</sub>
-     * Description: The L90 statistic is less than or equal to the L50 statistic; it is the length for which the collection of all contigs of that length or longer contains at least 90% of the sum of the lengths of all contigs.
-     * Range: [Float](types/Float.md)
- * [ctg_logsum](ctg_logsum.md)  <sub>0..1</sub>
-     * Description: Maximum contig length.
-     * Range: [Float](types/Float.md)
- * [ctg_powsum](ctg_powsum.md)  <sub>0..1</sub>
-     * Description: Powersum of all contigs is the same as logsum except that it uses the sum of (length*(length^P)) for some power P (default P=0.25).
-     * Range: [Float](types/Float.md)
- * [ctg_max](ctg_max.md)  <sub>0..1</sub>
-     * Description: Maximum contig length.
-     * Range: [Float](types/Float.md)
- * [gap_pct](gap_pct.md)  <sub>0..1</sub>
-     * Description: The gap size percentage of all scaffolds.
-     * Range: [Float](types/Float.md)
- * [gc_std](gc_std.md)  <sub>0..1</sub>
-     * Description: Standard deviation of GC content of all contigs.
-     * Range: [Float](types/Float.md)
- * [gc_avg](gc_avg.md)  <sub>0..1</sub>
-     * Description: Average of GC content of all contigs.
-     * Range: [Float](types/Float.md)
- * [num_input_reads](num_input_reads.md)  <sub>0..1</sub>
-     * Description: The sequence count number of input reads for assembly.
-     * Range: [Float](types/Float.md)
- * [num_aligned_reads](num_aligned_reads.md)  <sub>0..1</sub>
-     * Description: The sequence count number of input reads aligned to assembled contigs.
-     * Range: [Float](types/Float.md)
- * [INSDC assembly identifiers](INSDC_assembly_identifiers.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
 
-### Inherited from workflow execution activity:
 
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
- * [name](name.md)  <sub>0..1</sub>
-     * Description: A human readable label for an entity
-     * Range: [String](types/String.md)
- * [used](used.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [workflow execution activity➞execution resource](workflow_execution_activity_execution_resource.md)  <sub>1..1</sub>
-     * Description: Example: NERSC-Cori
-     * Range: [String](types/String.md)
- * [workflow execution activity➞git url](workflow_execution_activity_git_url.md)  <sub>1..1</sub>
-     * Description: Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1
-     * Range: [String](types/String.md)
- * [workflow execution activity➞has input](workflow_execution_activity_has_input.md)  <sub>1..\*</sub>
-     * Description: An input to a process.
-     * Range: [NamedThing](NamedThing.md)
- * [workflow execution activity➞has output](workflow_execution_activity_has_output.md)  <sub>1..\*</sub>
-     * Description: An output biosample to a processing step
-     * Range: [NamedThing](NamedThing.md)
- * [part of](part_of.md)  <sub>0..\*</sub>
-     * Description: Links a resource to another resource that either logically or physically includes it.
-     * Range: [NamedThing](NamedThing.md)
- * [workflow execution activity➞type](workflow_execution_activity_type.md)  <sub>1..1</sub>
-     * Description: An optional string that specifies the type object.  This is used to allow for searches for different kinds of objects.
-     * Range: [String](types/String.md)
-     * Example: nmdc:Biosample None
-     * Example: nmdc:Study None
- * [workflow execution activity➞was associated with](workflow_execution_activity_was_associated_with.md)  <sub>0..1</sub>
-     * Description: the agent/entity associated with the generation of the file
-     * Range: [WorkflowExecutionActivity](WorkflowExecutionActivity.md)
- * [workflow execution activity➞started at time](workflow_execution_activity_started_at_time.md)  <sub>1..1</sub>
-     * Range: [Datetime](types/Datetime.md)
- * [workflow execution activity➞ended at time](workflow_execution_activity_ended_at_time.md)  <sub>1..1</sub>
-     * Range: [Datetime](types/Datetime.md)
- * [workflow execution activity➞was informed by](workflow_execution_activity_was_informed_by.md)  <sub>1..1</sub>
-     * Range: [Activity](Activity.md)
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | workflow subset |
 
+
+
+
+
+
+```mermaid
+classDiagram
+  class MetatranscriptomeAssembly
+    WorkflowExecutionActivity <|-- MetatranscriptomeAssembly
+    
+    
+    
+  MetatranscriptomeAssembly : asm_score
+    
+  MetatranscriptomeAssembly : contig_bp
+    
+  MetatranscriptomeAssembly : contigs
+    
+  MetatranscriptomeAssembly : ctg_l50
+    
+  MetatranscriptomeAssembly : ctg_l90
+    
+  MetatranscriptomeAssembly : ctg_logsum
+    
+  MetatranscriptomeAssembly : ctg_max
+    
+  MetatranscriptomeAssembly : ctg_n50
+    
+  MetatranscriptomeAssembly : ctg_n90
+    
+  MetatranscriptomeAssembly : ctg_powsum
+    
+  MetatranscriptomeAssembly : ended_at_time
+    
+  MetatranscriptomeAssembly : execution_resource
+    
+  MetatranscriptomeAssembly : gap_pct
+    
+  MetatranscriptomeAssembly : gc_avg
+    
+  MetatranscriptomeAssembly : gc_std
+    
+  MetatranscriptomeAssembly : git_url
+    
+  MetatranscriptomeAssembly : has_failure_categorization
+    
+    MetatranscriptomeAssembly --|> FailureCategorization : has_failure_categorization
+    
+  MetatranscriptomeAssembly : has_input
+    
+    MetatranscriptomeAssembly --|> NamedThing : has_input
+    
+  MetatranscriptomeAssembly : has_output
+    
+    MetatranscriptomeAssembly --|> NamedThing : has_output
+    
+  MetatranscriptomeAssembly : id
+    
+  MetatranscriptomeAssembly : insdc_assembly_identifiers
+    
+  MetatranscriptomeAssembly : name
+    
+  MetatranscriptomeAssembly : num_aligned_reads
+    
+  MetatranscriptomeAssembly : num_input_reads
+    
+  MetatranscriptomeAssembly : part_of
+    
+    MetatranscriptomeAssembly --|> NamedThing : part_of
+    
+  MetatranscriptomeAssembly : qc_comment
+    
+  MetatranscriptomeAssembly : qc_status
+    
+    MetatranscriptomeAssembly --|> StatusEnum : qc_status
+    
+  MetatranscriptomeAssembly : scaf_bp
+    
+  MetatranscriptomeAssembly : scaf_l50
+    
+  MetatranscriptomeAssembly : scaf_l90
+    
+  MetatranscriptomeAssembly : scaf_l_gt50k
+    
+  MetatranscriptomeAssembly : scaf_logsum
+    
+  MetatranscriptomeAssembly : scaf_max
+    
+  MetatranscriptomeAssembly : scaf_n50
+    
+  MetatranscriptomeAssembly : scaf_n90
+    
+  MetatranscriptomeAssembly : scaf_n_gt50k
+    
+  MetatranscriptomeAssembly : scaf_pct_gt50k
+    
+  MetatranscriptomeAssembly : scaf_powsum
+    
+  MetatranscriptomeAssembly : scaffolds
+    
+  MetatranscriptomeAssembly : started_at_time
+    
+  MetatranscriptomeAssembly : type
+    
+  MetatranscriptomeAssembly : used
+    
+  MetatranscriptomeAssembly : version
+    
+  MetatranscriptomeAssembly : was_informed_by
+    
+    MetatranscriptomeAssembly --|> Activity : was_informed_by
+    
+  
+
+```
+
+
+
+
+
+
+## Inheritance
+* [Activity](Activity.md)
+    * [WorkflowExecutionActivity](WorkflowExecutionActivity.md)
+        * **MetatranscriptomeAssembly**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [asm_score](asm_score.md) | 0..1 <br/> [Float](Float.md) | A score for comparing metagenomic assembly quality from same sample | direct |
+| [scaffolds](scaffolds.md) | 0..1 <br/> [Float](Float.md) | Total sequence count of all scaffolds | direct |
+| [scaf_logsum](scaf_logsum.md) | 0..1 <br/> [Float](Float.md) | The sum of the (length*log(length)) of all scaffolds, times some constant | direct |
+| [scaf_powsum](scaf_powsum.md) | 0..1 <br/> [Float](Float.md) | Powersum of all scaffolds is the same as logsum except that it uses the sum o... | direct |
+| [scaf_max](scaf_max.md) | 0..1 <br/> [Float](Float.md) | Maximum scaffold length | direct |
+| [scaf_bp](scaf_bp.md) | 0..1 <br/> [Float](Float.md) | Total size in bp of all scaffolds | direct |
+| [scaf_n50](scaf_n50.md) | 0..1 <br/> [Float](Float.md) | Given a set of scaffolds, each with its own length, the N50 count is defined ... | direct |
+| [scaf_n90](scaf_n90.md) | 0..1 <br/> [Float](Float.md) | Given a set of scaffolds, each with its own length, the N90 count is defined ... | direct |
+| [scaf_l50](scaf_l50.md) | 0..1 <br/> [Float](Float.md) | Given a set of scaffolds, the L50 is defined as the sequence length of the sh... | direct |
+| [scaf_l90](scaf_l90.md) | 0..1 <br/> [Float](Float.md) | The L90 statistic is less than or equal to the L50 statistic; it is the lengt... | direct |
+| [scaf_n_gt50k](scaf_n_gt50k.md) | 0..1 <br/> [Float](Float.md) | Total sequence count of scaffolds greater than 50 KB | direct |
+| [scaf_l_gt50k](scaf_l_gt50k.md) | 0..1 <br/> [Float](Float.md) | Total size in bp of all scaffolds greater than 50 KB | direct |
+| [scaf_pct_gt50k](scaf_pct_gt50k.md) | 0..1 <br/> [Float](Float.md) | Total sequence size percentage of scaffolds greater than 50 KB | direct |
+| [contigs](contigs.md) | 0..1 <br/> [Float](Float.md) | The sum of the (length*log(length)) of all contigs, times some constant | direct |
+| [contig_bp](contig_bp.md) | 0..1 <br/> [Float](Float.md) | Total size in bp of all contigs | direct |
+| [ctg_n50](ctg_n50.md) | 0..1 <br/> [Float](Float.md) | Given a set of contigs, each with its own length, the N50 count is defined as... | direct |
+| [ctg_l50](ctg_l50.md) | 0..1 <br/> [Float](Float.md) | Given a set of contigs, the L50 is defined as the sequence length of the shor... | direct |
+| [ctg_n90](ctg_n90.md) | 0..1 <br/> [Float](Float.md) | Given a set of contigs, each with its own length, the N90 count is defined as... | direct |
+| [ctg_l90](ctg_l90.md) | 0..1 <br/> [Float](Float.md) | The L90 statistic is less than or equal to the L50 statistic; it is the lengt... | direct |
+| [ctg_logsum](ctg_logsum.md) | 0..1 <br/> [Float](Float.md) | Maximum contig length | direct |
+| [ctg_powsum](ctg_powsum.md) | 0..1 <br/> [Float](Float.md) | Powersum of all contigs is the same as logsum except that it uses the sum of ... | direct |
+| [ctg_max](ctg_max.md) | 0..1 <br/> [Float](Float.md) | Maximum contig length | direct |
+| [gap_pct](gap_pct.md) | 0..1 <br/> [Float](Float.md) | The gap size percentage of all scaffolds | direct |
+| [gc_std](gc_std.md) | 0..1 <br/> [Float](Float.md) | Standard deviation of GC content of all contigs | direct |
+| [gc_avg](gc_avg.md) | 0..1 <br/> [Float](Float.md) | Average of GC content of all contigs | direct |
+| [num_input_reads](num_input_reads.md) | 0..1 <br/> [Float](Float.md) | The sequence count number of input reads for assembly | direct |
+| [num_aligned_reads](num_aligned_reads.md) | 0..1 <br/> [Float](Float.md) | The sequence count number of input reads aligned to assembled contigs | direct |
+| [insdc_assembly_identifiers](insdc_assembly_identifiers.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [execution_resource](execution_resource.md) | 1..1 <br/> [String](String.md) |  | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [git_url](git_url.md) | 1..1 <br/> [String](String.md) |  | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [has_input](has_input.md) | 1..* <br/> [NamedThing](NamedThing.md) | An input to a process | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [has_output](has_output.md) | 0..* <br/> [NamedThing](NamedThing.md) | An output biosample to a processing step | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [part_of](part_of.md) | 0..* <br/> [NamedThing](NamedThing.md) | Links a resource to another resource that either logically or physically incl... | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [type](type.md) | 1..1 <br/> [String](String.md) | An optional string that specifies the type object | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [version](version.md) | 0..1 <br/> [String](String.md) |  | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [qc_status](qc_status.md) | 0..1 <br/> [StatusEnum](StatusEnum.md) | Stores information about the result of a process (ie the process of sequencin... | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [qc_comment](qc_comment.md) | 0..1 <br/> [String](String.md) | Slot to store additional comments about laboratory or workflow output | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [has_failure_categorization](has_failure_categorization.md) | 0..* <br/> [FailureCategorization](FailureCategorization.md) |  | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [id](id.md) | 1..1 <br/> [Uriorcurie](Uriorcurie.md) | A unique identifier for a thing | [Activity](Activity.md) |
+| [name](name.md) | 0..1 <br/> [String](String.md) | A human readable label for an entity | [Activity](Activity.md) |
+| [started_at_time](started_at_time.md) | 1..1 <br/> [String](String.md) |  | [Activity](Activity.md) |
+| [ended_at_time](ended_at_time.md) | 1..1 <br/> [String](String.md) |  | [Activity](Activity.md) |
+| [was_informed_by](was_informed_by.md) | 0..1 <br/> [Activity](Activity.md) |  | [Activity](Activity.md) |
+| [used](used.md) | 0..1 <br/> [String](String.md) |  | [Activity](Activity.md) |
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | nmdc:MetatranscriptomeAssembly |
+| native | nmdc:MetatranscriptomeAssembly |
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: MetatranscriptomeAssembly
+in_subset:
+- workflow subset
+from_schema: https://w3id.org/nmdc/nmdc
+is_a: WorkflowExecutionActivity
+slots:
+- asm_score
+- scaffolds
+- scaf_logsum
+- scaf_powsum
+- scaf_max
+- scaf_bp
+- scaf_n50
+- scaf_n90
+- scaf_l50
+- scaf_l90
+- scaf_n_gt50k
+- scaf_l_gt50k
+- scaf_pct_gt50k
+- contigs
+- contig_bp
+- ctg_n50
+- ctg_l50
+- ctg_n90
+- ctg_l90
+- ctg_logsum
+- ctg_powsum
+- ctg_max
+- gap_pct
+- gc_std
+- gc_avg
+- num_input_reads
+- num_aligned_reads
+- insdc_assembly_identifiers
+slot_usage:
+  id:
+    name: id
+    domain_of:
+    - Biosample
+    - Study
+    - NamedThing
+    - Activity
+    required: true
+    structured_pattern:
+      syntax: '{id_nmdc_prefix}:wfmtas-{id_shoulder}-{id_blade}{id_version}{id_locus}'
+      interpolated: true
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: MetatranscriptomeAssembly
+in_subset:
+- workflow subset
+from_schema: https://w3id.org/nmdc/nmdc
+is_a: WorkflowExecutionActivity
+slot_usage:
+  id:
+    name: id
+    domain_of:
+    - Biosample
+    - Study
+    - NamedThing
+    - Activity
+    required: true
+    structured_pattern:
+      syntax: '{id_nmdc_prefix}:wfmtas-{id_shoulder}-{id_blade}{id_version}{id_locus}'
+      interpolated: true
+attributes:
+  asm_score:
+    name: asm_score
+    description: A score for comparing metagenomic assembly quality from same sample.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: asm_score
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  scaffolds:
+    name: scaffolds
+    description: Total sequence count of all scaffolds.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: scaffolds
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  scaf_logsum:
+    name: scaf_logsum
+    description: The sum of the (length*log(length)) of all scaffolds, times some
+      constant.  Increase the contiguity, the score will increase
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: scaf_logsum
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  scaf_powsum:
+    name: scaf_powsum
+    description: Powersum of all scaffolds is the same as logsum except that it uses
+      the sum of (length*(length^P)) for some power P (default P=0.25).
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: scaf_powsum
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  scaf_max:
+    name: scaf_max
+    description: Maximum scaffold length.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: scaf_max
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  scaf_bp:
+    name: scaf_bp
+    description: Total size in bp of all scaffolds.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: scaf_bp
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  scaf_n50:
+    name: scaf_n50
+    description: Given a set of scaffolds, each with its own length, the N50 count
+      is defined as the smallest number of scaffolds whose length sum makes up half
+      of genome size.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: scaf_n50
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  scaf_n90:
+    name: scaf_n90
+    description: Given a set of scaffolds, each with its own length, the N90 count
+      is defined as the smallest number of scaffolds whose length sum makes up 90%
+      of genome size.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: scaf_n90
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  scaf_l50:
+    name: scaf_l50
+    description: Given a set of scaffolds, the L50 is defined as the sequence length
+      of the shortest scaffold at 50% of the total genome length.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: scaf_l50
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  scaf_l90:
+    name: scaf_l90
+    description: The L90 statistic is less than or equal to the L50 statistic; it
+      is the length for which the collection of all scaffolds of that length or longer
+      contains at least 90% of the sum of the lengths of all scaffolds.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: scaf_l90
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  scaf_n_gt50k:
+    name: scaf_n_gt50k
+    description: Total sequence count of scaffolds greater than 50 KB.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: scaf_n_gt50k
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  scaf_l_gt50k:
+    name: scaf_l_gt50k
+    description: Total size in bp of all scaffolds greater than 50 KB.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: scaf_l_gt50k
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  scaf_pct_gt50k:
+    name: scaf_pct_gt50k
+    description: Total sequence size percentage of scaffolds greater than 50 KB.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: scaf_pct_gt50k
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  contigs:
+    name: contigs
+    description: The sum of the (length*log(length)) of all contigs, times some constant.  Increase
+      the contiguity, the score will increase
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: contigs
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  contig_bp:
+    name: contig_bp
+    description: Total size in bp of all contigs.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: contig_bp
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  ctg_n50:
+    name: ctg_n50
+    description: Given a set of contigs, each with its own length, the N50 count is
+      defined as the smallest number_of_contigs whose length sum makes up half of
+      genome size.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: ctg_n50
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  ctg_l50:
+    name: ctg_l50
+    description: Given a set of contigs, the L50 is defined as the sequence length
+      of the shortest contig at 50% of the total genome length.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: ctg_l50
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  ctg_n90:
+    name: ctg_n90
+    description: Given a set of contigs, each with its own length, the N90 count is
+      defined as the smallest number of contigs whose length sum makes up 90% of genome
+      size.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: ctg_n90
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  ctg_l90:
+    name: ctg_l90
+    description: The L90 statistic is less than or equal to the L50 statistic; it
+      is the length for which the collection of all contigs of that length or longer
+      contains at least 90% of the sum of the lengths of all contigs.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: ctg_l90
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  ctg_logsum:
+    name: ctg_logsum
+    description: Maximum contig length.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: ctg_logsum
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  ctg_powsum:
+    name: ctg_powsum
+    description: Powersum of all contigs is the same as logsum except that it uses
+      the sum of (length*(length^P)) for some power P (default P=0.25).
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: ctg_powsum
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  ctg_max:
+    name: ctg_max
+    description: Maximum contig length.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: ctg_max
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  gap_pct:
+    name: gap_pct
+    description: The gap size percentage of all scaffolds.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: gap_pct
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  gc_std:
+    name: gc_std
+    description: Standard deviation of GC content of all contigs.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: gc_std
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  gc_avg:
+    name: gc_avg
+    description: Average of GC content of all contigs.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: gc_avg
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  num_input_reads:
+    name: num_input_reads
+    description: The sequence count number of input reads for assembly.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: num_input_reads
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  num_aligned_reads:
+    name: num_aligned_reads
+    description: The sequence count number of input reads aligned to assembled contigs.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: metagenome_assembly_parameter
+    alias: num_aligned_reads
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: float
+  insdc_assembly_identifiers:
+    name: insdc_assembly_identifiers
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: assembly_identifiers
+    mixins:
+    - insdc_identifiers
+    alias: insdc_assembly_identifiers
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - MetagenomeAssembly
+    - MetatranscriptomeAssembly
+    range: string
+    pattern: ^insdc.sra:[A-Z]+[0-9]+(\.[0-9]+)?$
+  execution_resource:
+    name: execution_resource
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: Activity
+    alias: execution_resource
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - WorkflowExecutionActivity
+    range: string
+    required: true
+  git_url:
+    name: git_url
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: git_url
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - WorkflowExecutionActivity
+    range: string
+    required: true
+  has_input:
+    name: has_input
+    description: An input to a process.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: NamedThing
+    multivalued: true
+    alias: has_input
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - BiosampleProcessing
+    - OmicsProcessing
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: NamedThing
+    required: true
+  has_output:
+    name: has_output
+    description: An output biosample to a processing step
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - output
+    rank: 1000
+    domain: NamedThing
+    multivalued: true
+    alias: has_output
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - OmicsProcessing
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: NamedThing
+  part_of:
+    name: part_of
+    description: Links a resource to another resource that either logically or physically
+      includes it.
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - is part of
+    rank: 1000
+    domain: NamedThing
+    slot_uri: dcterms:isPartOf
+    multivalued: true
+    alias: part_of
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - FieldResearchSite
+    - Biosample
+    - Study
+    - OmicsProcessing
+    - WorkflowExecutionActivity
+    range: NamedThing
+  type:
+    name: type
+    description: An optional string that specifies the type object.  This is used
+      to allow for searches for different kinds of objects.
+    deprecated: Due to confusion about what values are used for this slot, it is best
+      not to use this slot. See https://github.com/microbiomedata/nmdc-schema/issues/248.
+      MAM removed designates_type and rdf:type slot uri 2022-11-30
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: type
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - DataObject
+    - Biosample
+    - Study
+    - OmicsProcessing
+    - CreditAssociation
+    - WorkflowExecutionActivity
+    - MetagenomeAssembly
+    - MetagenomeAnnotationActivity
+    - MetatranscriptomeAnnotationActivity
+    - MetatranscriptomeActivity
+    - MagsAnalysisActivity
+    - ReadQcAnalysisActivity
+    - ReadBasedTaxonomyAnalysisActivity
+    - MagBin
+    - GenomeFeature
+    range: string
+    required: true
+  version:
+    name: version
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: Activity
+    alias: version
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - WorkflowExecutionActivity
+    - ReadQcAnalysisActivity
+    range: string
+  qc_status:
+    name: qc_status
+    description: Stores information about the result of a process (ie the process
+      of sequencing a library may have for qc_status of 'fail' if not enough data
+      was generated)
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: qc_status
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: StatusEnum
+  qc_comment:
+    name: qc_comment
+    description: Slot to store additional comments about laboratory or workflow output.
+      For workflow output it may describe the particular workflow stage that failed.
+      (ie Failed at call-stage due to a malformed fastq file).
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: qc_comment
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: string
+  has_failure_categorization:
+    name: has_failure_categorization
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    multivalued: true
+    alias: has_failure_categorization
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: FailureCategorization
+  id:
+    name: id
+    description: A unique identifier for a thing. Must be either a CURIE shorthand
+      for a URI or a complete URI
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    identifier: true
+    alias: id
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - Biosample
+    - Study
+    - NamedThing
+    - Activity
+    range: uriorcurie
+    required: true
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
+    structured_pattern:
+      syntax: '{id_nmdc_prefix}:wfmtas-{id_shoulder}-{id_blade}{id_version}{id_locus}'
+      interpolated: true
+  name:
+    name: name
+    description: A human readable label for an entity
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: name
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - Protocol
+    - NamedThing
+    - PersonValue
+    - Activity
+    range: string
+  started_at_time:
+    name: started_at_time
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: Activity
+    alias: started_at_time
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - Activity
+    range: string
+    required: true
+    pattern: ^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+  ended_at_time:
+    name: ended_at_time
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: Activity
+    alias: ended_at_time
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - Activity
+    range: string
+    required: true
+    pattern: ^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+  was_informed_by:
+    name: was_informed_by
+    from_schema: https://w3id.org/nmdc/nmdc
+    mappings:
+    - prov:wasInformedBy
+    rank: 1000
+    domain: Activity
+    alias: was_informed_by
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - Activity
+    range: Activity
+  used:
+    name: used
+    from_schema: https://w3id.org/nmdc/nmdc
+    mappings:
+    - prov:used
+    rank: 1000
+    domain: Activity
+    alias: used
+    owner: MetatranscriptomeAssembly
+    domain_of:
+    - Activity
+    range: string
+
+```
+</details>

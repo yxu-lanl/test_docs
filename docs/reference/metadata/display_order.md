@@ -1,23 +1,69 @@
-
-# Slot: display order
-
-
-When rendering information, this attribute to specify the order in which the information should be rendered.
-
-URI: [nmdc:display_order](https://microbiomedata/meta/display_order)
+# Slot: display_order
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_When rendering information, this attribute to specify the order in which the information should be rendered._
 
 
-## Used by
 
- * [ImageValue](ImageValue.md)
+URI: [nmdc:display_order](https://w3id.org/nmdc/display_order)
+
+
+
+<!-- no inheritance hierarchy -->
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[ImageValue](ImageValue.md) | An attribute value representing an image |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Integer](Integer.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: display_order
+description: When rendering information, this attribute to specify the order in which
+  the information should be rendered.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+domain: ImageValue
+alias: display_order
+domain_of:
+- ImageValue
+range: integer
+
+```
+</details>

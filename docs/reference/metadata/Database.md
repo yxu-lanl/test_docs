@@ -1,84 +1,599 @@
-
-# Class: database
-
-
-An abstract holder for any set of metadata and data. It does not need to correspond to an actual managed databse top level holder class. When translated to JSON-Schema this is the 'root' object. It should contain pointers to other objects of interest
-
-URI: [nmdc:Database](https://microbiomedata/meta/Database)
+# Class: Database
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[Study],[ReadBasedAnalysisActivity],[ReadQCAnalysisActivity],[OmicsProcessing],[NomAnalysisActivity],[MetatranscriptomeActivity],[MetaproteomicsAnalysisActivity],[MetagenomeAssembly],[MetagenomeAnnotationActivity],[MetabolomicsAnalysisActivity],[GenomeFeature],[FunctionalAnnotation],[GenomeFeature]<genome%20feature%20set%200..*-++[Database&#124;nmdc_schema_version:string%20%3F;date_created:string%20%3F;etl_software_version:string%20%3F],[FunctionalAnnotation]<functional%20annotation%20set%200..*-++[Database],[OmicsProcessing]<omics%20processing%20set%200..*-++[Database],[NomAnalysisActivity]<nom%20analysis%20activity%20set%200..*-++[Database],[ReadBasedAnalysisActivity]<read%20based%20analysis%20activity%20set%200..*-++[Database],[ReadQCAnalysisActivity]<read%20QC%20analysis%20activity%20set%200..*-++[Database],[MetatranscriptomeActivity]<metatranscriptome%20activity%20set%200..*-++[Database],[MetagenomeAssembly]<metagenome%20assembly%20set%200..*-++[Database],[MetagenomeAnnotationActivity]<metagenome%20annotation%20activity%20set%200..*-++[Database],[MetaproteomicsAnalysisActivity]<metaproteomics%20analysis%20activity%20set%200..*-++[Database],[MetabolomicsAnalysisActivity]<metabolomics%20analysis%20activity%20set%200..*-++[Database],[MAGsAnalysisActivity]<mags%20activity%20set%200..*-++[Database],[WorkflowExecutionActivity]<activity%20set%200..*-++[Database],[DataObject]<data%20object%20set%200..*-++[Database],[Study]<study%20set%200..*-++[Database],[Biosample]<biosample%20set%200..*-++[Database],[DataObject],[Biosample],[MAGsAnalysisActivity])](https://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[Study],[ReadBasedAnalysisActivity],[ReadQCAnalysisActivity],[OmicsProcessing],[NomAnalysisActivity],[MetatranscriptomeActivity],[MetaproteomicsAnalysisActivity],[MetagenomeAssembly],[MetagenomeAnnotationActivity],[MetabolomicsAnalysisActivity],[GenomeFeature],[FunctionalAnnotation],[GenomeFeature]<genome%20feature%20set%200..*-++[Database&#124;nmdc_schema_version:string%20%3F;date_created:string%20%3F;etl_software_version:string%20%3F],[FunctionalAnnotation]<functional%20annotation%20set%200..*-++[Database],[OmicsProcessing]<omics%20processing%20set%200..*-++[Database],[NomAnalysisActivity]<nom%20analysis%20activity%20set%200..*-++[Database],[ReadBasedAnalysisActivity]<read%20based%20analysis%20activity%20set%200..*-++[Database],[ReadQCAnalysisActivity]<read%20QC%20analysis%20activity%20set%200..*-++[Database],[MetatranscriptomeActivity]<metatranscriptome%20activity%20set%200..*-++[Database],[MetagenomeAssembly]<metagenome%20assembly%20set%200..*-++[Database],[MetagenomeAnnotationActivity]<metagenome%20annotation%20activity%20set%200..*-++[Database],[MetaproteomicsAnalysisActivity]<metaproteomics%20analysis%20activity%20set%200..*-++[Database],[MetabolomicsAnalysisActivity]<metabolomics%20analysis%20activity%20set%200..*-++[Database],[MAGsAnalysisActivity]<mags%20activity%20set%200..*-++[Database],[WorkflowExecutionActivity]<activity%20set%200..*-++[Database],[DataObject]<data%20object%20set%200..*-++[Database],[Study]<study%20set%200..*-++[Database],[Biosample]<biosample%20set%200..*-++[Database],[DataObject],[Biosample],[MAGsAnalysisActivity])
-
-## Referenced by Class
+_An abstract holder for any set of metadata and data. It does not need to correspond to an actual managed database top level holder class. When translated to JSON-Schema this is the 'root' object. It should contain pointers to other objects of interest. For MongoDB, the lists of objects that Database slots point to correspond to **collections**._
 
 
-## Attributes
 
 
-### Own
 
- * [biosample set](biosample_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of samples within it.
-     * Range: [Biosample](Biosample.md)
- * [study set](study_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of studies within it.
-     * Range: [Study](Study.md)
- * [data object set](data_object_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of data objects within it.
-     * Range: [DataObject](DataObject.md)
- * [activity set](activity_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of workflow activities.
-     * Range: [WorkflowExecutionActivity](WorkflowExecutionActivity.md)
- * [mags activity set](mags_activity_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of MAGs analysis activities.
-     * Range: [MAGsAnalysisActivity](MAGsAnalysisActivity.md)
- * [metabolomics analysis activity set](metabolomics_analysis_activity_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of metabolomics analysis activities.
-     * Range: [MetabolomicsAnalysisActivity](MetabolomicsAnalysisActivity.md)
- * [metaproteomics analysis activity set](metaproteomics_analysis_activity_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of metaproteomics analysis activities.
-     * Range: [MetaproteomicsAnalysisActivity](MetaproteomicsAnalysisActivity.md)
- * [metagenome annotation activity set](metagenome_annotation_activity_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of metagenome annotation activities.
-     * Range: [MetagenomeAnnotationActivity](MetagenomeAnnotationActivity.md)
- * [metagenome assembly set](metagenome_assembly_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of metagenome assembly activities.
-     * Range: [MetagenomeAssembly](MetagenomeAssembly.md)
- * [metatranscriptome activity set](metatranscriptome_activity_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of metatranscriptome analysis activities.
-     * Range: [MetatranscriptomeActivity](MetatranscriptomeActivity.md)
- * [read QC analysis activity set](read_QC_analysis_activity_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of read QC analysis activities.
-     * Range: [ReadQCAnalysisActivity](ReadQCAnalysisActivity.md)
- * [read based analysis activity set](read_based_analysis_activity_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of read based analysis activities.
-  
-     * Range: [ReadBasedAnalysisActivity](ReadBasedAnalysisActivity.md)
- * [nom analysis activity set](nom_analysis_activity_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of natural organic matter (NOM) analysis activities.
-     * Range: [NomAnalysisActivity](NomAnalysisActivity.md)
- * [omics processing set](omics_processing_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of omics processings within it.
-     * Range: [OmicsProcessing](OmicsProcessing.md)
- * [functional annotation set](functional_annotation_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of all functional annotations
-     * Range: [FunctionalAnnotation](FunctionalAnnotation.md)
- * [genome feature set](genome_feature_set.md)  <sub>0..\*</sub>
-     * Description: This property links a database object to the set of all features
-     * Range: [GenomeFeature](GenomeFeature.md)
- * [database➞nmdc schema version](database_nmdc_schema_version.md)  <sub>0..1</sub>
-     * Description: TODO
-     * Range: [String](types/String.md)
- * [database➞date created](database_date_created.md)  <sub>0..1</sub>
-     * Description: TODO
-     * Range: [String](types/String.md)
- * [database➞etl software version](database_etl_software_version.md)  <sub>0..1</sub>
-     * Description: TODO
-     * Range: [String](types/String.md)
+URI: [nmdc:Database](https://w3id.org/nmdc/Database)
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | NMDC metadata object |
 
+
+
+
+
+
+
+
+
+
+
+
+!!! note
+    Mermaid class diagram too large to render.
+
+
+
+
+<!-- no inheritance hierarchy -->
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [planned_process_set](planned_process_set.md) | 0..* <br/> [PlannedProcess](PlannedProcess.md) | This property links a database object to the set of planned processes within ... | direct |
+| [functional_annotation_agg](functional_annotation_agg.md) | 0..* <br/> [FunctionalAnnotationAggMember](FunctionalAnnotationAggMember.md) |  | direct |
+| [activity_set](activity_set.md) | 0..* <br/> [WorkflowExecutionActivity](WorkflowExecutionActivity.md) | This property links a database object to the set of workflow activities | direct |
+| [biosample_set](biosample_set.md) | 0..* <br/> [Biosample](Biosample.md) | This property links a database object to the set of samples within it | direct |
+| [collecting_biosamples_from_site_set](collecting_biosamples_from_site_set.md) | 0..* <br/> [CollectingBiosamplesFromSite](CollectingBiosamplesFromSite.md) |  | direct |
+| [data_object_set](data_object_set.md) | 0..* <br/> [DataObject](DataObject.md) | This property links a database object to the set of data objects within it | direct |
+| [extraction_set](extraction_set.md) | 0..* <br/> [Extraction](Extraction.md) | This property links a database object to the set of extractions within it | direct |
+| [field_research_site_set](field_research_site_set.md) | 0..* <br/> [FieldResearchSite](FieldResearchSite.md) |  | direct |
+| [functional_annotation_agg](functional_annotation_agg.md) | 0..* <br/> [FunctionalAnnotationAggMember](FunctionalAnnotationAggMember.md) |  | direct |
+| [functional_annotation_set](functional_annotation_set.md) | 0..* <br/> [FunctionalAnnotation](FunctionalAnnotation.md) | This property links a database object to the set of all functional annotation... | direct |
+| [genome_feature_set](genome_feature_set.md) | 0..* <br/> [GenomeFeature](GenomeFeature.md) | This property links a database object to the set of all features | direct |
+| [library_preparation_set](library_preparation_set.md) | 0..* <br/> [LibraryPreparation](LibraryPreparation.md) | This property links a database object to the set of DNA extractions within it | direct |
+| [mags_activity_set](mags_activity_set.md) | 0..* <br/> [MagsAnalysisActivity](MagsAnalysisActivity.md) | This property links a database object to the set of MAGs analysis activities | direct |
+| [metabolomics_analysis_activity_set](metabolomics_analysis_activity_set.md) | 0..* <br/> [MetabolomicsAnalysisActivity](MetabolomicsAnalysisActivity.md) | This property links a database object to the set of metabolomics analysis act... | direct |
+| [metagenome_annotation_activity_set](metagenome_annotation_activity_set.md) | 0..* <br/> [MetagenomeAnnotationActivity](MetagenomeAnnotationActivity.md) | This property links a database object to the set of metagenome annotation act... | direct |
+| [metagenome_assembly_set](metagenome_assembly_set.md) | 0..* <br/> [MetagenomeAssembly](MetagenomeAssembly.md) | This property links a database object to the set of metagenome assembly activ... | direct |
+| [metagenome_sequencing_activity_set](metagenome_sequencing_activity_set.md) | 0..* <br/> [MetagenomeSequencingActivity](MetagenomeSequencingActivity.md) | This property links a database object to the set of metagenome sequencing act... | direct |
+| [metaproteomics_analysis_activity_set](metaproteomics_analysis_activity_set.md) | 0..* <br/> [MetaproteomicsAnalysisActivity](MetaproteomicsAnalysisActivity.md) | This property links a database object to the set of metaproteomics analysis a... | direct |
+| [metatranscriptome_activity_set](metatranscriptome_activity_set.md) | 0..* <br/> [MetatranscriptomeActivity](MetatranscriptomeActivity.md) | This property links a database object to the set of metatranscriptome analysi... | direct |
+| [nom_analysis_activity_set](nom_analysis_activity_set.md) | 0..* <br/> [NomAnalysisActivity](NomAnalysisActivity.md) | This property links a database object to the set of natural organic matter (N... | direct |
+| [omics_processing_set](omics_processing_set.md) | 0..* <br/> [OmicsProcessing](OmicsProcessing.md) | This property links a database object to the set of omics processings within ... | direct |
+| [planned_process_set](planned_process_set.md) | 0..* <br/> [PlannedProcess](PlannedProcess.md) | This property links a database object to the set of planned processes within ... | direct |
+| [pooling_set](pooling_set.md) | 0..* <br/> [Pooling](Pooling.md) |  | direct |
+| [processed_sample_set](processed_sample_set.md) | 0..* <br/> [ProcessedSample](ProcessedSample.md) | This property links a database object to the set of processed samples within ... | direct |
+| [read_based_taxonomy_analysis_activity_set](read_based_taxonomy_analysis_activity_set.md) | 0..* <br/> [ReadBasedTaxonomyAnalysisActivity](ReadBasedTaxonomyAnalysisActivity.md) | This property links a database object to the set of read based analysis activ... | direct |
+| [read_qc_analysis_activity_set](read_qc_analysis_activity_set.md) | 0..* <br/> [ReadQcAnalysisActivity](ReadQcAnalysisActivity.md) | This property links a database object to the set of read QC analysis activiti... | direct |
+| [study_set](study_set.md) | 0..* <br/> [Study](Study.md) | This property links a database object to the set of studies within it | direct |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Database](Database.md) | [planned_process_set](planned_process_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [functional_annotation_agg](functional_annotation_agg.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [activity_set](activity_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [biosample_set](biosample_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [collecting_biosamples_from_site_set](collecting_biosamples_from_site_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [data_object_set](data_object_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [extraction_set](extraction_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [field_research_site_set](field_research_site_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [functional_annotation_set](functional_annotation_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [genome_feature_set](genome_feature_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [library_preparation_set](library_preparation_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [mags_activity_set](mags_activity_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [metabolomics_analysis_activity_set](metabolomics_analysis_activity_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [metagenome_annotation_activity_set](metagenome_annotation_activity_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [metagenome_assembly_set](metagenome_assembly_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [metagenome_sequencing_activity_set](metagenome_sequencing_activity_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [metaproteomics_analysis_activity_set](metaproteomics_analysis_activity_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [metatranscriptome_activity_set](metatranscriptome_activity_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [nom_analysis_activity_set](nom_analysis_activity_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [omics_processing_set](omics_processing_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [pooling_set](pooling_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [processed_sample_set](processed_sample_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [read_based_taxonomy_analysis_activity_set](read_based_taxonomy_analysis_activity_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [read_qc_analysis_activity_set](read_qc_analysis_activity_set.md) | domain | [Database](Database.md) |
+| [Database](Database.md) | [study_set](study_set.md) | domain | [Database](Database.md) |
+
+
+
+
+## Aliases
+
+
+* NMDC metadata object
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | nmdc:Database |
+| native | nmdc:Database |
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Database
+description: An abstract holder for any set of metadata and data. It does not need
+  to correspond to an actual managed database top level holder class. When translated
+  to JSON-Schema this is the 'root' object. It should contain pointers to other objects
+  of interest. For MongoDB, the lists of objects that Database slots point to correspond
+  to **collections**.
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- NMDC metadata object
+slots:
+- planned_process_set
+- functional_annotation_agg
+- activity_set
+- biosample_set
+- collecting_biosamples_from_site_set
+- data_object_set
+- extraction_set
+- field_research_site_set
+- functional_annotation_agg
+- functional_annotation_set
+- genome_feature_set
+- library_preparation_set
+- mags_activity_set
+- metabolomics_analysis_activity_set
+- metagenome_annotation_activity_set
+- metagenome_assembly_set
+- metagenome_sequencing_activity_set
+- metaproteomics_analysis_activity_set
+- metatranscriptome_activity_set
+- nom_analysis_activity_set
+- omics_processing_set
+- planned_process_set
+- pooling_set
+- processed_sample_set
+- read_based_taxonomy_analysis_activity_set
+- read_qc_analysis_activity_set
+- study_set
+tree_root: true
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Database
+description: An abstract holder for any set of metadata and data. It does not need
+  to correspond to an actual managed database top level holder class. When translated
+  to JSON-Schema this is the 'root' object. It should contain pointers to other objects
+  of interest. For MongoDB, the lists of objects that Database slots point to correspond
+  to **collections**.
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- NMDC metadata object
+attributes:
+  planned_process_set:
+    name: planned_process_set
+    description: This property links a database object to the set of planned processes
+      within it.
+    comments:
+    - PlannedProcess instances aggregated by this slot will require the designated_class
+      slot
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: planned_process_set
+    owner: Database
+    domain_of:
+    - Database
+    range: PlannedProcess
+    inlined_as_list: true
+  functional_annotation_agg:
+    name: functional_annotation_agg
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: Database
+    multivalued: true
+    alias: functional_annotation_agg
+    owner: Database
+    domain_of:
+    - Database
+    range: FunctionalAnnotationAggMember
+    inlined: true
+    inlined_as_list: true
+  activity_set:
+    name: activity_set
+    description: This property links a database object to the set of workflow activities.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: activity_set
+    owner: Database
+    domain_of:
+    - Database
+    range: WorkflowExecutionActivity
+    inlined_as_list: true
+  biosample_set:
+    name: biosample_set
+    description: This property links a database object to the set of samples within
+      it.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: biosample_set
+    owner: Database
+    domain_of:
+    - Database
+    range: Biosample
+    inlined_as_list: true
+  collecting_biosamples_from_site_set:
+    name: collecting_biosamples_from_site_set
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: collecting_biosamples_from_site_set
+    owner: Database
+    domain_of:
+    - Database
+    range: CollectingBiosamplesFromSite
+    inlined_as_list: true
+  data_object_set:
+    name: data_object_set
+    description: This property links a database object to the set of data objects
+      within it.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: data_object_set
+    owner: Database
+    domain_of:
+    - Database
+    range: DataObject
+    inlined_as_list: true
+  extraction_set:
+    name: extraction_set
+    description: This property links a database object to the set of extractions within
+      it.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: extraction_set
+    owner: Database
+    domain_of:
+    - Database
+    range: Extraction
+    inlined_as_list: true
+  field_research_site_set:
+    name: field_research_site_set
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: field_research_site_set
+    owner: Database
+    domain_of:
+    - Database
+    range: FieldResearchSite
+    inlined_as_list: true
+  functional_annotation_set:
+    name: functional_annotation_set
+    description: This property links a database object to the set of all functional
+      annotations
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: functional_annotation_set
+    owner: Database
+    domain_of:
+    - Database
+    range: FunctionalAnnotation
+    inlined_as_list: true
+  genome_feature_set:
+    name: genome_feature_set
+    description: This property links a database object to the set of all features
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: genome_feature_set
+    owner: Database
+    domain_of:
+    - Database
+    range: GenomeFeature
+    inlined_as_list: true
+  library_preparation_set:
+    name: library_preparation_set
+    description: This property links a database object to the set of DNA extractions
+      within it.
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - library_construction_set
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: library_preparation_set
+    owner: Database
+    domain_of:
+    - Database
+    range: LibraryPreparation
+    inlined_as_list: true
+  mags_activity_set:
+    name: mags_activity_set
+    description: This property links a database object to the set of MAGs analysis
+      activities.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: mags_activity_set
+    owner: Database
+    domain_of:
+    - Database
+    range: MagsAnalysisActivity
+    inlined_as_list: true
+  metabolomics_analysis_activity_set:
+    name: metabolomics_analysis_activity_set
+    description: This property links a database object to the set of metabolomics
+      analysis activities.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: metabolomics_analysis_activity_set
+    owner: Database
+    domain_of:
+    - Database
+    range: MetabolomicsAnalysisActivity
+    inlined_as_list: true
+  metagenome_annotation_activity_set:
+    name: metagenome_annotation_activity_set
+    description: This property links a database object to the set of metagenome annotation
+      activities.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: metagenome_annotation_activity_set
+    owner: Database
+    domain_of:
+    - Database
+    range: MetagenomeAnnotationActivity
+    inlined_as_list: true
+  metagenome_assembly_set:
+    name: metagenome_assembly_set
+    description: This property links a database object to the set of metagenome assembly
+      activities.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: metagenome_assembly_set
+    owner: Database
+    domain_of:
+    - Database
+    range: MetagenomeAssembly
+    inlined_as_list: true
+  metagenome_sequencing_activity_set:
+    name: metagenome_sequencing_activity_set
+    description: This property links a database object to the set of metagenome sequencing
+      activities.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: metagenome_sequencing_activity_set
+    owner: Database
+    domain_of:
+    - Database
+    range: MetagenomeSequencingActivity
+    inlined_as_list: true
+  metaproteomics_analysis_activity_set:
+    name: metaproteomics_analysis_activity_set
+    description: This property links a database object to the set of metaproteomics
+      analysis activities.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: metaproteomics_analysis_activity_set
+    owner: Database
+    domain_of:
+    - Database
+    range: MetaproteomicsAnalysisActivity
+    inlined_as_list: true
+  metatranscriptome_activity_set:
+    name: metatranscriptome_activity_set
+    description: This property links a database object to the set of metatranscriptome
+      analysis activities.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: metatranscriptome_activity_set
+    owner: Database
+    domain_of:
+    - Database
+    range: MetatranscriptomeActivity
+    inlined_as_list: true
+  nom_analysis_activity_set:
+    name: nom_analysis_activity_set
+    description: This property links a database object to the set of natural organic
+      matter (NOM) analysis activities.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: nom_analysis_activity_set
+    owner: Database
+    domain_of:
+    - Database
+    range: NomAnalysisActivity
+    inlined_as_list: true
+  omics_processing_set:
+    name: omics_processing_set
+    description: This property links a database object to the set of omics processings
+      within it.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: omics_processing_set
+    owner: Database
+    domain_of:
+    - Database
+    range: OmicsProcessing
+    inlined_as_list: true
+  pooling_set:
+    name: pooling_set
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: pooling_set
+    owner: Database
+    domain_of:
+    - Database
+    range: Pooling
+    inlined_as_list: true
+  processed_sample_set:
+    name: processed_sample_set
+    description: This property links a database object to the set of processed samples
+      within it.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: processed_sample_set
+    owner: Database
+    domain_of:
+    - Database
+    range: ProcessedSample
+    inlined_as_list: true
+  read_based_taxonomy_analysis_activity_set:
+    name: read_based_taxonomy_analysis_activity_set
+    description: This property links a database object to the set of read based analysis
+      activities.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: read_based_taxonomy_analysis_activity_set
+    owner: Database
+    domain_of:
+    - Database
+    range: ReadBasedTaxonomyAnalysisActivity
+    inlined_as_list: true
+  read_qc_analysis_activity_set:
+    name: read_qc_analysis_activity_set
+    description: This property links a database object to the set of read QC analysis
+      activities.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: read_qc_analysis_activity_set
+    owner: Database
+    domain_of:
+    - Database
+    range: ReadQcAnalysisActivity
+    inlined_as_list: true
+  study_set:
+    name: study_set
+    description: This property links a database object to the set of studies within
+      it.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    mixins:
+    - object_set
+    domain: Database
+    multivalued: true
+    alias: study_set
+    owner: Database
+    domain_of:
+    - Database
+    range: Study
+    inlined_as_list: true
+tree_root: true
+
+```
+</details>

@@ -1,29 +1,65 @@
+# Slot: applies_to_person
 
-# Slot: applies to person
-
-
-
-
-URI: [nmdc:applies_to_person](https://microbiomedata/meta/applies_to_person)
+URI: [nmdc:applies_to_person](https://w3id.org/nmdc/applies_to_person)
 
 
-## Domain and Range
 
-[CreditAssociation](CreditAssociation.md) &#8594;  <sub>1..1</sub> [PersonValue](PersonValue.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
 
-## Used by
+## Applicable Classes
 
- * [CreditAssociation](CreditAssociation.md)
-
-## Other properties
-
-|  |  |  |
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Mappings:** | | prov:agent |
+[CreditAssociation](CreditAssociation.md) | This class supports binding associated researchers to studies |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [PersonValue](PersonValue.md)
+
+* Required: True
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: applies_to_person
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+domain: CreditAssociation
+alias: applies_to_person
+domain_of:
+- CreditAssociation
+range: PersonValue
+required: true
+
+```
+</details>

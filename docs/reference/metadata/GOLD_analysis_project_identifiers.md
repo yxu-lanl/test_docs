@@ -1,29 +1,94 @@
-
-# Slot: GOLD analysis project identifiers
-
-
-identifiers for corresponding analysis project in GOLD
-
-URI: [nmdc:GOLD_analysis_project_identifiers](https://microbiomedata/meta/GOLD_analysis_project_identifiers)
+# Slot: gold_analysis_project_identifiers
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..\*</sub> [ExternalIdentifier](types/ExternalIdentifier.md)
-
-## Parents
-
- *  is_a: [analysis identifiers](analysis_identifiers.md)
-
-## Children
+_identifiers for corresponding analysis project in GOLD_
 
 
-## Used by
+
+URI: [nmdc:gold_analysis_project_identifiers](https://w3id.org/nmdc/gold_analysis_project_identifiers)
 
 
-## Other properties
 
-|  |  |  |
+
+## Inheritance
+
+* [alternative_identifiers](alternative_identifiers.md)
+    * [external_database_identifiers](external_database_identifiers.md)
+        * [analysis_identifiers](analysis_identifiers.md)
+            * **gold_analysis_project_identifiers** [ [gold_identifiers](gold_identifiers.md)]
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Examples:** | | Example(value='https://identifiers.org/gold:Ga0526289', description=None) |
+[MetagenomeAnnotationActivity](MetagenomeAnnotationActivity.md) | A workflow execution activity that provides functional and structural annotat... |  no  |
+[MetatranscriptomeAnnotationActivity](MetatranscriptomeAnnotationActivity.md) |  |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [ExternalIdentifier](ExternalIdentifier.md)
+
+* Multivalued: True
+
+* Regex pattern: `^gold:Ga[0-9]+$`
+
+
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| https://bioregistry.io/gold:Ga0526289 |
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: gold_analysis_project_identifiers
+description: identifiers for corresponding analysis project in GOLD
+examples:
+- value: https://bioregistry.io/gold:Ga0526289
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+is_a: analysis_identifiers
+mixins:
+- gold_identifiers
+multivalued: true
+alias: gold_analysis_project_identifiers
+domain_of:
+- MetagenomeAnnotationActivity
+- MetatranscriptomeAnnotationActivity
+range: external_identifier
+pattern: ^gold:Ga[0-9]+$
+
+```
+</details>

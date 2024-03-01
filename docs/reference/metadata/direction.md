@@ -1,22 +1,68 @@
-
 # Slot: direction
 
 
-One of l->r, r->l, bidirectional, neutral
-
-URI: [nmdc:direction](https://microbiomedata/meta/direction)
+_One of l->r, r->l, bidirectional, neutral_
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+URI: [nmdc:direction](https://w3id.org/nmdc/direction)
 
 
-## Children
 
- *  [reaction➞direction](reaction_direction.md)
+<!-- no inheritance hierarchy -->
 
-## Used by
 
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[Reaction](Reaction.md) | An individual biochemical transformation carried out by a functional unit of ... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: direction
+description: One of l->r, r->l, bidirectional, neutral
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+domain: Reaction
+alias: direction
+domain_of:
+- Reaction
+range: string
+
+```
+</details>

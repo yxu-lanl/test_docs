@@ -1,29 +1,79 @@
-
 # Slot: start
 
 
-The start of the feature in positive 1-based integer coordinates
-
-URI: [nmdc:start](https://microbiomedata/meta/start)
+_The start of the feature in positive 1-based integer coordinates_
 
 
-## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [Integer](types/Integer.md)
-
-## Parents
-
- *  is_a: [gff coordinate](gff_coordinate.md)
-
-## Children
+URI: [nmdc:start](https://w3id.org/nmdc/start)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
+* [gff_coordinate](gff_coordinate.md)
+    * **start**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Close Mappings:** | | biolink:start_interbase_coordinate |
+[GenomeFeature](GenomeFeature.md) | A feature localized to an interval along a genome |  yes  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [Integer](Integer.md)
+
+* Minimum Value: 1
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: start
+description: The start of the feature in positive 1-based integer coordinates
+from_schema: https://w3id.org/nmdc/nmdc
+close_mappings:
+- biolink:start_interbase_coordinate
+rank: 1000
+is_a: gff_coordinate
+domain: GenomeFeature
+alias: start
+domain_of:
+- GenomeFeature
+range: integer
+minimum_value: 1
+
+```
+</details>

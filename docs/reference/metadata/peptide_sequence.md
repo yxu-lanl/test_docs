@@ -1,22 +1,61 @@
+# Slot: peptide_sequence
 
-# Slot: peptide sequence
-
-
-
-
-URI: [nmdc:peptide_sequence](https://microbiomedata/meta/peptide_sequence)
+URI: [nmdc:peptide_sequence](https://w3id.org/nmdc/peptide_sequence)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [peptide quantification➞peptide sequence](peptide_quantification_peptide_sequence.md)
 
-## Used by
+## Applicable Classes
 
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[PeptideQuantification](PeptideQuantification.md) | This is used to link a metaproteomics analysis workflow to a specific peptide... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: peptide_sequence
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: peptide_sequence
+domain_of:
+- PeptideQuantification
+range: string
+
+```
+</details>

@@ -1,24 +1,77 @@
-
-# Slot: scaf_N50
-
-
-Given a set of scaffolds, each with its own length, the N50 count is defined as the smallest number of scaffolds whose length sum makes up half of genome size.
-
-URI: [nmdc:scaf_N50](https://microbiomedata/meta/scaf_N50)
+# Slot: scaf_n50
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
-
-## Parents
-
- *  is_a: [metagenome assembly parameter](metagenome_assembly_parameter.md)
-
-## Children
+_Given a set of scaffolds, each with its own length, the N50 count is defined as the smallest number of scaffolds whose length sum makes up half of genome size._
 
 
-## Used by
 
- * [MetagenomeAssembly](MetagenomeAssembly.md)
- * [MetatranscriptomeAssembly](MetatranscriptomeAssembly.md)
+URI: [nmdc:scaf_n50](https://w3id.org/nmdc/scaf_n50)
+
+
+
+
+## Inheritance
+
+* [metagenome_assembly_parameter](metagenome_assembly_parameter.md)
+    * **scaf_n50**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[MetagenomeAssembly](MetagenomeAssembly.md) | A workflow execution activity that converts sequencing reads into an assemble... |  no  |
+[MetatranscriptomeAssembly](MetatranscriptomeAssembly.md) |  |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Float](Float.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: scaf_n50
+description: Given a set of scaffolds, each with its own length, the N50 count is
+  defined as the smallest number of scaffolds whose length sum makes up half of genome
+  size.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+is_a: metagenome_assembly_parameter
+alias: scaf_n50
+domain_of:
+- MetagenomeAssembly
+- MetatranscriptomeAssembly
+range: float
+
+```
+</details>

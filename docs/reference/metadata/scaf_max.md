@@ -1,24 +1,75 @@
-
 # Slot: scaf_max
 
 
-Maximum scaffold length.
-
-URI: [nmdc:scaf_max](https://microbiomedata/meta/scaf_max)
+_Maximum scaffold length._
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
-
-## Parents
-
- *  is_a: [metagenome assembly parameter](metagenome_assembly_parameter.md)
-
-## Children
+URI: [nmdc:scaf_max](https://w3id.org/nmdc/scaf_max)
 
 
-## Used by
 
- * [MetagenomeAssembly](MetagenomeAssembly.md)
- * [MetatranscriptomeAssembly](MetatranscriptomeAssembly.md)
+
+## Inheritance
+
+* [metagenome_assembly_parameter](metagenome_assembly_parameter.md)
+    * **scaf_max**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[MetagenomeAssembly](MetagenomeAssembly.md) | A workflow execution activity that converts sequencing reads into an assemble... |  no  |
+[MetatranscriptomeAssembly](MetatranscriptomeAssembly.md) |  |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Float](Float.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: scaf_max
+description: Maximum scaffold length.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+is_a: metagenome_assembly_parameter
+alias: scaf_max
+domain_of:
+- MetagenomeAssembly
+- MetatranscriptomeAssembly
+range: float
+
+```
+</details>

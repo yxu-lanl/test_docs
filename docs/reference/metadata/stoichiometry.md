@@ -1,22 +1,67 @@
-
 # Slot: stoichiometry
 
 
+_from reaction participant class_
 
 
-URI: [nmdc:stoichiometry](https://microbiomedata/meta/stoichiometry)
+
+URI: [nmdc:stoichiometry](https://w3id.org/nmdc/stoichiometry)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [reaction participant➞stoichiometry](reaction_participant_stoichiometry.md)
 
-## Used by
+## Applicable Classes
 
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[ReactionParticipant](ReactionParticipant.md) | Instances of this link a reaction to a chemical entity participant |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Integer](Integer.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: stoichiometry
+description: from reaction participant class
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: stoichiometry
+domain_of:
+- ReactionParticipant
+range: integer
+
+```
+</details>

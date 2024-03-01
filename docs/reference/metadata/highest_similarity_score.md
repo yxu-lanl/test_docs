@@ -1,22 +1,67 @@
+# Slot: highest_similarity_score
 
-# Slot: highest similarity score
-
-
-TODO: Yuri to fill in
-
-URI: [nmdc:highest_similarity_score](https://microbiomedata/meta/highest_similarity_score)
+URI: [nmdc:highest_similarity_score](https://w3id.org/nmdc/highest_similarity_score)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [metabolite quantification➞highest similarity score](metabolite_quantification_highest_similarity_score.md)
 
-## Used by
+## Applicable Classes
 
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[MetaboliteQuantification](MetaboliteQuantification.md) | This is used to link a metabolomics analysis workflow to a specific metabolit... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Float](Float.md)
+
+
+
+
+
+## TODOs
+
+* Yuri to fill in description
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: highest_similarity_score
+todos:
+- Yuri to fill in description
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: highest_similarity_score
+domain_of:
+- MetaboliteQuantification
+range: float
+
+```
+</details>

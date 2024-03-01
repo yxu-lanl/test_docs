@@ -1,32 +1,106 @@
-
-# Slot: target_subfragment
-
-
-Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on 16S rRNA
-
-URI: [nmdc:target_subfragment](https://microbiomedata/meta/target_subfragment)
+# Slot: target subfragment (target_subfragment)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [TextValue](TextValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on 16S rRNA_
 
 
-## Used by
 
- * [OmicsProcessing](OmicsProcessing.md)
+URI: [MIXS:0000045](https://w3id.org/mixs/0000045)
 
-## Other properties
 
-|  |  |  |
+
+
+## Inheritance
+
+* [sequencing_field](sequencing_field.md)
+    * **target_subfragment**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | target subfragment |
-| **Mappings:** | | mixs:target_subfragment |
-| **In Subsets:** | | sequencing |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
+[OmicsProcessing](OmicsProcessing.md) | The methods and processes used to generate omics data from a biosample or org... |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [TextValue](TextValue.md)
+
+
+
+## Aliases
+
+
+* target subfragment
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| V6, V9, ITS |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | gene fragment name |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: target_subfragment
+annotations:
+  expected_value:
+    tag: expected_value
+    value: gene fragment name
+description: Name of subfragment of a gene or locus. Important to e.g. identify special
+  regions on marker genes like V6 on 16S rRNA
+title: target subfragment
+examples:
+- value: V6, V9, ITS
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- target subfragment
+rank: 1000
+is_a: sequencing field
+string_serialization: '{text}'
+slot_uri: MIXS:0000045
+multivalued: false
+alias: target_subfragment
+domain_of:
+- Biosample
+- OmicsProcessing
+range: TextValue
+
+```
+</details>

@@ -1,22 +1,65 @@
+# Slot: has_peptide_quantifications
 
-# Slot: has peptide quantifications
-
-
-
-
-URI: [nmdc:has_peptide_quantifications](https://microbiomedata/meta/has_peptide_quantifications)
+URI: [nmdc:has_peptide_quantifications](https://w3id.org/nmdc/has_peptide_quantifications)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [PeptideQuantification](PeptideQuantification.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [metaproteomics analysis activity➞has peptide quantifications](metaproteomics_analysis_activity_has_peptide_quantifications.md)
 
-## Used by
+## Applicable Classes
 
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[MetaproteomicsAnalysisActivity](MetaproteomicsAnalysisActivity.md) |  |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [PeptideQuantification](PeptideQuantification.md)
+
+* Multivalued: True
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: has_peptide_quantifications
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+domain: MetaproteomicsAnalysisActivity
+multivalued: true
+alias: has_peptide_quantifications
+domain_of:
+- MetaproteomicsAnalysisActivity
+range: PeptideQuantification
+
+```
+</details>

@@ -1,28 +1,62 @@
-
 # Slot: keywords
 
 
-A list of keywords that used to associate the entity. Keywords SHOULD come from controlled vocabularies, including MESH, ENVO.
-
-URI: [nmdc:keywords](https://microbiomedata/meta/keywords)
+_A list of keywords that used to associate the entity. Keywords SHOULD come from controlled vocabularies, including MESH, ENVO._
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [String](types/String.md)
-
-## Parents
+URI: [nmdc:keywords](https://w3id.org/nmdc/keywords)
 
 
-## Children
+
+<!-- no inheritance hierarchy -->
 
 
-## Used by
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | dcterms:subject |
 
+
+## Properties
+
+* Range: [String](String.md)
+
+* Multivalued: True
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: keywords
+description: A list of keywords that used to associate the entity. Keywords SHOULD
+  come from controlled vocabularies, including MESH, ENVO.
+from_schema: https://w3id.org/nmdc/nmdc
+mappings:
+- dcterms:subject
+rank: 1000
+multivalued: true
+alias: keywords
+range: string
+
+```
+</details>

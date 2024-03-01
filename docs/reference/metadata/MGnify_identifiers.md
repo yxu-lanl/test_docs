@@ -1,28 +1,67 @@
+# Slot: mgnify_identifiers
 
-# Slot: MGnify identifiers
-
-
-
-
-URI: [nmdc:MGnify_identifiers](https://microbiomedata/meta/MGnify_identifiers)
+URI: [nmdc:mgnify_identifiers](https://w3id.org/nmdc/mgnify_identifiers)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
 
-## Used by
 
 
-## Other properties
+## Mixin Usage
 
-|  |  |  |
-| --- | --- | --- |
-| **See also:** | | [https://www.ebi.ac.uk/metagenomics/](https://www.ebi.ac.uk/metagenomics/) |
+| mixed into | description | range | domain |
+| --- | --- | --- | --- |
+| [mgnify_project_identifiers](mgnify_project_identifiers.md) | identifiers for corresponding project in MGnify | None | Study |
+| [mgnify_analysis_identifiers](mgnify_analysis_identifiers.md) |  | None |  |
 
+
+
+## Properties
+
+* Range: [String](String.md)
+
+* Mixin: True
+
+
+
+
+
+## See Also
+
+* [https://www.ebi.ac.uk/metagenomics/](https://www.ebi.ac.uk/metagenomics/)
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: mgnify_identifiers
+from_schema: https://w3id.org/nmdc/nmdc
+see_also:
+- https://www.ebi.ac.uk/metagenomics/
+rank: 1000
+mixin: true
+alias: mgnify_identifiers
+range: string
+
+```
+</details>

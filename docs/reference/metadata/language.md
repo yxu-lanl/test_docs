@@ -1,22 +1,67 @@
-
 # Slot: language
 
 
-Should use ISO 639-1 code e.g. "en", "fr"
-
-URI: [nmdc:language](https://microbiomedata/meta/language)
+_Should use ISO 639-1 code e.g. "en", "fr"_
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [LanguageCode](types/LanguageCode.md)
-
-## Parents
+URI: [nmdc:language](https://w3id.org/nmdc/language)
 
 
-## Children
+
+<!-- no inheritance hierarchy -->
 
 
-## Used by
 
- * [TextValue](TextValue.md)
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[TextValue](TextValue.md) | A basic string value |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [LanguageCode](LanguageCode.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: language
+description: Should use ISO 639-1 code e.g. "en", "fr"
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: language
+domain_of:
+- TextValue
+range: language code
+
+```
+</details>

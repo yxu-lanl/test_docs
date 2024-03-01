@@ -1,22 +1,67 @@
-
 # Slot: input_read_bases
 
 
-TODO
-
-URI: [nmdc:input_read_bases](https://microbiomedata/meta/input_read_bases)
+_TODO      _
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
-
-## Parents
+URI: [nmdc:input_read_bases](https://w3id.org/nmdc/input_read_bases)
 
 
-## Children
 
- *  [read QC analysis activity➞input_read_bases](read_QC_analysis_activity_input_read_bases.md)
+<!-- no inheritance hierarchy -->
 
-## Used by
 
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[ReadQcAnalysisActivity](ReadQcAnalysisActivity.md) | A workflow execution activity that performs quality control on raw Illumina r... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Float](Float.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: input_read_bases
+description: 'TODO      '
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: input_read_bases
+domain_of:
+- ReadQcAnalysisActivity
+range: float
+
+```
+</details>

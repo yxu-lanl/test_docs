@@ -1,29 +1,76 @@
-
 # Slot: salinity_category
 
 
-Categorcial description of the sample's salinity. Examples: halophile, halotolerant, hypersaline, huryhaline
-
-URI: [nmdc:salinity_category](https://microbiomedata/meta/salinity_category)
+_Categorical description of the sample's salinity. Examples: halophile, halotolerant, hypersaline, huryhaline_
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+URI: [nmdc:salinity_category](https://w3id.org/nmdc/salinity_category)
 
 
-## Children
+
+<!-- no inheritance hierarchy -->
 
 
-## Used by
 
- * [Biosample](Biosample.md)
 
-## Other properties
+## Applicable Classes
 
-|  |  |  |
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **See also:** | | [https://github.com/microbiomedata/nmdc-metadata/pull/297](https://github.com/microbiomedata/nmdc-metadata/pull/297) |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## See Also
+
+* [https://github.com/microbiomedata/nmdc-metadata/pull/297](https://github.com/microbiomedata/nmdc-metadata/pull/297)
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: salinity_category
+description: 'Categorical description of the sample''s salinity. Examples: halophile,
+  halotolerant, hypersaline, huryhaline'
+notes:
+- maps to gold:salinity
+from_schema: https://w3id.org/nmdc/nmdc
+see_also:
+- https://github.com/microbiomedata/nmdc-metadata/pull/297
+rank: 1000
+alias: salinity_category
+domain_of:
+- Biosample
+range: string
+
+```
+</details>

@@ -1,31 +1,108 @@
-
-# Slot: water_content
-
-
-Water content measurement
-
-URI: [nmdc:water_content](https://microbiomedata/meta/water_content)
+# Slot: water content (water_content)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [QuantityValue](QuantityValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Water content measurement_
 
 
-## Used by
 
- * [Biosample](Biosample.md)
+URI: [MIXS:0000185](https://w3id.org/mixs/0000185)
 
-## Other properties
 
-|  |  |  |
+
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **water_content**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | water content |
-| **Mappings:** | | mixs:water_content |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  yes  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [QuantityValue](QuantityValue.md)
+
+
+
+## Aliases
+
+
+* water content
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+|  |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | measurement value || preferred_unit | gram per gram or cubic centimeter per cubic centimeter || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: water_content
+annotations:
+  expected_value:
+    tag: expected_value
+    value: measurement value
+  preferred_unit:
+    tag: preferred_unit
+    value: gram per gram or cubic centimeter per cubic centimeter
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: Water content measurement
+title: water content
+examples:
+- value: ''
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- water content
+rank: 1000
+is_a: core field
+slot_uri: MIXS:0000185
+multivalued: false
+alias: water_content
+domain_of:
+- Biosample
+range: QuantityValue
+
+```
+</details>

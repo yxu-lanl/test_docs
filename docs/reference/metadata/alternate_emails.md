@@ -1,21 +1,56 @@
-
-# Slot: alternate emails
-
-
-One or more other email addresses for an entity.
-
-URI: [nmdc:alternate_emails](https://microbiomedata/meta/alternate_emails)
+# Slot: alternate_emails
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+_One or more other email addresses for an entity._
 
 
-## Children
+
+URI: [nmdc:alternate_emails](https://w3id.org/nmdc/alternate_emails)
 
 
-## Used by
 
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: alternate_emails
+description: One or more other email addresses for an entity.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: alternate_emails
+range: string
+
+```
+</details>

@@ -1,30 +1,112 @@
-
-# Slot: org_particles
-
-
-Concentration of particles such as faeces, hairs, food, vomit, paper fibers, plant material, humus, etc.
-
-URI: [nmdc:org_particles](https://microbiomedata/meta/org_particles)
+# Slot: organic particles (org_particles)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [QuantityValue](QuantityValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Concentration of particles such as faeces, hairs, food, vomit, paper fibers, plant material, humus, etc._
 
 
-## Used by
+
+URI: [MIXS:0000665](https://w3id.org/mixs/0000665)
 
 
-## Other properties
 
-|  |  |  |
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **org_particles**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | organic particles |
-| **Mappings:** | | mixs:org_particles |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [TextValue](TextValue.md)
+
+* Multivalued: True
+
+
+
+## Aliases
+
+
+* organic particles
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+|  |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | particle name;measurement value || preferred_unit | gram per liter || occurrence | m |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: org_particles
+annotations:
+  expected_value:
+    tag: expected_value
+    value: particle name;measurement value
+  preferred_unit:
+    tag: preferred_unit
+    value: gram per liter
+  occurrence:
+    tag: occurrence
+    value: m
+description: Concentration of particles such as faeces, hairs, food, vomit, paper
+  fibers, plant material, humus, etc.
+title: organic particles
+examples:
+- value: ''
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- organic particles
+rank: 1000
+is_a: core field
+string_serialization: '{text};{float} {unit}'
+slot_uri: MIXS:0000665
+multivalued: true
+alias: org_particles
+domain_of:
+- Biosample
+range: TextValue
+
+```
+</details>

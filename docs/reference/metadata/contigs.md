@@ -1,24 +1,76 @@
-
 # Slot: contigs
 
 
-The sum of the (length*log(length)) of all contigs, times some constant.  Increase the contiguity, the score will increase
-
-URI: [nmdc:contigs](https://microbiomedata/meta/contigs)
+_The sum of the (length*log(length)) of all contigs, times some constant.  Increase the contiguity, the score will increase_
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
-
-## Parents
-
- *  is_a: [metagenome assembly parameter](metagenome_assembly_parameter.md)
-
-## Children
+URI: [nmdc:contigs](https://w3id.org/nmdc/contigs)
 
 
-## Used by
 
- * [MetagenomeAssembly](MetagenomeAssembly.md)
- * [MetatranscriptomeAssembly](MetatranscriptomeAssembly.md)
+
+## Inheritance
+
+* [metagenome_assembly_parameter](metagenome_assembly_parameter.md)
+    * **contigs**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[MetagenomeAssembly](MetagenomeAssembly.md) | A workflow execution activity that converts sequencing reads into an assemble... |  no  |
+[MetatranscriptomeAssembly](MetatranscriptomeAssembly.md) |  |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Float](Float.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: contigs
+description: The sum of the (length*log(length)) of all contigs, times some constant.  Increase
+  the contiguity, the score will increase
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+is_a: metagenome_assembly_parameter
+alias: contigs
+domain_of:
+- MetagenomeAssembly
+- MetatranscriptomeAssembly
+range: float
+
+```
+</details>

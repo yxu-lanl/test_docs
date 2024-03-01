@@ -1,78 +1,378 @@
-
-# Class: reaction
-
-
-An individual biochemical transformation carried out by a functional unit of an organism, in which a collection of substrates are transformed into a collection of products. Can also represent transporters
-
-URI: [nmdc:Reaction](https://microbiomedata/meta/Reaction)
+# Class: Reaction
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ReactionParticipant],[ReactionParticipant]<right%20participants%200..*-++[Reaction&#124;direction:string%20%3F;smarts_string:string%20%3F;is_diastereoselective:boolean%20%3F;is_stereo:boolean%20%3F;is_balanced:boolean%20%3F;is_transport:boolean%20%3F;is_fully_characterized:boolean%20%3F;id(i):string;name(i):string%20%3F;description(i):string%20%3F;alternative_identifiers(i):string%20*],[ReactionParticipant]<left%20participants%200..*-++[Reaction],[Pathway]-%20has_part%200..*>[Reaction],[FunctionalAnnotationTerm]^-[Reaction],[Pathway],[FunctionalAnnotationTerm])](https://yuml.me/diagram/nofunky;dir:TB/class/[ReactionParticipant],[ReactionParticipant]<right%20participants%200..*-++[Reaction&#124;direction:string%20%3F;smarts_string:string%20%3F;is_diastereoselective:boolean%20%3F;is_stereo:boolean%20%3F;is_balanced:boolean%20%3F;is_transport:boolean%20%3F;is_fully_characterized:boolean%20%3F;id(i):string;name(i):string%20%3F;description(i):string%20%3F;alternative_identifiers(i):string%20*],[ReactionParticipant]<left%20participants%200..*-++[Reaction],[Pathway]-%20has_part%200..*>[Reaction],[FunctionalAnnotationTerm]^-[Reaction],[Pathway],[FunctionalAnnotationTerm])
-
-## Identifier prefixes
-
- * KEGG.REACTION
- * RHEA
- * MetaCyc
- * EC
- * GO
- * MetaNetX
- * SEED
- * RetroRules
-
-## Parents
-
- *  is_a: [FunctionalAnnotationTerm](FunctionalAnnotationTerm.md) - Abstract grouping class for any term/descriptor that can be applied to a functional unit of a genome (protein, ncRNA, complex).
-
-## Referenced by Class
-
- *  **None** *[has_part](has_part.md)*  <sub>0..\*</sub>  **[Reaction](Reaction.md)**
- *  **[Pathway](Pathway.md)** *[pathway➞has_part](pathway_has_part.md)*  <sub>0..\*</sub>  **[Reaction](Reaction.md)**
-
-## Attributes
+_An individual biochemical transformation carried out by a functional unit of an organism, in which a collection of substrates are transformed into a collection of products. Can also represent transporters_
 
 
-### Own
 
- * [reaction➞left participants](reaction_left_participants.md)  <sub>0..\*</sub>
-     * Range: [ReactionParticipant](ReactionParticipant.md)
- * [reaction➞right participants](reaction_right_participants.md)  <sub>0..\*</sub>
-     * Range: [ReactionParticipant](ReactionParticipant.md)
- * [reaction➞direction](reaction_direction.md)  <sub>0..1</sub>
-     * Description: One of l->r, r->l, bidirectional, neutral
-     * Range: [String](types/String.md)
- * [reaction➞smarts string](reaction_smarts_string.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [reaction➞is diastereoselective](reaction_is_diastereoselective.md)  <sub>0..1</sub>
-     * Range: [Boolean](types/Boolean.md)
- * [reaction➞is stereo](reaction_is_stereo.md)  <sub>0..1</sub>
-     * Range: [Boolean](types/Boolean.md)
- * [reaction➞is balanced](reaction_is_balanced.md)  <sub>0..1</sub>
-     * Range: [Boolean](types/Boolean.md)
- * [reaction➞is transport](reaction_is_transport.md)  <sub>0..1</sub>
-     * Range: [Boolean](types/Boolean.md)
- * [reaction➞is fully characterized](reaction_is_fully_characterized.md)  <sub>0..1</sub>
-     * Description: False if includes R-groups
-     * Range: [Boolean](types/Boolean.md)
 
-### Inherited from functional annotation term:
 
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
- * [name](name.md)  <sub>0..1</sub>
-     * Description: A human readable label for an entity
-     * Range: [String](types/String.md)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of a thing
-     * Range: [String](types/String.md)
- * [alternative identifiers](alternative_identifiers.md)  <sub>0..\*</sub>
-     * Description: A list of alternative identifiers for the entity.
-     * Range: [String](types/String.md)
+URI: [nmdc:Reaction](https://w3id.org/nmdc/Reaction)
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | biolink:MolecularActivity |
 
+
+
+
+
+
+
+
+
+
+
+
+
+```mermaid
+classDiagram
+  class Reaction
+    FunctionalAnnotationTerm <|-- Reaction
+    
+    
+    
+  Reaction : alternative_identifiers
+    
+  Reaction : description
+    
+  Reaction : direction
+    
+  Reaction : id
+    
+  Reaction : is_balanced
+    
+  Reaction : is_diastereoselective
+    
+  Reaction : is_fully_characterized
+    
+  Reaction : is_stereo
+    
+  Reaction : is_transport
+    
+  Reaction : left_participants
+    
+    Reaction --|> ReactionParticipant : left_participants
+    
+  Reaction : name
+    
+  Reaction : right_participants
+    
+    Reaction --|> ReactionParticipant : right_participants
+    
+  Reaction : smarts_string
+    
+  
+
+```
+
+
+
+
+
+
+## Inheritance
+* [NamedThing](NamedThing.md)
+    * [OntologyClass](OntologyClass.md)
+        * [FunctionalAnnotationTerm](FunctionalAnnotationTerm.md)
+            * **Reaction**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [direction](direction.md) | 0..1 <br/> [String](String.md) | One of l->r, r->l, bidirectional, neutral | direct |
+| [is_balanced](is_balanced.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
+| [is_diastereoselective](is_diastereoselective.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
+| [is_fully_characterized](is_fully_characterized.md) | 0..1 <br/> [Boolean](Boolean.md) | False if includes R-groups | direct |
+| [is_stereo](is_stereo.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
+| [is_transport](is_transport.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
+| [left_participants](left_participants.md) | 0..* <br/> [ReactionParticipant](ReactionParticipant.md) |  | direct |
+| [right_participants](right_participants.md) | 0..* <br/> [ReactionParticipant](ReactionParticipant.md) |  | direct |
+| [smarts_string](smarts_string.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [id](id.md) | 1..1 <br/> [Uriorcurie](Uriorcurie.md) | A unique identifier for a thing | [NamedThing](NamedThing.md) |
+| [name](name.md) | 0..1 <br/> [String](String.md) | A human readable label for an entity | [NamedThing](NamedThing.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | a human-readable description of a thing | [NamedThing](NamedThing.md) |
+| [alternative_identifiers](alternative_identifiers.md) | 0..* <br/> [Uriorcurie](Uriorcurie.md) | A list of alternative identifiers for the entity | [NamedThing](NamedThing.md) |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Pathway](Pathway.md) | [has_part](has_part.md) | range | [Reaction](Reaction.md) |
+| [Reaction](Reaction.md) | [direction](direction.md) | domain | [Reaction](Reaction.md) |
+| [Reaction](Reaction.md) | [left_participants](left_participants.md) | domain | [Reaction](Reaction.md) |
+| [Reaction](Reaction.md) | [right_participants](right_participants.md) | domain | [Reaction](Reaction.md) |
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+### Valid ID Prefixes
+
+Instances of this class *should* have identifiers with one of the following prefixes:
+
+* KEGG.REACTION
+
+* RHEA
+
+* MetaCyc
+
+* EC
+
+* GO
+
+* MetaNetX
+
+* SEED
+
+* RetroRules
+
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | nmdc:Reaction |
+| native | nmdc:Reaction |
+| exact | biolink:MolecularActivity |
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Reaction
+id_prefixes:
+- KEGG.REACTION
+- RHEA
+- MetaCyc
+- EC
+- GO
+- MetaNetX
+- SEED
+- RetroRules
+description: An individual biochemical transformation carried out by a functional
+  unit of an organism, in which a collection of substrates are transformed into a
+  collection of products. Can also represent transporters
+from_schema: https://w3id.org/nmdc/nmdc
+exact_mappings:
+- biolink:MolecularActivity
+is_a: FunctionalAnnotationTerm
+slots:
+- direction
+- is_balanced
+- is_diastereoselective
+- is_fully_characterized
+- is_stereo
+- is_transport
+- left_participants
+- right_participants
+- smarts_string
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Reaction
+id_prefixes:
+- KEGG.REACTION
+- RHEA
+- MetaCyc
+- EC
+- GO
+- MetaNetX
+- SEED
+- RetroRules
+description: An individual biochemical transformation carried out by a functional
+  unit of an organism, in which a collection of substrates are transformed into a
+  collection of products. Can also represent transporters
+from_schema: https://w3id.org/nmdc/nmdc
+exact_mappings:
+- biolink:MolecularActivity
+is_a: FunctionalAnnotationTerm
+attributes:
+  direction:
+    name: direction
+    description: One of l->r, r->l, bidirectional, neutral
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: Reaction
+    alias: direction
+    owner: Reaction
+    domain_of:
+    - Reaction
+    range: string
+  is_balanced:
+    name: is_balanced
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: is_balanced
+    owner: Reaction
+    domain_of:
+    - Reaction
+    range: boolean
+  is_diastereoselective:
+    name: is_diastereoselective
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: is_diastereoselective
+    owner: Reaction
+    domain_of:
+    - Reaction
+    range: boolean
+  is_fully_characterized:
+    name: is_fully_characterized
+    description: False if includes R-groups
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: is_fully_characterized
+    owner: Reaction
+    domain_of:
+    - Reaction
+    range: boolean
+  is_stereo:
+    name: is_stereo
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: is_stereo
+    owner: Reaction
+    domain_of:
+    - Reaction
+    range: boolean
+  is_transport:
+    name: is_transport
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: is_transport
+    owner: Reaction
+    domain_of:
+    - Reaction
+    range: boolean
+  left_participants:
+    name: left_participants
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: has_participants
+    domain: Reaction
+    multivalued: true
+    alias: left_participants
+    owner: Reaction
+    domain_of:
+    - Reaction
+    range: ReactionParticipant
+  right_participants:
+    name: right_participants
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: has_participants
+    domain: Reaction
+    multivalued: true
+    alias: right_participants
+    owner: Reaction
+    domain_of:
+    - Reaction
+    range: ReactionParticipant
+  smarts_string:
+    name: smarts_string
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: smarts_string
+    owner: Reaction
+    domain_of:
+    - Reaction
+    range: string
+  id:
+    name: id
+    description: A unique identifier for a thing. Must be either a CURIE shorthand
+      for a URI or a complete URI
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    identifier: true
+    alias: id
+    owner: Reaction
+    domain_of:
+    - Biosample
+    - Study
+    - NamedThing
+    - Activity
+    range: uriorcurie
+    required: true
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
+  name:
+    name: name
+    description: A human readable label for an entity
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: name
+    owner: Reaction
+    domain_of:
+    - Protocol
+    - NamedThing
+    - PersonValue
+    - Activity
+    range: string
+  description:
+    name: description
+    description: a human-readable description of a thing
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    slot_uri: dcterms:description
+    alias: description
+    owner: Reaction
+    domain_of:
+    - Study
+    - NamedThing
+    - ImageValue
+    range: string
+  alternative_identifiers:
+    name: alternative_identifiers
+    description: A list of alternative identifiers for the entity.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    multivalued: true
+    alias: alternative_identifiers
+    owner: Reaction
+    domain_of:
+    - Biosample
+    - Study
+    - NamedThing
+    - MetaboliteQuantification
+    range: uriorcurie
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
+
+```
+</details>

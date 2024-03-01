@@ -1,22 +1,56 @@
-
-# Slot: etl software version
-
-
-TODO
-
-URI: [nmdc:etl_software_version](https://microbiomedata/meta/etl_software_version)
+# Slot: etl_software_version
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+_from database class_
 
 
-## Children
 
- *  [database➞etl software version](database_etl_software_version.md)
+URI: [nmdc:etl_software_version](https://w3id.org/nmdc/etl_software_version)
 
-## Used by
 
+
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: etl_software_version
+description: from database class
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: etl_software_version
+range: string
+
+```
+</details>

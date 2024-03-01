@@ -1,30 +1,105 @@
-
-# Slot: ceil_type
-
-
-The type of ceiling according to the ceiling's appearance or construction
-
-URI: [nmdc:ceil_type](https://microbiomedata/meta/ceil_type)
+# Slot: ceiling type (ceil_type)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [TextValue](TextValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_The type of ceiling according to the ceiling's appearance or construction_
 
 
-## Used by
+
+URI: [MIXS:0000784](https://w3id.org/mixs/0000784)
 
 
-## Other properties
 
-|  |  |  |
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **ceil_type**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | ceiling type |
-| **Mappings:** | | mixs:ceil_type |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [CeilTypeEnum](CeilTypeEnum.md)
+
+
+
+## Aliases
+
+
+* ceiling type
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| coffered |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | enumeration || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: ceil_type
+annotations:
+  expected_value:
+    tag: expected_value
+    value: enumeration
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: The type of ceiling according to the ceiling's appearance or construction
+title: ceiling type
+examples:
+- value: coffered
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- ceiling type
+rank: 1000
+is_a: core field
+slot_uri: MIXS:0000784
+multivalued: false
+alias: ceil_type
+domain_of:
+- Biosample
+range: ceil_type_enum
+
+```
+</details>

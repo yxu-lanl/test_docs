@@ -1,25 +1,67 @@
+# Slot: analysis_identifiers
 
-# Slot: analysis identifiers
-
-
-
-
-URI: [nmdc:analysis_identifiers](https://microbiomedata/meta/analysis_identifiers)
+URI: [nmdc:analysis_identifiers](https://w3id.org/nmdc/analysis_identifiers)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [ExternalIdentifier](types/ExternalIdentifier.md)
 
-## Parents
+## Inheritance
 
- *  is_a: [external database identifiers](external_database_identifiers.md)
+* [alternative_identifiers](alternative_identifiers.md)
+    * [external_database_identifiers](external_database_identifiers.md)
+        * **analysis_identifiers**
+            * [gold_analysis_project_identifiers](gold_analysis_project_identifiers.md) [ [gold_identifiers](gold_identifiers.md)]
+            * [insdc_analysis_identifiers](insdc_analysis_identifiers.md) [ [insdc_identifiers](insdc_identifiers.md)]
+            * [mgnify_analysis_identifiers](mgnify_analysis_identifiers.md) [ [mgnify_identifiers](mgnify_identifiers.md)]
 
-## Children
 
- *  [GOLD analysis project identifiers](GOLD_analysis_project_identifiers.md)
- *  [INSDC analysis identifiers](INSDC_analysis_identifiers.md)
- *  [MGnify analysis identifiers](MGnify_analysis_identifiers.md)
 
-## Used by
 
+
+
+
+
+## Properties
+
+* Range: [ExternalIdentifier](ExternalIdentifier.md)
+
+* Multivalued: True
+
+* Regex pattern: `^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$`
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: analysis_identifiers
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+is_a: external_database_identifiers
+abstract: true
+multivalued: true
+alias: analysis_identifiers
+range: external_identifier
+pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
+
+```
+</details>

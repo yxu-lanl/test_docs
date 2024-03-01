@@ -1,22 +1,68 @@
-
 # Slot: protein_spectral_count
 
 
-sum of filter passing MS2 spectra associated with the best protein within a given LC-MS/MS data file
-
-URI: [nmdc:protein_spectral_count](https://microbiomedata/meta/protein_spectral_count)
+_sum of filter passing MS2 spectra associated with the best protein within a given LC-MS/MS data file_
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
-
-## Parents
+URI: [nmdc:protein_spectral_count](https://w3id.org/nmdc/protein_spectral_count)
 
 
-## Children
 
- *  [protein quantification➞protein_spectral_count](protein_quantification_protein_spectral_count.md)
+<!-- no inheritance hierarchy -->
 
-## Used by
 
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[ProteinQuantification](ProteinQuantification.md) | This is used to link a metaproteomics analysis workflow to a specific protein |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Integer](Integer.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: protein_spectral_count
+description: sum of filter passing MS2 spectra associated with the best protein within
+  a given LC-MS/MS data file
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: protein_spectral_count
+domain_of:
+- ProteinQuantification
+range: integer
+
+```
+</details>

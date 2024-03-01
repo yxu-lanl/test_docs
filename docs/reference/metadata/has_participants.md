@@ -1,32 +1,59 @@
+# Slot: has_participants
 
-# Slot: has participants
-
-
-
-
-URI: [nmdc:has_participants](https://microbiomedata/meta/has_participants)
+URI: [nmdc:has_participants](https://w3id.org/nmdc/has_participants)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
 
 
-## Children
+## Inheritance
 
- *  [left participants](left_participants.md)
- *  [reaction➞left participants](reaction_left_participants.md)
- *  [reaction➞right participants](reaction_right_participants.md)
- *  [right participants](right_participants.md)
-
-## Used by
+* **has_participants**
+    * [left_participants](left_participants.md)
+    * [right_participants](right_participants.md)
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | RO:0000057 |
 
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: has_participants
+from_schema: https://w3id.org/nmdc/nmdc
+exact_mappings:
+- RO:0000057
+rank: 1000
+abstract: true
+alias: has_participants
+range: string
+
+```
+</details>

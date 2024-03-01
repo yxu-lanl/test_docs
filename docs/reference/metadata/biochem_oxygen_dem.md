@@ -1,30 +1,110 @@
-
-# Slot: biochem_oxygen_dem
-
-
-Amount of dissolved oxygen needed by aerobic biological organisms in a body of water to break down organic material present in a given water sample at certain temperature over a specific time period
-
-URI: [nmdc:biochem_oxygen_dem](https://microbiomedata/meta/biochem_oxygen_dem)
+# Slot: biochemical oxygen demand (biochem_oxygen_dem)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [QuantityValue](QuantityValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Amount of dissolved oxygen needed by aerobic biological organisms in a body of water to break down organic material present in a given water sample at certain temperature over a specific time period_
 
 
-## Used by
+
+URI: [MIXS:0000653](https://w3id.org/mixs/0000653)
 
 
-## Other properties
 
-|  |  |  |
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **biochem_oxygen_dem**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | biochemical oxygen demand |
-| **Mappings:** | | mixs:biochem_oxygen_dem |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [QuantityValue](QuantityValue.md)
+
+
+
+## Aliases
+
+
+* biochemical oxygen demand
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+|  |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | measurement value || preferred_unit | milligram per liter || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: biochem_oxygen_dem
+annotations:
+  expected_value:
+    tag: expected_value
+    value: measurement value
+  preferred_unit:
+    tag: preferred_unit
+    value: milligram per liter
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: Amount of dissolved oxygen needed by aerobic biological organisms in
+  a body of water to break down organic material present in a given water sample at
+  certain temperature over a specific time period
+title: biochemical oxygen demand
+examples:
+- value: ''
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- biochemical oxygen demand
+rank: 1000
+is_a: core field
+slot_uri: MIXS:0000653
+multivalued: false
+alias: biochem_oxygen_dem
+domain_of:
+- Biosample
+range: QuantityValue
+
+```
+</details>

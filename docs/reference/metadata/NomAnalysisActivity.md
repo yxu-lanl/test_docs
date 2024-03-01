@@ -1,75 +1,463 @@
-
-# Class: nom analysis activity
-
+# Class: NomAnalysisActivity
 
 
 
-URI: [nmdc:NomAnalysisActivity](https://microbiomedata/meta/NomAnalysisActivity)
+URI: [nmdc:NomAnalysisActivity](https://w3id.org/nmdc/NomAnalysisActivity)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[Instrument]<used%200..1-%20[NomAnalysisActivity&#124;has_calibration:string%20%3F;execution_resource(i):string;git_url(i):string;type(i):string;started_at_time(i):datetime;ended_at_time(i):datetime;id(i):string;name(i):string%20%3F],[Database]++-%20nom%20analysis%20activity%20set%200..*>[NomAnalysisActivity],[WorkflowExecutionActivity]^-[NomAnalysisActivity],[NamedThing],[Instrument],[Database],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[WorkflowExecutionActivity],[Instrument]<used%200..1-%20[NomAnalysisActivity&#124;has_calibration:string%20%3F;execution_resource(i):string;git_url(i):string;type(i):string;started_at_time(i):datetime;ended_at_time(i):datetime;id(i):string;name(i):string%20%3F],[Database]++-%20nom%20analysis%20activity%20set%200..*>[NomAnalysisActivity],[WorkflowExecutionActivity]^-[NomAnalysisActivity],[NamedThing],[Instrument],[Database],[Activity])
-
-## Parents
-
- *  is_a: [WorkflowExecutionActivity](WorkflowExecutionActivity.md) - Represents an instance of an execution of a particular workflow
-
-## Referenced by Class
-
- *  **[Database](Database.md)** *[nom analysis activity set](nom_analysis_activity_set.md)*  <sub>0..\*</sub>  **[NomAnalysisActivity](NomAnalysisActivity.md)**
-
-## Attributes
 
 
-### Own
 
- * [nom analysis activity➞used](nom_analysis_activity_used.md)  <sub>0..1</sub>
-     * Description: The instrument used to collect the data used in the analysis
-     * Range: [Instrument](Instrument.md)
- * [nom analysis activity➞has calibration](nom_analysis_activity_has_calibration.md)  <sub>0..1</sub>
-     * Description: A reference to a file that holds calibration information.
-     * Range: [String](types/String.md)
 
-### Inherited from workflow execution activity:
 
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
- * [name](name.md)  <sub>0..1</sub>
-     * Description: A human readable label for an entity
-     * Range: [String](types/String.md)
- * [workflow execution activity➞execution resource](workflow_execution_activity_execution_resource.md)  <sub>1..1</sub>
-     * Description: Example: NERSC-Cori
-     * Range: [String](types/String.md)
- * [workflow execution activity➞git url](workflow_execution_activity_git_url.md)  <sub>1..1</sub>
-     * Description: Example: https://github.com/microbiomedata/mg_annotation/releases/tag/0.1
-     * Range: [String](types/String.md)
- * [workflow execution activity➞has input](workflow_execution_activity_has_input.md)  <sub>1..\*</sub>
-     * Description: An input to a process.
-     * Range: [NamedThing](NamedThing.md)
- * [workflow execution activity➞has output](workflow_execution_activity_has_output.md)  <sub>1..\*</sub>
-     * Description: An output biosample to a processing step
-     * Range: [NamedThing](NamedThing.md)
- * [part of](part_of.md)  <sub>0..\*</sub>
-     * Description: Links a resource to another resource that either logically or physically includes it.
-     * Range: [NamedThing](NamedThing.md)
- * [workflow execution activity➞type](workflow_execution_activity_type.md)  <sub>1..1</sub>
-     * Description: An optional string that specifies the type object.  This is used to allow for searches for different kinds of objects.
-     * Range: [String](types/String.md)
-     * Example: nmdc:Biosample None
-     * Example: nmdc:Study None
- * [workflow execution activity➞was associated with](workflow_execution_activity_was_associated_with.md)  <sub>0..1</sub>
-     * Description: the agent/entity associated with the generation of the file
-     * Range: [WorkflowExecutionActivity](WorkflowExecutionActivity.md)
- * [workflow execution activity➞started at time](workflow_execution_activity_started_at_time.md)  <sub>1..1</sub>
-     * Range: [Datetime](types/Datetime.md)
- * [workflow execution activity➞ended at time](workflow_execution_activity_ended_at_time.md)  <sub>1..1</sub>
-     * Range: [Datetime](types/Datetime.md)
- * [workflow execution activity➞was informed by](workflow_execution_activity_was_informed_by.md)  <sub>1..1</sub>
-     * Range: [Activity](Activity.md)
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | workflow subset |
 
+
+
+
+
+
+```mermaid
+classDiagram
+  class NomAnalysisActivity
+    WorkflowExecutionActivity <|-- NomAnalysisActivity
+    
+    
+    
+  NomAnalysisActivity : ended_at_time
+    
+  NomAnalysisActivity : execution_resource
+    
+  NomAnalysisActivity : git_url
+    
+  NomAnalysisActivity : has_calibration
+    
+  NomAnalysisActivity : has_failure_categorization
+    
+    NomAnalysisActivity --|> FailureCategorization : has_failure_categorization
+    
+  NomAnalysisActivity : has_input
+    
+    NomAnalysisActivity --|> NamedThing : has_input
+    
+  NomAnalysisActivity : has_output
+    
+    NomAnalysisActivity --|> NamedThing : has_output
+    
+  NomAnalysisActivity : id
+    
+  NomAnalysisActivity : name
+    
+  NomAnalysisActivity : part_of
+    
+    NomAnalysisActivity --|> NamedThing : part_of
+    
+  NomAnalysisActivity : qc_comment
+    
+  NomAnalysisActivity : qc_status
+    
+    NomAnalysisActivity --|> StatusEnum : qc_status
+    
+  NomAnalysisActivity : started_at_time
+    
+  NomAnalysisActivity : type
+    
+  NomAnalysisActivity : used
+    
+  NomAnalysisActivity : version
+    
+  NomAnalysisActivity : was_informed_by
+    
+    NomAnalysisActivity --|> Activity : was_informed_by
+    
+  
+
+```
+
+
+
+
+
+
+## Inheritance
+* [Activity](Activity.md)
+    * [WorkflowExecutionActivity](WorkflowExecutionActivity.md)
+        * **NomAnalysisActivity**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [has_calibration](has_calibration.md) | 0..1 <br/> [String](String.md) | A reference to a file that holds calibration information | direct |
+| [execution_resource](execution_resource.md) | 1..1 <br/> [String](String.md) |  | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [git_url](git_url.md) | 1..1 <br/> [String](String.md) |  | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [has_input](has_input.md) | 1..* <br/> [NamedThing](NamedThing.md) | An input to a process | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [has_output](has_output.md) | 0..* <br/> [NamedThing](NamedThing.md) | An output biosample to a processing step | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [part_of](part_of.md) | 0..* <br/> [NamedThing](NamedThing.md) | Links a resource to another resource that either logically or physically incl... | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [type](type.md) | 1..1 <br/> [String](String.md) | An optional string that specifies the type object | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [version](version.md) | 0..1 <br/> [String](String.md) |  | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [qc_status](qc_status.md) | 0..1 <br/> [StatusEnum](StatusEnum.md) | Stores information about the result of a process (ie the process of sequencin... | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [qc_comment](qc_comment.md) | 0..1 <br/> [String](String.md) | Slot to store additional comments about laboratory or workflow output | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [has_failure_categorization](has_failure_categorization.md) | 0..* <br/> [FailureCategorization](FailureCategorization.md) |  | [WorkflowExecutionActivity](WorkflowExecutionActivity.md) |
+| [id](id.md) | 1..1 <br/> [Uriorcurie](Uriorcurie.md) | A unique identifier for a thing | [Activity](Activity.md) |
+| [name](name.md) | 0..1 <br/> [String](String.md) | A human readable label for an entity | [Activity](Activity.md) |
+| [started_at_time](started_at_time.md) | 1..1 <br/> [String](String.md) |  | [Activity](Activity.md) |
+| [ended_at_time](ended_at_time.md) | 1..1 <br/> [String](String.md) |  | [Activity](Activity.md) |
+| [was_informed_by](was_informed_by.md) | 0..1 <br/> [Activity](Activity.md) |  | [Activity](Activity.md) |
+| [used](used.md) | 0..1 <br/> [String](String.md) | The instrument used to collect the data used in the analysis | [Activity](Activity.md) |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Database](Database.md) | [nom_analysis_activity_set](nom_analysis_activity_set.md) | range | [NomAnalysisActivity](NomAnalysisActivity.md) |
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | nmdc:NomAnalysisActivity |
+| native | nmdc:NomAnalysisActivity |
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: NomAnalysisActivity
+in_subset:
+- workflow subset
+from_schema: https://w3id.org/nmdc/nmdc
+is_a: WorkflowExecutionActivity
+slots:
+- has_calibration
+slot_usage:
+  used:
+    name: used
+    description: The instrument used to collect the data used in the analysis
+    domain_of:
+    - Activity
+    range: string
+  id:
+    name: id
+    domain_of:
+    - Biosample
+    - Study
+    - NamedThing
+    - Activity
+    required: true
+    structured_pattern:
+      syntax: '{id_nmdc_prefix}:wfnom-{id_shoulder}-{id_blade}{id_version}{id_locus}'
+      interpolated: true
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: NomAnalysisActivity
+in_subset:
+- workflow subset
+from_schema: https://w3id.org/nmdc/nmdc
+is_a: WorkflowExecutionActivity
+slot_usage:
+  used:
+    name: used
+    description: The instrument used to collect the data used in the analysis
+    domain_of:
+    - Activity
+    range: string
+  id:
+    name: id
+    domain_of:
+    - Biosample
+    - Study
+    - NamedThing
+    - Activity
+    required: true
+    structured_pattern:
+      syntax: '{id_nmdc_prefix}:wfnom-{id_shoulder}-{id_blade}{id_version}{id_locus}'
+      interpolated: true
+attributes:
+  has_calibration:
+    name: has_calibration
+    description: A reference to a file that holds calibration information.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: has_calibration
+    owner: NomAnalysisActivity
+    domain_of:
+    - MetabolomicsAnalysisActivity
+    - NomAnalysisActivity
+    range: string
+  execution_resource:
+    name: execution_resource
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: Activity
+    alias: execution_resource
+    owner: NomAnalysisActivity
+    domain_of:
+    - WorkflowExecutionActivity
+    range: string
+    required: true
+  git_url:
+    name: git_url
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: git_url
+    owner: NomAnalysisActivity
+    domain_of:
+    - WorkflowExecutionActivity
+    range: string
+    required: true
+  has_input:
+    name: has_input
+    description: An input to a process.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: NamedThing
+    multivalued: true
+    alias: has_input
+    owner: NomAnalysisActivity
+    domain_of:
+    - BiosampleProcessing
+    - OmicsProcessing
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: NamedThing
+    required: true
+  has_output:
+    name: has_output
+    description: An output biosample to a processing step
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - output
+    rank: 1000
+    domain: NamedThing
+    multivalued: true
+    alias: has_output
+    owner: NomAnalysisActivity
+    domain_of:
+    - OmicsProcessing
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: NamedThing
+  part_of:
+    name: part_of
+    description: Links a resource to another resource that either logically or physically
+      includes it.
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - is part of
+    rank: 1000
+    domain: NamedThing
+    slot_uri: dcterms:isPartOf
+    multivalued: true
+    alias: part_of
+    owner: NomAnalysisActivity
+    domain_of:
+    - FieldResearchSite
+    - Biosample
+    - Study
+    - OmicsProcessing
+    - WorkflowExecutionActivity
+    range: NamedThing
+  type:
+    name: type
+    description: An optional string that specifies the type object.  This is used
+      to allow for searches for different kinds of objects.
+    deprecated: Due to confusion about what values are used for this slot, it is best
+      not to use this slot. See https://github.com/microbiomedata/nmdc-schema/issues/248.
+      MAM removed designates_type and rdf:type slot uri 2022-11-30
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: type
+    owner: NomAnalysisActivity
+    domain_of:
+    - DataObject
+    - Biosample
+    - Study
+    - OmicsProcessing
+    - CreditAssociation
+    - WorkflowExecutionActivity
+    - MetagenomeAssembly
+    - MetagenomeAnnotationActivity
+    - MetatranscriptomeAnnotationActivity
+    - MetatranscriptomeActivity
+    - MagsAnalysisActivity
+    - ReadQcAnalysisActivity
+    - ReadBasedTaxonomyAnalysisActivity
+    - MagBin
+    - GenomeFeature
+    range: string
+    required: true
+  version:
+    name: version
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: Activity
+    alias: version
+    owner: NomAnalysisActivity
+    domain_of:
+    - WorkflowExecutionActivity
+    - ReadQcAnalysisActivity
+    range: string
+  qc_status:
+    name: qc_status
+    description: Stores information about the result of a process (ie the process
+      of sequencing a library may have for qc_status of 'fail' if not enough data
+      was generated)
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: qc_status
+    owner: NomAnalysisActivity
+    domain_of:
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: StatusEnum
+  qc_comment:
+    name: qc_comment
+    description: Slot to store additional comments about laboratory or workflow output.
+      For workflow output it may describe the particular workflow stage that failed.
+      (ie Failed at call-stage due to a malformed fastq file).
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: qc_comment
+    owner: NomAnalysisActivity
+    domain_of:
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: string
+  has_failure_categorization:
+    name: has_failure_categorization
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    multivalued: true
+    alias: has_failure_categorization
+    owner: NomAnalysisActivity
+    domain_of:
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: FailureCategorization
+  id:
+    name: id
+    description: A unique identifier for a thing. Must be either a CURIE shorthand
+      for a URI or a complete URI
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    identifier: true
+    alias: id
+    owner: NomAnalysisActivity
+    domain_of:
+    - Biosample
+    - Study
+    - NamedThing
+    - Activity
+    range: uriorcurie
+    required: true
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
+    structured_pattern:
+      syntax: '{id_nmdc_prefix}:wfnom-{id_shoulder}-{id_blade}{id_version}{id_locus}'
+      interpolated: true
+  name:
+    name: name
+    description: A human readable label for an entity
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: name
+    owner: NomAnalysisActivity
+    domain_of:
+    - Protocol
+    - NamedThing
+    - PersonValue
+    - Activity
+    range: string
+  started_at_time:
+    name: started_at_time
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: Activity
+    alias: started_at_time
+    owner: NomAnalysisActivity
+    domain_of:
+    - Activity
+    range: string
+    required: true
+    pattern: ^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+  ended_at_time:
+    name: ended_at_time
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: Activity
+    alias: ended_at_time
+    owner: NomAnalysisActivity
+    domain_of:
+    - Activity
+    range: string
+    required: true
+    pattern: ^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+  was_informed_by:
+    name: was_informed_by
+    from_schema: https://w3id.org/nmdc/nmdc
+    mappings:
+    - prov:wasInformedBy
+    rank: 1000
+    domain: Activity
+    alias: was_informed_by
+    owner: NomAnalysisActivity
+    domain_of:
+    - Activity
+    range: Activity
+  used:
+    name: used
+    description: The instrument used to collect the data used in the analysis
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: Activity
+    alias: used
+    owner: NomAnalysisActivity
+    domain_of:
+    - Activity
+    range: string
+
+```
+</details>

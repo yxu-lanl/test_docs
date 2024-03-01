@@ -1,30 +1,107 @@
-
-# Slot: room_hallway
-
-
-List of room(s) (room number, room name) located in the same hallway as sampling room
-
-URI: [nmdc:room_hallway](https://microbiomedata/meta/room_hallway)
+# Slot: rooms that are on the same hallway (room_hallway)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [TextValue](TextValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_List of room(s) (room number, room name) located in the same hallway as sampling room_
 
 
-## Used by
+
+URI: [MIXS:0000238](https://w3id.org/mixs/0000238)
 
 
-## Other properties
 
-|  |  |  |
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **room_hallway**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | rooms that are on the same hallway |
-| **Mappings:** | | mixs:room_hallway |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [TextValue](TextValue.md)
+
+
+
+## Aliases
+
+
+* rooms that are on the same hallway
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+|  |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | room name;room number || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: room_hallway
+annotations:
+  expected_value:
+    tag: expected_value
+    value: room name;room number
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: List of room(s) (room number, room name) located in the same hallway
+  as sampling room
+title: rooms that are on the same hallway
+examples:
+- value: ''
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- rooms that are on the same hallway
+rank: 1000
+is_a: core field
+string_serialization: '{text};{integer}'
+slot_uri: MIXS:0000238
+multivalued: false
+alias: room_hallway
+domain_of:
+- Biosample
+range: TextValue
+
+```
+</details>

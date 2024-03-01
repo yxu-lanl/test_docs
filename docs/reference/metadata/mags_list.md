@@ -1,22 +1,65 @@
+# Slot: mags_list
 
-# Slot: mags list
-
-
-
-
-URI: [nmdc:mags_list](https://microbiomedata/meta/mags_list)
+URI: [nmdc:mags_list](https://w3id.org/nmdc/mags_list)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [MAGBin](MAGBin.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
 
-## Used by
+## Applicable Classes
 
- * [MAGsAnalysisActivity](MAGsAnalysisActivity.md)
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[MagsAnalysisActivity](MagsAnalysisActivity.md) | A workflow execution activity that uses computational binning tools to group ... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [MagBin](MagBin.md)
+
+* Multivalued: True
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: mags_list
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+domain: MagsAnalysisActivity
+multivalued: true
+alias: mags_list
+domain_of:
+- MagsAnalysisActivity
+range: MagBin
+
+```
+</details>

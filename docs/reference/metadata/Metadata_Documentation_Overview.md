@@ -1,5 +1,5 @@
-# The NMDC Metadata Standards Documentation
-## Introduction
+### The NMDC Metadata Standards Documentation
+### Introduction
 
 This documentation provides details on the National Microbiome Data
 Collaborative’s ([<u>NMDC</u>](http://microbiomedata.org)) approach to
@@ -13,7 +13,7 @@ Were Afraid to Ask)*
 ([<u>https://doi.org/10.25979/1607365</u>](https://doi.org/10.25979/1607365)).
 
 <div align="center">
-	<img src="../../_static/images/NMDC_metadata_img1.png" style="width:80%"/>
+	<img src="../images/NMDC_metadata_img1.png" style="width:80%"/>
 </div>
 
 Figure 1: Microbiome metadata types: Information that contextualizes
@@ -44,11 +44,11 @@ Additional information on the activities by the NMDC Metadata Standards
 team can be found on the NMDC website at:
 [<u>https://microbiomedata.org/metadata/</u>](https://microbiomedata.org/metadata/)
 
-## Standards and Ontologies used by the NMDC
+### Standards and Ontologies used by the NMDC
 
-### Sample Metadata
+#### Sample Metadata
 
-#### GSC Minimum Information about any (x) Sequence (MIxS)
+##### GSC Minimum Information about any (x) Sequence (MIxS)
 
 The GSC has developed standards for describing genomic and metagenomic
 sequences, including the “minimum information about a genome sequence”
@@ -96,7 +96,7 @@ from the GSC MIxS standards.
 -   Learn more about all of the [<u>17 MIxS environmental
     packages</u>](https://gensc.org/mixs)
 
-#### Genomes Online Database (GOLD)
+##### Genomes Online Database (GOLD)
 
 The JGI [<u>Genomes OnLine Database</u>](https://gold.jgi.doe.gov/)
 (GOLD, [<u>Mukherjee
@@ -112,7 +112,7 @@ schema also uses this ecosystem classification to describe sample
 environments.
 
 <div align="center">
-<img src="../../_static/images/NMDC_metadata_img2.png" style="width:100%"/>
+<img src="../images/NMDC_metadata_img2.png" style="width:100%"/>
 </div>
 
 Figure 2. The GOLD five-level ecosystem classification paths
@@ -146,7 +146,7 @@ classification*
     example of how to assign the GOLD ecosystem classification to a lake
     sediment sample.
 
-#### Environmental Ontology (EnvO)
+##### Environmental Ontology (EnvO)
 
 The Environment Ontology (<u>EnvO</u>, [<u>Buttigieg
 2016</u>](https://pubmed.ncbi.nlm.nih.gov/27664130/)) is a community-led
@@ -206,7 +206,7 @@ oligotrophic lake sediment sample below.
 		<p>Using <a href="http://www.ontobee.org/ontology/ENVO?iri=http://purl.obolibrary.org/obo/ENVO_00000428"><u>EnvO biome</u></a> categories, <em>aquatic</em> is appropriate. However, since the EnvO is a hierarchical system, the aquatic biome has two sub-categories: freshwater and marine biomes. The freshwater biome is further divided into freshwater lake biome and freshwater river biome. Therefore, for a lake sediment sample, <em>freshwater lake biome</em> is the appropriate EnvO biome category.</p>
 	 </td>
 	 <td>
-		<img src="../../_static/images/NMDC_metadata_img3.png" style="width:100%" />
+		<img src="../images/NMDC_metadata_img3.png" style="width:100%" />
 	 </td>
 	</tr>
 	<tr class="even">
@@ -214,7 +214,7 @@ oligotrophic lake sediment sample below.
 	 <p><strong>env_local_scale (Feature)</strong></p>
 	 <p>Next, we describe the local environmental feature in the vicinity of and likely having a strong causal influence on the sample. Using the <a href="http://www.ontobee.org/ontology/ENVO?iri=http://purl.obolibrary.org/obo/ENVO_01000813"><u>EnvO astronomical body part</u></a> categories, we step through the relevant categories (see figure on the right) until we reach the EnvO term <em>oligotrophic lake</em>.</p></td>
 	<td>
-		<img src="../../_static/images/NMDC_metadata_img4.png" style="width:100%" />
+		<img src="../images/NMDC_metadata_img4.png" style="width:100%" />
 	</td>
 	</tr>
 	<tr class="odd">
@@ -222,7 +222,7 @@ oligotrophic lake sediment sample below.
 	 <p><strong>env_medium (Material)</strong></p>
 	 <p>Finally, since the sample is <em>oligotrophic lake sediment</em>, the <a href="http://www.ontobee.org/ontology/ENVO?iri=http://purl.obolibrary.org/obo/ENVO_00002007"><u>EnvO environmental material</u></a> could be assigned <em>sediment</em>. But because the EnvO hierarchy provides sub-categories within <em>sediment</em>, the environmenta material will be assigned <em>lake sediment</em>.</p></td>
 	 <td>
-		 <img src="../../_static/images/NMDC_metadata_img5.png" style="width:100%" />
+		 <img src="../images/NMDC_metadata_img5.png" style="width:100%" />
 	 </td>
 	</tr>
  </tbody>
@@ -237,7 +237,7 @@ Therefore, the EnvO triad for *oligotrophic lake sediment* is:
 >
 > **Env\_medium**: lake sediment \[ENVO\_00000546\]
 
-#### Classifying samples with GOLD and MIxS/EnvO
+##### Classifying samples with GOLD and MIxS/EnvO
 
 The five-level GOLD ecosystem classification path and EnvO triad each
 have unique advantages in describing the environmental context of a
@@ -251,14 +251,14 @@ The NMDC team is currently working on exploring solutions for automated
 mapping between GOLD and MIxS/EnvO.
 
 <div align="center">
-	<img src="../../_static/images/NMDC_metadata_img6.png" style="width:80%" />
+	<img src="../images/NMDC_metadata_img6.png" style="width:80%" />
 </div>
 
 Figure 3: Mapping between the MIxS/EnvO triad and the GOLD ecosystem
 classification enables integration of sample environments defined with
 GOLD and MIxS/EnvO.
 
-### Data Processing Metadata
+#### Data Processing Metadata
 
 In addition, the NMDC is adopting the MIxS standards for sequence data
 types (e.g., sequencing method, pcr primers and conditions, etc.), and
@@ -270,7 +270,7 @@ to develop standards and controlled vocabularies for mass spectrometry
 data types (e.g., ionization mode, mass resolution, scan rate, etc.).
 *Additional details on the processing metadata are coming soon.*
 
-## Overview of the NMDC Data Schema
+### Overview of the NMDC Data Schema
 
 The NMDC has developed a normalized metadata
 [<u>schema</u>](https://github.com/microbiomedata/nmdc-metadata)

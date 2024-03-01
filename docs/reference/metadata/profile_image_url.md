@@ -1,22 +1,68 @@
-
-# Slot: profile image url
-
-
-A url that points to an image of a person.
-
-URI: [nmdc:profile_image_url](https://microbiomedata/meta/profile_image_url)
+# Slot: profile_image_url
 
 
-## Domain and Range
-
-[PersonValue](PersonValue.md) &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+_A url that points to an image of a person._
 
 
-## Children
+
+URI: [nmdc:profile_image_url](https://w3id.org/nmdc/profile_image_url)
 
 
-## Used by
 
- * [PersonValue](PersonValue.md)
+<!-- no inheritance hierarchy -->
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[PersonValue](PersonValue.md) | An attribute value representing a person |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: profile_image_url
+description: A url that points to an image of a person.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+domain: PersonValue
+alias: profile_image_url
+domain_of:
+- PersonValue
+range: string
+
+```
+</details>

@@ -1,23 +1,75 @@
-
-# Slot: has maximum numeric value
-
-
-The maximum value part, expressed as number, of the quantity value when the value covers a range.
-
-URI: [nmdc:has_maximum_numeric_value](https://microbiomedata/meta/has_maximum_numeric_value)
+# Slot: has_maximum_numeric_value
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
-
-## Parents
-
- *  is_a: [has numeric value](has_numeric_value.md)
-
-## Children
+_The maximum value part, expressed as number, of the quantity value when the value covers a range._
 
 
-## Used by
 
- * [QuantityValue](QuantityValue.md)
+URI: [nmdc:has_maximum_numeric_value](https://w3id.org/nmdc/has_maximum_numeric_value)
+
+
+
+
+## Inheritance
+
+* [has_numeric_value](has_numeric_value.md)
+    * **has_maximum_numeric_value**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[QuantityValue](QuantityValue.md) | A simple quantity, e |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Float](Float.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: has_maximum_numeric_value
+description: The maximum value part, expressed as number, of the quantity value when
+  the value covers a range.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+is_a: has_numeric_value
+domain: QuantityValue
+alias: has_maximum_numeric_value
+domain_of:
+- QuantityValue
+range: float
+
+```
+</details>

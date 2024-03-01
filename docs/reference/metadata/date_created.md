@@ -1,22 +1,56 @@
-
-# Slot: date created
-
-
-TODO
-
-URI: [nmdc:date_created](https://microbiomedata/meta/date_created)
+# Slot: date_created
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+_from database class_
 
 
-## Children
 
- *  [database➞date created](database_date_created.md)
+URI: [nmdc:date_created](https://w3id.org/nmdc/date_created)
 
-## Used by
 
+
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: date_created
+description: from database class
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: date_created
+range: string
+
+```
+</details>

@@ -1,31 +1,106 @@
-
-# Slot: ph
-
-
-Ph measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid
-
-URI: [nmdc:ph](https://microbiomedata/meta/ph)
+# Slot: pH (ph)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [QuantityValue](QuantityValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Ph measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid_
 
 
-## Used by
 
- * [Biosample](Biosample.md)
+URI: [MIXS:0001001](https://w3id.org/mixs/0001001)
 
-## Other properties
 
-|  |  |  |
+
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **ph**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | pH |
-| **Mappings:** | | mixs:ph |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [Double](Double.md)
+
+
+
+## Aliases
+
+
+* pH
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| 7.2 |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | measurement value || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: ph
+annotations:
+  expected_value:
+    tag: expected_value
+    value: measurement value
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: Ph measurement of the sample, or liquid portion of sample, or aqueous
+  phase of the fluid
+title: pH
+examples:
+- value: '7.2'
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- pH
+rank: 1000
+is_a: core field
+slot_uri: MIXS:0001001
+multivalued: false
+alias: ph
+domain_of:
+- Biosample
+range: double
+
+```
+</details>

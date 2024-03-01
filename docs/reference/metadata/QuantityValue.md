@@ -1,301 +1,467 @@
-
-# Class: quantity value
-
-
-A simple quantity, e.g. 2cm
-
-URI: [nmdc:QuantityValue](https://microbiomedata/meta/QuantityValue)
+# Class: QuantityValue
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Biosample]++-%20agrochem_addition%200..1>[QuantityValue&#124;has_unit:unit%20%3F;has_numeric_value:double%20%3F;has_minimum_numeric_value:float%20%3F;has_maximum_numeric_value:float%20%3F;has_raw_value:string%20%3F;type(i):string%20%3F],[Biosample]++-%20al_sat%200..1>[QuantityValue],[Biosample]++-%20alkalinity%200..1>[QuantityValue],[Biosample]++-%20alkyl_diethers%200..1>[QuantityValue],[Biosample]++-%20alt%200..1>[QuantityValue],[Biosample]++-%20aminopept_act%200..1>[QuantityValue],[Biosample]++-%20ammonium%200..1>[QuantityValue],[Biosample]++-%20annual_precpt%200..1>[QuantityValue],[Biosample]++-%20annual_temp%200..1>[QuantityValue],[Biosample]++-%20bacteria_carb_prod%200..1>[QuantityValue],[Biosample]++-%20bishomohopanol%200..1>[QuantityValue],[Biosample]++-%20bromide%200..1>[QuantityValue],[Biosample]++-%20calcium%200..1>[QuantityValue],[Biosample]++-%20carb_nitro_ratio%200..1>[QuantityValue],[Biosample]++-%20chloride%200..1>[QuantityValue],[Biosample]++-%20chlorophyll%200..1>[QuantityValue],[Biosample]++-%20density%200..1>[QuantityValue],[Biosample]++-%20depth%200..1>[QuantityValue],[Biosample]++-%20depth2%200..1>[QuantityValue],[Biosample]++-%20diss_carb_dioxide%200..1>[QuantityValue],[Biosample]++-%20diss_hydrogen%200..1>[QuantityValue],[Biosample]++-%20diss_inorg_carb%200..1>[QuantityValue],[Biosample]++-%20diss_inorg_phosp%200..1>[QuantityValue],[Biosample]++-%20diss_org_carb%200..1>[QuantityValue],[Biosample]++-%20diss_org_nitro%200..1>[QuantityValue],[Biosample]++-%20diss_oxygen%200..1>[QuantityValue],[Biosample]++-%20elev%200..1>[QuantityValue],[Biosample]++-%20glucosidase_act%200..1>[QuantityValue],[Biosample]++-%20heavy_metals%200..1>[QuantityValue],[Biosample]++-%20magnesium%200..1>[QuantityValue],[Biosample]++-%20mean_frict_vel%200..1>[QuantityValue],[Biosample]++-%20mean_peak_frict_vel%200..1>[QuantityValue],[Biosample]++-%20microbial_biomass%200..1>[QuantityValue],[Biosample]++-%20misc_param%200..1>[QuantityValue],[Biosample]++-%20n_alkanes%200..1>[QuantityValue],[Biosample]++-%20nitrate%200..1>[QuantityValue],[Biosample]++-%20nitrite%200..1>[QuantityValue],[Biosample]++-%20org_matter%200..1>[QuantityValue],[Biosample]++-%20org_nitro%200..1>[QuantityValue],[Biosample]++-%20organism_count%200..1>[QuantityValue],[Biosample]++-%20part_org_carb%200..1>[QuantityValue],[Biosample]++-%20petroleum_hydrocarb%200..1>[QuantityValue],[Biosample]++-%20ph%200..1>[QuantityValue],[Biosample]++-%20phaeopigments%200..1>[QuantityValue],[Biosample]++-%20phosplipid_fatt_acid%200..1>[QuantityValue],[Biosample]++-%20potassium%200..1>[QuantityValue],[Biosample]++-%20pressure%200..1>[QuantityValue],[Biosample]++-%20redox_potential%200..1>[QuantityValue],[Biosample]++-%20salinity%200..1>[QuantityValue],[Biosample]++-%20samp_store_temp%200..1>[QuantityValue],[Biosample]++-%20samp_vol_we_dna_ext%200..1>[QuantityValue],[OmicsProcessing]++-%20samp_vol_we_dna_ext%200..1>[QuantityValue],[Biosample]++-%20season_precpt%200..1>[QuantityValue],[Biosample]++-%20season_temp%200..1>[QuantityValue],[Biosample]++-%20sieving%200..1>[QuantityValue],[Biosample]++-%20size_frac_low%200..1>[QuantityValue],[Biosample]++-%20size_frac_up%200..1>[QuantityValue],[Biosample]++-%20slope_aspect%200..1>[QuantityValue],[Biosample]++-%20slope_gradient%200..1>[QuantityValue],[Biosample]++-%20sodium%200..1>[QuantityValue],[Biosample]++-%20subsurface_depth%200..1>[QuantityValue],[Biosample]++-%20subsurface_depth2%200..1>[QuantityValue],[Biosample]++-%20sulfate%200..1>[QuantityValue],[Biosample]++-%20sulfide%200..1>[QuantityValue],[Biosample]++-%20temp%200..1>[QuantityValue],[Biosample]++-%20texture%200..1>[QuantityValue],[Biosample]++-%20tot_carb%200..1>[QuantityValue],[Biosample]++-%20tot_depth_water_col%200..1>[QuantityValue],[Biosample]++-%20tot_diss_nitro%200..1>[QuantityValue],[Biosample]++-%20tot_nitro_content%200..1>[QuantityValue],[Biosample]++-%20tot_org_carb%200..1>[QuantityValue],[Biosample]++-%20tot_phosp%200..1>[QuantityValue],[Biosample]++-%20water_content%200..1>[QuantityValue],[AttributeValue]^-[QuantityValue],[OmicsProcessing],[Biosample],[AttributeValue],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[Biosample]++-%20agrochem_addition%200..1>[QuantityValue&#124;has_unit:unit%20%3F;has_numeric_value:double%20%3F;has_minimum_numeric_value:float%20%3F;has_maximum_numeric_value:float%20%3F;has_raw_value:string%20%3F;type(i):string%20%3F],[Biosample]++-%20al_sat%200..1>[QuantityValue],[Biosample]++-%20alkalinity%200..1>[QuantityValue],[Biosample]++-%20alkyl_diethers%200..1>[QuantityValue],[Biosample]++-%20alt%200..1>[QuantityValue],[Biosample]++-%20aminopept_act%200..1>[QuantityValue],[Biosample]++-%20ammonium%200..1>[QuantityValue],[Biosample]++-%20annual_precpt%200..1>[QuantityValue],[Biosample]++-%20annual_temp%200..1>[QuantityValue],[Biosample]++-%20bacteria_carb_prod%200..1>[QuantityValue],[Biosample]++-%20bishomohopanol%200..1>[QuantityValue],[Biosample]++-%20bromide%200..1>[QuantityValue],[Biosample]++-%20calcium%200..1>[QuantityValue],[Biosample]++-%20carb_nitro_ratio%200..1>[QuantityValue],[Biosample]++-%20chloride%200..1>[QuantityValue],[Biosample]++-%20chlorophyll%200..1>[QuantityValue],[Biosample]++-%20density%200..1>[QuantityValue],[Biosample]++-%20depth%200..1>[QuantityValue],[Biosample]++-%20depth2%200..1>[QuantityValue],[Biosample]++-%20diss_carb_dioxide%200..1>[QuantityValue],[Biosample]++-%20diss_hydrogen%200..1>[QuantityValue],[Biosample]++-%20diss_inorg_carb%200..1>[QuantityValue],[Biosample]++-%20diss_inorg_phosp%200..1>[QuantityValue],[Biosample]++-%20diss_org_carb%200..1>[QuantityValue],[Biosample]++-%20diss_org_nitro%200..1>[QuantityValue],[Biosample]++-%20diss_oxygen%200..1>[QuantityValue],[Biosample]++-%20elev%200..1>[QuantityValue],[Biosample]++-%20glucosidase_act%200..1>[QuantityValue],[Biosample]++-%20heavy_metals%200..1>[QuantityValue],[Biosample]++-%20magnesium%200..1>[QuantityValue],[Biosample]++-%20mean_frict_vel%200..1>[QuantityValue],[Biosample]++-%20mean_peak_frict_vel%200..1>[QuantityValue],[Biosample]++-%20microbial_biomass%200..1>[QuantityValue],[Biosample]++-%20misc_param%200..1>[QuantityValue],[Biosample]++-%20n_alkanes%200..1>[QuantityValue],[Biosample]++-%20nitrate%200..1>[QuantityValue],[Biosample]++-%20nitrite%200..1>[QuantityValue],[Biosample]++-%20org_matter%200..1>[QuantityValue],[Biosample]++-%20org_nitro%200..1>[QuantityValue],[Biosample]++-%20organism_count%200..1>[QuantityValue],[Biosample]++-%20part_org_carb%200..1>[QuantityValue],[Biosample]++-%20petroleum_hydrocarb%200..1>[QuantityValue],[Biosample]++-%20ph%200..1>[QuantityValue],[Biosample]++-%20phaeopigments%200..1>[QuantityValue],[Biosample]++-%20phosplipid_fatt_acid%200..1>[QuantityValue],[Biosample]++-%20potassium%200..1>[QuantityValue],[Biosample]++-%20pressure%200..1>[QuantityValue],[Biosample]++-%20redox_potential%200..1>[QuantityValue],[Biosample]++-%20salinity%200..1>[QuantityValue],[Biosample]++-%20samp_store_temp%200..1>[QuantityValue],[Biosample]++-%20samp_vol_we_dna_ext%200..1>[QuantityValue],[OmicsProcessing]++-%20samp_vol_we_dna_ext%200..1>[QuantityValue],[Biosample]++-%20season_precpt%200..1>[QuantityValue],[Biosample]++-%20season_temp%200..1>[QuantityValue],[Biosample]++-%20sieving%200..1>[QuantityValue],[Biosample]++-%20size_frac_low%200..1>[QuantityValue],[Biosample]++-%20size_frac_up%200..1>[QuantityValue],[Biosample]++-%20slope_aspect%200..1>[QuantityValue],[Biosample]++-%20slope_gradient%200..1>[QuantityValue],[Biosample]++-%20sodium%200..1>[QuantityValue],[Biosample]++-%20subsurface_depth%200..1>[QuantityValue],[Biosample]++-%20subsurface_depth2%200..1>[QuantityValue],[Biosample]++-%20sulfate%200..1>[QuantityValue],[Biosample]++-%20sulfide%200..1>[QuantityValue],[Biosample]++-%20temp%200..1>[QuantityValue],[Biosample]++-%20texture%200..1>[QuantityValue],[Biosample]++-%20tot_carb%200..1>[QuantityValue],[Biosample]++-%20tot_depth_water_col%200..1>[QuantityValue],[Biosample]++-%20tot_diss_nitro%200..1>[QuantityValue],[Biosample]++-%20tot_nitro_content%200..1>[QuantityValue],[Biosample]++-%20tot_org_carb%200..1>[QuantityValue],[Biosample]++-%20tot_phosp%200..1>[QuantityValue],[Biosample]++-%20water_content%200..1>[QuantityValue],[AttributeValue]^-[QuantityValue],[OmicsProcessing],[Biosample],[AttributeValue],[Activity])
-
-## Parents
-
- *  is_a: [AttributeValue](AttributeValue.md) - The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic value and the structured value
-
-## Referenced by Class
-
- *  **None** *[abs_air_humidity](abs_air_humidity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[agrochem_addition](agrochem_addition.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[air_temp](air_temp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[air_temp_regm](air_temp_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[al_sat](al_sat.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[alkalinity](alkalinity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[alkyl_diethers](alkyl_diethers.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[alt](alt.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[aminopept_act](aminopept_act.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[ammonium](ammonium.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[amount_light](amount_light.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[annual_precpt](annual_precpt.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[annual_temp](annual_temp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[antibiotic_regm](antibiotic_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[api](api.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[aromatics_pc](aromatics_pc.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[asphaltenes_pc](asphaltenes_pc.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[atmospheric_data](atmospheric_data.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[avg_dew_point](avg_dew_point.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[avg_temp](avg_temp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[bac_prod](bac_prod.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[bac_resp](bac_resp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[bacteria_carb_prod](bacteria_carb_prod.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[barometric_press](barometric_press.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[benzene](benzene.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[biochem_oxygen_dem](biochem_oxygen_dem.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[biocide_admin_method](biocide_admin_method.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[biomass](biomass.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[bishomohopanol](bishomohopanol.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[bromide](bromide.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[built_struc_age](built_struc_age.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[calcium](calcium.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[carb_dioxide](carb_dioxide.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[carb_monoxide](carb_monoxide.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[carb_nitro_ratio](carb_nitro_ratio.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[ceil_area](ceil_area.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[ceil_thermal_mass](ceil_thermal_mass.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[chem_mutagen](chem_mutagen.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[chem_oxygen_dem](chem_oxygen_dem.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[chem_treatment_method](chem_treatment_method.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[chloride](chloride.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[chlorophyll](chlorophyll.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[conduc](conduc.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[density](density.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[depth](depth.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[depth2](depth2.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[dew_point](dew_point.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[diether_lipids](diether_lipids.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[diss_carb_dioxide](diss_carb_dioxide.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[diss_hydrogen](diss_hydrogen.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[diss_inorg_carb](diss_inorg_carb.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[diss_inorg_nitro](diss_inorg_nitro.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[diss_inorg_phosp](diss_inorg_phosp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[diss_iron](diss_iron.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[diss_org_carb](diss_org_carb.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[diss_org_nitro](diss_org_nitro.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[diss_oxygen](diss_oxygen.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[diss_oxygen_fluid](diss_oxygen_fluid.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[door_size](door_size.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[down_par](down_par.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[efficiency_percent](efficiency_percent.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[elev](elev.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[emulsions](emulsions.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[ethylbenzene](ethylbenzene.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[exp_duct](exp_duct.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[exp_pipe](exp_pipe.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[extreme_salinity](extreme_salinity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[fertilizer_regm](fertilizer_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[floor_age](floor_age.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[floor_area](floor_area.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[floor_thermal_mass](floor_thermal_mass.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[fluor](fluor.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[freq_clean](freq_clean.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[freq_cook](freq_cook.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[fungicide_regm](fungicide_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[gaseous_environment](gaseous_environment.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[gaseous_substances](gaseous_substances.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[glucosidase_act](glucosidase_act.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[gravity](gravity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[growth_hormone_regm](growth_hormone_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[hcr_fw_salinity](hcr_fw_salinity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[hcr_pressure](hcr_pressure.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[hcr_temp](hcr_temp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[heavy_metals](heavy_metals.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[height_carper_fiber](height_carper_fiber.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[herbicide_regm](herbicide_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[host_age](host_age.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[host_blood_press_diast](host_blood_press_diast.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[host_blood_press_syst](host_blood_press_syst.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[host_body_mass_index](host_body_mass_index.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[host_body_temp](host_body_temp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[host_dry_mass](host_dry_mass.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[host_height](host_height.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[host_length](host_length.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[host_pulse](host_pulse.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[host_tot_mass](host_tot_mass.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[host_wet_mass](host_wet_mass.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[humidity](humidity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[humidity_regm](humidity_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[indust_eff_percent](indust_eff_percent.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[inorg_particles](inorg_particles.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[inside_lux](inside_lux.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[iwf](iwf.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[light_intensity](light_intensity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[light_regm](light_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[magnesium](magnesium.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[max_occup](max_occup.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[mean_frict_vel](mean_frict_vel.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[mean_peak_frict_vel](mean_peak_frict_vel.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[methane](methane.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[microbial_biomass](microbial_biomass.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[mineral_nutr_regm](mineral_nutr_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[misc_param](misc_param.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[n_alkanes](n_alkanes.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[nitrate](nitrate.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[nitrite](nitrite.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[nitro](nitro.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[non_mineral_nutr_regm](non_mineral_nutr_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[number_pets](number_pets.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[number_plants](number_plants.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[number_resident](number_resident.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[occup_density_samp](occup_density_samp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[occup_samp](occup_samp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[org_carb](org_carb.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[org_matter](org_matter.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[org_nitro](org_nitro.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[org_particles](org_particles.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[organism_count](organism_count.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[owc_tvdss](owc_tvdss.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[oxygen](oxygen.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[part_org_carb](part_org_carb.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[part_org_nitro](part_org_nitro.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[particle_class](particle_class.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[permeability](permeability.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[pesticide_regm](pesticide_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[petroleum_hydrocarb](petroleum_hydrocarb.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[ph](ph.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[phaeopigments](phaeopigments.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[phosphate](phosphate.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[phosplipid_fatt_acid](phosplipid_fatt_acid.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[photon_flux](photon_flux.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[pollutants](pollutants.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[porosity](porosity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[potassium](potassium.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[pour_point](pour_point.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[pressure](pressure.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[primary_prod](primary_prod.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[prod_rate](prod_rate.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[radiation_regm](radiation_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[rainfall_regm](rainfall_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[redox_potential](redox_potential.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[rel_air_humidity](rel_air_humidity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[rel_humidity_out](rel_humidity_out.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[resins_pc](resins_pc.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[resp_part_matter](resp_part_matter.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[room_air_exch_rate](room_air_exch_rate.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[room_dim](room_dim.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[room_door_dist](room_door_dist.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[room_net_area](room_net_area.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[room_occup](room_occup.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[room_vol](room_vol.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[root_med_carbon](root_med_carbon.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[root_med_macronutr](root_med_macronutr.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[root_med_micronutr](root_med_micronutr.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[root_med_ph](root_med_ph.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[root_med_regl](root_med_regl.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[root_med_suppl](root_med_suppl.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[salinity](salinity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[salt_regm](salt_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[samp_loc_corr_rate](samp_loc_corr_rate.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[samp_md](samp_md.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[samp_preserv](samp_preserv.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[samp_salinity](samp_salinity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[samp_size](samp_size.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[samp_store_temp](samp_store_temp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[samp_transport_cond](samp_transport_cond.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[samp_tvdss](samp_tvdss.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[samp_vol_we_dna_ext](samp_vol_we_dna_ext.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[saturates_pc](saturates_pc.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[season_precpt](season_precpt.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[season_temp](season_temp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[sieving](sieving.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[silicate](silicate.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[size_frac](size_frac.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[size_frac_low](size_frac_low.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[size_frac_up](size_frac_up.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[slope_aspect](slope_aspect.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[slope_gradient](slope_gradient.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[sludge_retent_time](sludge_retent_time.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[sodium](sodium.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[solar_irradiance](solar_irradiance.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[soluble_inorg_mat](soluble_inorg_mat.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[soluble_org_mat](soluble_org_mat.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[soluble_react_phosp](soluble_react_phosp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[specific_humidity](specific_humidity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[subsurface_depth](subsurface_depth.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[subsurface_depth2](subsurface_depth2.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[sulfate](sulfate.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[sulfate_fw](sulfate_fw.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[sulfide](sulfide.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[surf_humidity](surf_humidity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[surf_moisture](surf_moisture.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[surf_moisture_ph](surf_moisture_ph.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[surf_temp](surf_temp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[suspend_part_matter](suspend_part_matter.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[suspend_solids](suspend_solids.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tan](tan.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[temp](temp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[temp_out](temp_out.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[texture](texture.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[toluene](toluene.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tot_carb](tot_carb.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tot_depth_water_col](tot_depth_water_col.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tot_diss_nitro](tot_diss_nitro.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tot_inorg_nitro](tot_inorg_nitro.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tot_iron](tot_iron.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tot_nitro](tot_nitro.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tot_nitro_content](tot_nitro_content.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tot_org_carb](tot_org_carb.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tot_part_carb](tot_part_carb.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tot_phosp](tot_phosp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tot_phosphate](tot_phosphate.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tot_sulfur](tot_sulfur.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[turbidity](turbidity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tvdss_of_hcr_pressure](tvdss_of_hcr_pressure.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[tvdss_of_hcr_temp](tvdss_of_hcr_temp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[typ_occup_density](typ_occup_density.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[ventilation_rate](ventilation_rate.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[vfa](vfa.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[vfa_fw](vfa_fw.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[viscosity](viscosity.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[volatile_org_comp](volatile_org_comp.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[wall_area](wall_area.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[wall_height](wall_height.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[wall_thermal_mass](wall_thermal_mass.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[water_content](water_content.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[water_current](water_current.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[water_cut](water_cut.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[water_feat_size](water_feat_size.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[water_production_rate](water_production_rate.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[water_temp_regm](water_temp_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[watering_regm](watering_regm.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[weight_loss_3_month](weight_loss_3_month.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[wind_speed](wind_speed.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[window_size](window_size.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
- *  **None** *[xylene](xylene.md)*  <sub>0..1</sub>  **[QuantityValue](QuantityValue.md)**
-
-## Attributes
+_A simple quantity, e.g. 2cm_
 
 
-### Own
 
- * [quantity value➞has unit](quantity_value_has_unit.md)  <sub>0..1</sub>
-     * Description: The unit of the quantity
-     * Range: [Unit](types/Unit.md)
- * [quantity value➞has numeric value](quantity_value_has_numeric_value.md)  <sub>0..1</sub>
-     * Description: The number part of the quantity
-     * Range: [Double](types/Double.md)
- * [has minimum numeric value](has_minimum_numeric_value.md)  <sub>0..1</sub>
-     * Description: The minimum value part, expressed as number, of the quantity value when the value covers a range.
-     * Range: [Float](types/Float.md)
- * [has maximum numeric value](has_maximum_numeric_value.md)  <sub>0..1</sub>
-     * Description: The maximum value part, expressed as number, of the quantity value when the value covers a range.
-     * Range: [Float](types/Float.md)
- * [quantity value➞has raw value](quantity_value_has_raw_value.md)  <sub>0..1</sub>
-     * Description: Unnormalized atomic string representation, should in syntax {number} {unit}
-     * Range: [String](types/String.md)
 
-### Inherited from attribute value:
 
- * [was generated by](was_generated_by.md)  <sub>0..1</sub>
-     * Range: [Activity](Activity.md)
- * [attribute value➞type](attribute_value_type.md)  <sub>0..1</sub>
-     * Description: An optional string that specified the type of object.
-     * Range: [String](types/String.md)
-     * Example: nmdc:Biosample None
-     * Example: nmdc:Study None
+URI: [nmdc:QuantityValue](https://w3id.org/nmdc/QuantityValue)
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | schema:QuantityValue |
 
+
+
+
+
+
+
+
+
+
+
+
+
+```mermaid
+classDiagram
+  class QuantityValue
+    AttributeValue <|-- QuantityValue
+    
+    
+    
+  QuantityValue : has_maximum_numeric_value
+    
+  QuantityValue : has_minimum_numeric_value
+    
+  QuantityValue : has_numeric_value
+    
+  QuantityValue : has_raw_value
+    
+  QuantityValue : has_unit
+    
+  QuantityValue : was_generated_by
+    
+    QuantityValue --|> Activity : was_generated_by
+    
+  
+
+```
+
+
+
+
+
+
+## Inheritance
+* [AttributeValue](AttributeValue.md)
+    * **QuantityValue**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [has_maximum_numeric_value](has_maximum_numeric_value.md) | 0..1 <br/> [Float](Float.md) | The maximum value part, expressed as number, of the quantity value when the v... | direct |
+| [has_minimum_numeric_value](has_minimum_numeric_value.md) | 0..1 <br/> [Float](Float.md) | The minimum value part, expressed as number, of the quantity value when the v... | direct |
+| [has_numeric_value](has_numeric_value.md) | 0..1 <br/> [Double](Double.md) | The number part of the quantity | direct |
+| [has_raw_value](has_raw_value.md) | 0..1 <br/> [String](String.md) | Unnormalized atomic string representation, should in syntax {number} {unit} | direct |
+| [has_unit](has_unit.md) | 0..1 <br/> [Unit](Unit.md) | The unit of the quantity | direct |
+| [was_generated_by](was_generated_by.md) | 0..1 <br/> [Activity](Activity.md) |  | [AttributeValue](AttributeValue.md) |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Extraction](Extraction.md) | [input_mass](input_mass.md) | range | [QuantityValue](QuantityValue.md) |
+| [Extraction](Extraction.md) | [volume](volume.md) | range | [QuantityValue](QuantityValue.md) |
+| [SolutionComponent](SolutionComponent.md) | [concentration](concentration.md) | range | [QuantityValue](QuantityValue.md) |
+| [Solution](Solution.md) | [volume](volume.md) | range | [QuantityValue](QuantityValue.md) |
+| [FieldResearchSite](FieldResearchSite.md) | [elev](elev.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [abs_air_humidity](abs_air_humidity.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [air_temp](air_temp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [al_sat](al_sat.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [alkalinity](alkalinity.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [alkyl_diethers](alkyl_diethers.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [alt](alt.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [aminopept_act](aminopept_act.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [ammonium](ammonium.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [ammonium_nitrogen](ammonium_nitrogen.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [amount_light](amount_light.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [annual_precpt](annual_precpt.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [annual_temp](annual_temp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [api](api.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [avg_dew_point](avg_dew_point.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [avg_temp](avg_temp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [bac_prod](bac_prod.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [bac_resp](bac_resp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [bacteria_carb_prod](bacteria_carb_prod.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [barometric_press](barometric_press.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [benzene](benzene.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [biochem_oxygen_dem](biochem_oxygen_dem.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [bishomohopanol](bishomohopanol.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [blood_press_diast](blood_press_diast.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [blood_press_syst](blood_press_syst.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [bromide](bromide.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [built_struc_age](built_struc_age.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [calcium](calcium.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [carb_dioxide](carb_dioxide.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [carb_monoxide](carb_monoxide.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [carb_nitro_ratio](carb_nitro_ratio.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [ceil_area](ceil_area.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [ceil_thermal_mass](ceil_thermal_mass.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [chem_oxygen_dem](chem_oxygen_dem.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [chloride](chloride.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [chlorophyll](chlorophyll.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [conduc](conduc.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [density](density.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [depth](depth.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [dew_point](dew_point.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [diss_carb_dioxide](diss_carb_dioxide.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [diss_hydrogen](diss_hydrogen.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [diss_inorg_carb](diss_inorg_carb.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [diss_inorg_nitro](diss_inorg_nitro.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [diss_inorg_phosp](diss_inorg_phosp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [diss_iron](diss_iron.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [diss_org_carb](diss_org_carb.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [diss_org_nitro](diss_org_nitro.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [diss_oxygen](diss_oxygen.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [diss_oxygen_fluid](diss_oxygen_fluid.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [door_size](door_size.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [down_par](down_par.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [efficiency_percent](efficiency_percent.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [ethylbenzene](ethylbenzene.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [exp_duct](exp_duct.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [exp_pipe](exp_pipe.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [floor_age](floor_age.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [floor_area](floor_area.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [floor_thermal_mass](floor_thermal_mass.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [fluor](fluor.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [freq_clean](freq_clean.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [freq_cook](freq_cook.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [glucosidase_act](glucosidase_act.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [hcr_fw_salinity](hcr_fw_salinity.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [height_carper_fiber](height_carper_fiber.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [host_age](host_age.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [host_body_temp](host_body_temp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [host_dry_mass](host_dry_mass.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [host_height](host_height.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [host_length](host_length.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [host_tot_mass](host_tot_mass.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [host_wet_mass](host_wet_mass.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [humidity](humidity.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [indust_eff_percent](indust_eff_percent.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [inside_lux](inside_lux.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [iwf](iwf.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [lbc_thirty](lbc_thirty.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [lbceq](lbceq.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [light_intensity](light_intensity.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [magnesium](magnesium.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [manganese](manganese.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [max_occup](max_occup.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [mean_frict_vel](mean_frict_vel.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [mean_peak_frict_vel](mean_peak_frict_vel.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [methane](methane.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [microbial_biomass](microbial_biomass.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [nitrate](nitrate.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [nitrate_nitrogen](nitrate_nitrogen.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [nitrite](nitrite.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [nitrite_nitrogen](nitrite_nitrogen.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [nitro](nitro.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [number_pets](number_pets.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [number_plants](number_plants.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [number_resident](number_resident.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [occup_density_samp](occup_density_samp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [occup_samp](occup_samp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [org_carb](org_carb.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [org_matter](org_matter.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [org_nitro](org_nitro.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [organism_count](organism_count.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [owc_tvdss](owc_tvdss.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [oxygen](oxygen.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [part_org_carb](part_org_carb.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [part_org_nitro](part_org_nitro.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [petroleum_hydrocarb](petroleum_hydrocarb.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [phosphate](phosphate.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [photon_flux](photon_flux.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [potassium](potassium.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [pour_point](pour_point.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [pressure](pressure.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [primary_prod](primary_prod.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [prod_rate](prod_rate.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [redox_potential](redox_potential.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [rel_air_humidity](rel_air_humidity.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [rel_humidity_out](rel_humidity_out.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [room_air_exch_rate](room_air_exch_rate.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [room_occup](room_occup.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [root_med_ph](root_med_ph.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [salinity](salinity.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [samp_md](samp_md.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [samp_size](samp_size.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [samp_store_temp](samp_store_temp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [samp_vol_we_dna_ext](samp_vol_we_dna_ext.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [season_precpt](season_precpt.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [season_temp](season_temp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [silicate](silicate.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [size_frac_low](size_frac_low.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [size_frac_up](size_frac_up.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [slope_aspect](slope_aspect.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [slope_gradient](slope_gradient.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [sludge_retent_time](sludge_retent_time.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [sodium](sodium.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [soil_text_measure](soil_text_measure.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [solar_irradiance](solar_irradiance.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [soluble_react_phosp](soluble_react_phosp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [specific_humidity](specific_humidity.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [sulfate](sulfate.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [sulfate_fw](sulfate_fw.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [sulfide](sulfide.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [surf_humidity](surf_humidity.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [surf_moisture](surf_moisture.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [surf_temp](surf_temp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [suspend_part_matter](suspend_part_matter.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tan](tan.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [temp](temp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [temp_out](temp_out.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [toluene](toluene.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tot_carb](tot_carb.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tot_depth_water_col](tot_depth_water_col.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tot_diss_nitro](tot_diss_nitro.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tot_inorg_nitro](tot_inorg_nitro.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tot_iron](tot_iron.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tot_nitro](tot_nitro.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tot_nitro_content](tot_nitro_content.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tot_org_carb](tot_org_carb.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tot_part_carb](tot_part_carb.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tot_phosp](tot_phosp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tot_phosphate](tot_phosphate.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tot_sulfur](tot_sulfur.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [turbidity](turbidity.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tvdss_of_hcr_press](tvdss_of_hcr_press.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [tvdss_of_hcr_temp](tvdss_of_hcr_temp.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [ventilation_rate](ventilation_rate.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [vfa](vfa.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [vfa_fw](vfa_fw.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [wall_area](wall_area.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [wall_height](wall_height.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [wall_thermal_mass](wall_thermal_mass.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [water_current](water_current.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [water_cut](water_cut.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [water_feat_size](water_feat_size.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [water_prod_rate](water_prod_rate.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [wind_speed](wind_speed.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [xylene](xylene.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [zinc](zinc.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [subsurface_depth](subsurface_depth.md) | range | [QuantityValue](QuantityValue.md) |
+| [Biosample](Biosample.md) | [bulk_elect_conductivity](bulk_elect_conductivity.md) | range | [QuantityValue](QuantityValue.md) |
+| [SubSamplingProcess](SubSamplingProcess.md) | [container_size](container_size.md) | range | [QuantityValue](QuantityValue.md) |
+| [SubSamplingProcess](SubSamplingProcess.md) | [temperature](temperature.md) | range | [QuantityValue](QuantityValue.md) |
+| [SubSamplingProcess](SubSamplingProcess.md) | [volume](volume.md) | range | [QuantityValue](QuantityValue.md) |
+| [SubSamplingProcess](SubSamplingProcess.md) | [mass](mass.md) | range | [QuantityValue](QuantityValue.md) |
+| [MixingProcess](MixingProcess.md) | [duration](duration.md) | range | [QuantityValue](QuantityValue.md) |
+| [FiltrationProcess](FiltrationProcess.md) | [container_size](container_size.md) | range | [QuantityValue](QuantityValue.md) |
+| [FiltrationProcess](FiltrationProcess.md) | [filter_pore_size](filter_pore_size.md) | range | [QuantityValue](QuantityValue.md) |
+| [FiltrationProcess](FiltrationProcess.md) | [volume](volume.md) | range | [QuantityValue](QuantityValue.md) |
+| [ChromatographicSeparationProcess](ChromatographicSeparationProcess.md) | [temperature](temperature.md) | range | [QuantityValue](QuantityValue.md) |
+| [OmicsProcessing](OmicsProcessing.md) | [samp_vol_we_dna_ext](samp_vol_we_dna_ext.md) | range | [QuantityValue](QuantityValue.md) |
+| [ProcessedSample](ProcessedSample.md) | [biomaterial_purity](biomaterial_purity.md) | range | [QuantityValue](QuantityValue.md) |
+| [QuantityValue](QuantityValue.md) | [has_maximum_numeric_value](has_maximum_numeric_value.md) | domain | [QuantityValue](QuantityValue.md) |
+| [QuantityValue](QuantityValue.md) | [has_minimum_numeric_value](has_minimum_numeric_value.md) | domain | [QuantityValue](QuantityValue.md) |
+| [QuantityValue](QuantityValue.md) | [has_numeric_value](has_numeric_value.md) | domain | [QuantityValue](QuantityValue.md) |
+| [QuantityValue](QuantityValue.md) | [has_unit](has_unit.md) | domain | [QuantityValue](QuantityValue.md) |
+| [IntegerValue](IntegerValue.md) | [has_numeric_value](has_numeric_value.md) | domain | [QuantityValue](QuantityValue.md) |
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | nmdc:QuantityValue |
+| native | nmdc:QuantityValue |
+| undefined | schema:QuantityValue |
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: QuantityValue
+description: A simple quantity, e.g. 2cm
+from_schema: https://w3id.org/nmdc/nmdc
+mappings:
+- schema:QuantityValue
+is_a: AttributeValue
+slots:
+- has_maximum_numeric_value
+- has_minimum_numeric_value
+- has_numeric_value
+- has_raw_value
+- has_unit
+slot_usage:
+  has_raw_value:
+    name: has_raw_value
+    description: Unnormalized atomic string representation, should in syntax {number}
+      {unit}
+    domain_of:
+    - AttributeValue
+    - QuantityValue
+  has_unit:
+    name: has_unit
+    description: The unit of the quantity
+    domain_of:
+    - QuantityValue
+  has_numeric_value:
+    name: has_numeric_value
+    description: The number part of the quantity
+    domain_of:
+    - QuantityValue
+    - IntegerValue
+    range: double
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: QuantityValue
+description: A simple quantity, e.g. 2cm
+from_schema: https://w3id.org/nmdc/nmdc
+mappings:
+- schema:QuantityValue
+is_a: AttributeValue
+slot_usage:
+  has_raw_value:
+    name: has_raw_value
+    description: Unnormalized atomic string representation, should in syntax {number}
+      {unit}
+    domain_of:
+    - AttributeValue
+    - QuantityValue
+  has_unit:
+    name: has_unit
+    description: The unit of the quantity
+    domain_of:
+    - QuantityValue
+  has_numeric_value:
+    name: has_numeric_value
+    description: The number part of the quantity
+    domain_of:
+    - QuantityValue
+    - IntegerValue
+    range: double
+attributes:
+  has_maximum_numeric_value:
+    name: has_maximum_numeric_value
+    description: The maximum value part, expressed as number, of the quantity value
+      when the value covers a range.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: has_numeric_value
+    domain: QuantityValue
+    alias: has_maximum_numeric_value
+    owner: QuantityValue
+    domain_of:
+    - QuantityValue
+    range: float
+  has_minimum_numeric_value:
+    name: has_minimum_numeric_value
+    description: The minimum value part, expressed as number, of the quantity value
+      when the value covers a range.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    is_a: has_numeric_value
+    domain: QuantityValue
+    alias: has_minimum_numeric_value
+    owner: QuantityValue
+    domain_of:
+    - QuantityValue
+    range: float
+  has_numeric_value:
+    name: has_numeric_value
+    description: The number part of the quantity
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: QuantityValue
+    multivalued: false
+    alias: has_numeric_value
+    owner: QuantityValue
+    domain_of:
+    - QuantityValue
+    - IntegerValue
+    range: double
+  has_raw_value:
+    name: has_raw_value
+    description: Unnormalized atomic string representation, should in syntax {number}
+      {unit}
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: AttributeValue
+    multivalued: false
+    alias: has_raw_value
+    owner: QuantityValue
+    domain_of:
+    - AttributeValue
+    - QuantityValue
+    range: string
+  has_unit:
+    name: has_unit
+    description: The unit of the quantity
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: QuantityValue
+    alias: has_unit
+    owner: QuantityValue
+    domain_of:
+    - QuantityValue
+    range: unit
+  was_generated_by:
+    name: was_generated_by
+    from_schema: https://w3id.org/nmdc/nmdc
+    mappings:
+    - prov:wasGeneratedBy
+    rank: 1000
+    alias: was_generated_by
+    owner: QuantityValue
+    domain_of:
+    - DataObject
+    - AttributeValue
+    - FunctionalAnnotation
+    range: Activity
+
+```
+</details>
