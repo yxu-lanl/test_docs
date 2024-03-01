@@ -42,7 +42,7 @@ The NMDC workflows are also available as a web application called `NMDC EDGE <ht
 
 
 
-Reads QC Workflow (v1.0.2)
+Reads QC Workflow (v1.0.1)
 =============================
 
 .. image:: ../_static/images/reference/workflows/1_RQC_rqc_workflow.png
@@ -55,28 +55,6 @@ Workflow Overview
 
 This workflow utilizes the program “rqcfilter2” from BBTools to perform quality control on raw Illumina reads. The workflow performs quality trimming, artifact removal, linker trimming, adapter trimming, and spike-in removal (using BBDuk), and performs human/cat/dog/mouse/microbe removal (using BBMap).
 
-The following parameters are used for "rqcfilter2" in this workflow::
- - qtrim=r     :  Quality-trim from right ends before mapping.
- - trimq=0     :  Trim quality threshold.
- - maxns=3     :  Reads with more Ns than this will be discarded.
- - maq=3       :  Reads with average quality (before trimming) below this will be discarded.
- - minlen=51   :  Reads shorter than this after trimming will be discarded.  Pairs will be discarded only if both are shorter.
- - mlf=0.33    :  Reads shorter than this fraction of original length after trimming will be discarded.
- - phix=true   :  Remove reads containing phiX kmers.
- - khist=true  :  Generate a kmer-frequency histogram of the output data.
- - kapa=true   :  Remove and quantify kapa tag
- - trimpolyg=5 :  Trim reads that start or end with a G polymer at least this long
- - clumpify=true       :  Run clumpify; all deduplication flags require this.
- - removehuman=true    :  Remove human reads via mapping.
- - removedog=true      :  Remove dog reads via mapping.
- - removecat=true      :  Remove cat reads via mapping.
- - removemouse=true    :  Remove mouse reads via mapping.
- - barcodefilter=false :  Disable improper barcodes filter
- - chastityfilter=false:  Remove illumina reads failing chastity filter.
- - trimfragadapter=true:  Trim all known Illumina adapter sequences, including TruSeq and Nextera.
- - removemicrobes=true :  Remove common contaminant microbial reads via mapping, and place them in a separate file.
-
- 
 Workflow Availability
 ---------------------
 
@@ -105,7 +83,7 @@ Workflow Dependencies
 Third party software (This is included in the Docker image.)  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- `BBTools v38.96 <https://jgi.doe.gov/data-and-tools/bbtools/>`_ (License: `BSD-3-Clause-LBNL <https://bitbucket.org/berkeleylab/jgi-bbtools/src/master/license.txt>`_)
+- `BBTools v38.90 <https://jgi.doe.gov/data-and-tools/bbtools/>`_ (License: `BSD-3-Clause-LBNL <https://bitbucket.org/berkeleylab/jgi-bbtools/src/master/license.txt>`_)
 
 Requisite database
 ~~~~~~~~~~~~~~~~~~
@@ -122,9 +100,7 @@ The following commands will download the database::
 Sample dataset(s)
 -----------------
 
-- small dataset: `Ecoli 10x <https://portal.nersc.gov/cfs/m3408/test_data/ReadsQC_small_test_data.tgz>`_ . You can find input/output in the downloaded tar gz file.
-
-- large dataset: Zymobiomics mock-community DNA control (`SRR7877884 <https://www.ebi.ac.uk/ena/browser/view/SRR7877884>`_); the `original gzipped dataset <https://portal.nersc.gov/cfs/m3408/test_data/ReadsQC_large_test_data.tgz>`_ is ~5.7 GB.  You can find input/output in the downloaded tar gz file.
+Zymobiomics mock-community DNA control (`SRR7877884 <https://www.ebi.ac.uk/ena/browser/view/SRR7877884>`_); the original gzipped dataset is ~4 GB. 
 
 
 .. note::
@@ -145,11 +121,8 @@ A JSON file containing the following information:
 1.	the path to the database
 2.	the path to the interleaved fastq file (input data) 
 3.	the path to the output directory
-4.      input_interleaved (boolean)
-5.      forwards reads fastq file (when input_interleaved is false) 
-6.      reverse reads fastq file (when input_interleaved is false)     
-7.	(optional) parameters for memory 
-8.	(optional) number of threads requested
+4.	(optional) parameters for memory 
+5.	(optional) number of threads requested
 
 
 An example input JSON file is shown below:
@@ -161,9 +134,6 @@ An example input JSON file is shown below:
         "jgi_rqcfilter.input_files": [
             "/path/to/SRR7877884-int-0.1.fastq.gz "
         ],
-        "jgi_rqcfilter.input_interleaved": true,
-        "jgi_rqcfilter.input_fq1":[],
-        "jgi_rqcfilter.input_fq2":[],
         "jgi_rqcfilter.outdir": "/path/to/rqcfiltered",
         "jgi_rqcfilter.memory": "35G",
         "jgi_rqcfilter.threads": "16"
@@ -180,25 +150,20 @@ Output
 
 A directory named with the prefix of the FASTQ input file will be created and multiple output files are generated; the main QC FASTQ output is named prefix.anqdpht.fastq.gz. Using the dataset above as an example, the main output would be named SRR7877884-int-0.1.anqdpht.fastq.gz. Other files include statistics on the quality of the data; what was trimmed, detected, and filtered in the data; a status log, and a shell script documenting the steps implemented so the workflow can be reproduced.
 
-An example output JSON file (filterStats.json) is shown below:
+Part of an example output JSON file is shown below:
    
-.. code-block:: JSON 
+.. code-block:: bash    
     
-	{
-	  "inputReads": 331126,
-	  "kfilteredBases": 138732,
-	  "qfilteredReads": 0,
-	  "ktrimmedReads": 478,
-	  "outputBases": 1680724,
-	  "ktrimmedBases": 25248,
-	  "kfilteredReads": 926,
-	  "qtrimmedBases": 0,
-	  "outputReads": 11212,
-	  "gcPolymerRatio": 0.182857,
-	  "inputBases": 50000026,
-	  "qtrimmedReads": 0,
-	  "qfilteredBases": 0
-	}
+    SRR7877884-int-0.1
+    |-- SRR7877884-int-0.1.anqdpht.fastq.gz
+    |-- filterStats.txt
+    |-- filterStats.json
+    |-- filterStats2.txt
+    |-- adaptersDetected.fa
+    |-- reproduce.sh
+    |-- spikein.fq.gz
+    |-- status.log
+    |-- ...
 
 
 Below is an example of all the output directory files with descriptions to the right.
@@ -243,7 +208,7 @@ synth2.fq.gz                          detected synthetic molecule (short contami
 Version History
 ---------------
 
-- 1.0.2 (release date **04/09/2021**; previous versions: 1.0.1)
+- 1.0.1 (release date **02/16/2021**; previous versions: 1.0.0)
 
 
 Point of contact
@@ -423,7 +388,7 @@ Package maintainer: Po-E Li <po-e@lanl.gov>
 
 
 
-Metagenome Assembly Workflow (v1.0.2)
+Metagenome Assembly Workflow (v1.0.1)
 ========================================
 
 .. image:: ../_static/images/reference/workflows/3_MetaGAssemly_workflow_assembly.png
@@ -478,16 +443,20 @@ Third party software:  (This is included in the Docker image.)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - `metaSPades v3.15.0 <https://cab.spbu.ru/software/spades/>`_ (License: `GPLv2 <https://github.com/ablab/spades/blob/spades_3.15.0/assembler/GPLv2.txt>`_)
-- `BBTools:38.94 <https://jgi.doe.gov/data-and-tools/bbtools/>`_ (License: `BSD-3-Clause-LBNL <https://bitbucket.org/berkeleylab/jgi-bbtools/src/master/license.txt>`_)
+- `BBTools:38.90 <https://jgi.doe.gov/data-and-tools/bbtools/>`_ (License: `BSD-3-Clause-LBNL <https://bitbucket.org/berkeleylab/jgi-bbtools/src/master/license.txt>`_)
 
 Sample dataset(s)
 -----------------
 
-- small dataset: `Ecoli 10x (287M) <https://portal.nersc.gov/cfs/m3408/test_data/metaAssembly_small_test_data.tgz>`_ . You can find input/output in the downloaded tar gz file.
+Zymobiomics mock-community DNA control (SRR7877884); this dataset is ~4 GB.
 
-- large dataset: `Zymobiomics mock-community DNA control (22G) <https://portal.nersc.gov/cfs/m3408/test_data/metaAssembly_large_test_data.tgz>`_ .  You can find input/output in the downloaded tar gz file.
+.. note::
 
-Zymobiomics mock-community DNA control (`SRR7877884 <https://www.ebi.ac.uk/ena/browser/view/SRR7877884>`_); this original dataset is ~4 GB.
+    If the input data is paired-end data, it must be in interleaved format. The following command will interleave the files, using the above dataset as an example:
+
+.. code-block:: bash   
+
+    paste <(zcat SRR7877884_1.fastq.gz | paste - - - -) <(zcat SRR7877884_2.fastq.gz | paste - - - -) | tr '\t' '\n' | gzip -c > SRR7877884-int.fastq.gz
 
 For testing purposes and for the following examples, we used a 10% sub-sampling of the above dataset: (`SRR7877884-int-0.1.fastq.gz <https://portal.nersc.gov/cfs/m3408/test_data/SRR7877884-int-0.1.fastq.gz>`_). This dataset is already interleaved. 
 
@@ -500,11 +469,8 @@ A JSON file containing the following information:
 1. the path to the input FASTQ file (Illumina paired-end interleaved FASTQ) (recommended the output of the Reads QC workflow.)
 2. the contig prefix for the FASTA header
 3. the output path
-4. input_interleaved (boolean)
-5. forwards reads fastq file (required value when input_interleaved is false, otherwise use [] )
-6. reverse reads fastq file (required value when input_interleaved is false, otherwise use [] )
-7. memory (optional) ex: “jgi_metaASM.memory”: “105G”
-8. threads (optional) ex: “jgi_metaASM.threads”: “16”
+4. memory (optional) ex: “jgi_metaASM.memory”: “105G”
+5. threads (optional) ex: “jgi_metaASM.threads”: “16”
 
 An example input JSON file is shown below::
 
@@ -512,9 +478,6 @@ An example input JSON file is shown below::
         "jgi_metaASM.input_file":["/path/to/SRR7877884-int-0.1.fastq.gz "],
         "jgi_metaASM.rename_contig_prefix":"projectID",
         "jgi_metaASM.outdir":"/path/to/ SRR7877884-int-0.1_assembly",
-        "jgi_metaASM.input_interleaved":true,
-        "jgi_metaASM.input_fq1":[],
-        "jgi_metaASM.input_fq2":[],
         "jgi_metaASM.memory": "105G",
         "jgi_metaASM.threads": "16"
     }
@@ -522,51 +485,36 @@ An example input JSON file is shown below::
 Output
 ------
 
-The output directory will contain following files::
+The output directory will contain four output sub-directories: bbcms, final_assembly, mapping and spades3. The main output, the assembled contigs, are in final_assembly/assembly.contigs.fasta.
 
+Part of an example output JSON file is shown below::
 
-    output/
-    ├── assembly.agp
-    ├── assembly_contigs.fna
-    ├── assembly_scaffolds.fna
-    ├── covstats.txt
-    ├── pairedMapped.sam.gz
-    ├── pairedMapped_sorted.bam
-    └── stats.json
-
-Part of an example output stats JSON file is shown below:
-
-```
-{
-   "scaffolds": 58,
-   "contigs": 58,
-   "scaf_bp": 28406,
-   "contig_bp": 28406,
-   "gap_pct": 0.00000,
-   "scaf_N50": 21,
-   "scaf_L50": 536,
-   "ctg_N50": 21,
-   "ctg_L50": 536,
-   "scaf_N90": 49,
-   "scaf_L90": 317,
-   "ctg_N90": 49,
-   "ctg_L90": 317,
-   "scaf_logsum": 22.158,
-   "scaf_powsum": 2.245,
-   "ctg_logsum": 22.158,
-   "ctg_powsum": 2.245,
-   "asm_score": 0.000,
-   "scaf_max": 1117,
-   "ctg_max": 1117,
-   "scaf_n_gt50K": 0,
-   "scaf_l_gt50K": 0,
-   "scaf_pct_gt50K": 0.0,
-   "gc_avg": 0.39129,
-   "gc_std": 0.03033,
-   "filename": "/global/cfs/cdirs/m3408/aim2/metagenome/assembly/cromwell-executions/jgi_metaASM/3342a6e8-7f78-40e6-a831-364dd2a47baa/call-create_agp/execution/assembly_scaffolds.fna"
-}
-```
-
+    ├── bbcms
+    │   ├── berkeleylab-jgi-meta-60ade422cd4e
+    │   ├── counts.metadata.json
+    │   ├── input.corr.fastq.gz
+    │   ├── input.corr.left.fastq.gz
+    │   ├── input.corr.right.fastq.gz
+    │   ├── readlen.txt
+    │   └── unique31mer.txt
+    ├── final_assembly
+    │   ├── assembly.agp
+    │   ├── assembly_contigs.fasta
+    │   ├── assembly_scaffolds.fasta
+    │   └── assembly_scaffolds.legend
+    ├── mapping
+    │   ├── covstats.txt (mapping_stats.txt)
+    │   ├── pairedMapped.bam
+    │   ├── pairedMapped.sam.gz
+    │   ├── pairedMapped_sorted.bam
+    │   └── pairedMapped_sorted.bam.bai
+    └── spades3
+            ├── assembly_graph.fastg
+            ├── assembly_graph_with_scaffolds.gfa
+            ├── contigs.fasta
+            ├── contigs.paths
+            ├── scaffolds.fasta
+            └── scaffolds.paths
 
 The table provides all of the output directories, files, and their descriptions.
 
@@ -649,7 +597,7 @@ mapping/                                            stdout.background           
 Version History
 ---------------
 
-- 1.0.2 (release date **03/12/2021**; previous versions: 1.0.1)
+- 1.0.1 (release date **02/16/2021**; previous versions: 1.0.0)
 
 Point of contact
 ----------------
@@ -776,7 +724,7 @@ Point of contact
 
 
 
-Metagenome Assembled Genomes Workflow (v1.0.4)
+Metagenome Assembled Genomes Workflow (v1.0.2)
 =============================================
 
 .. image:: ../_static/images/reference/workflows/5_MAG_MAG_workflow.png
@@ -808,8 +756,8 @@ Requirements for Execution
 Hardware Requirements
 ---------------------
 
-- Disk space: > 33 GB for the CheckM and GTDB-Tk databases 
-- Memory: ~150GB memory for GTDB-tk.
+- Disk space: > 27 GB for the CheckM and GTDB-Tk databases 
+- Memory: ~120GB memory for GTDB-tk.
 
 Workflow Dependencies
 ---------------------
@@ -824,7 +772,7 @@ Third party software (These are included in the Docker image.)
 - `samtools > v1.9 <https://github.com/samtools/samtools>`_ (License: `MIT License <https://github.com/samtools/samtools/blob/develop/LICENSE>`_)
 - `Metabat2 v2.15 <https://pubmed.ncbi.nlm.nih.gov/31388474/>`_ (License: `BSD-3-Clause <https://bitbucket.org/berkeleylab/metabat/src/master/license.txt>`_)
 - `CheckM v1.1.2 <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4484387/>`_ (License: `GPLv3 <https://github.com/Ecogenomics/CheckM/blob/master/LICENSE>`_)
-- `GTDB-TK v1.3.0 <https://doi.org/10.1093/bioinformatics/btz848>`_ (License: `GPLv3 <https://github.com/Ecogenomics/GTDBTk/blob/master/LICENSE>`_)
+- `GTDB-TK v1.2.0 <https://doi.org/10.1093/bioinformatics/btz848>`_ (License: `GPLv3 <https://github.com/Ecogenomics/GTDBTk/blob/master/LICENSE>`_)
 - `FastANI v1.3 <https://github.com/ParBLiSS/FastANI>`_ (License: `Apache 2.0 <https://github.com/ParBLiSS/FastANI/blob/master/LICENSE>`_)
 - `FastTree v2.1.10 <http://www.microbesonline.org/fasttree/>`_ (License: `GPLv2 <http://www.microbesonline.org/fasttree/FastTree.c>`_)
 
@@ -836,21 +784,15 @@ The GTDB-Tk database must be downloaded and installed. The CheckM database inclu
 
 - The following commands will download and unarchive the GTDB-Tk database::
 
-    wget https://data.gtdb.ecogenomic.org/releases/release95/95.0/auxillary_files/gtdbtk_r95_data.tar.gz
-    tar -xvzf gtdbtk_r95_data.tar.gz
-    mv release95 GTDBTK_DB
-    rm gtdbtk_r95_data.tar.gz
+    wget https://data.ace.uq.edu.au/public/gtdb/data/releases/release89/89.0/gtdbtk_r89_data.tar.gz
+    tar -xvzf gtdbtk_r89_data.tar.gz
+    mv release89 GTDBTK_DB
+    rm gtdbtk_r89_data.tar.gz
 
 Sample dataset(s)
 -----------------
 
-
-The following test datasets include an assembled contigs file, a BAM file, and a functional annotation file:
-
-- small dataset: `LQ only (3.1G) <https://portal.nersc.gov/cfs/m3408/test_data/metaMAGs_small_test_data.tgz>`_ . You can find input/output in the downloaded tar gz file.
-
-- large dataset: `with HQ and MQ bins (12G) <https://portal.nersc.gov/cfs/m3408/test_data/metaMAGs_large_test_data.tgz>`_ . You can find input/output in the downloaded tar gz file.
-
+The following test dataset include an assembled contigs file, a BAM file, and a functional annotation file: `metaMAGs_test_dataset.tgz <https://portal.nersc.gov/cfs/m3408/test_data/metaMAGs_test_dataset.tgz>`_
 
 
 Input
@@ -865,7 +807,7 @@ A JSON file containing the following:
 5. the path to the Metagenome Assembled Contig fasta file (FNA)
 6. the path to the Sam/Bam file from read mapping back to contigs (SAM.gz or BAM)
 7. the path to contigs functional annotation result (GFF)
-8. the path to the text file which contains mapping of headers between SAM or BAM and GFF (ID in SAM/FNA<tab>ID in GFF). A two column tab-delimited file. When the annotation and assembly are performed using different identifiers for contigs. The map file is to link the gff file content and mapping result bam file content to the assembled contigs ID.
+8. the path to the text file which contains mapping of headers between SAM or BAM and GFF (ID in SAM/FNA<tab>ID in GFF)
 9. the path to the database directory which includes *checkM_DB* and *GTDBTK_DB* subdirectories.
 10. (optional) scratch_dir: use --scratch_dir for gtdbtk disk swap to reduce memory usage but longer runtime
 
@@ -981,7 +923,7 @@ complete.mbin                                       the dummy file to indicate t
 Version History
 ---------------
 
-- 1.0.4 (release date **01/12/2022**; previous versions: b1.0.3)
+- 1.0.2 (release date **02/24/2021**; previous versions: 1.0.1)
 
 Point of contact
 ----------------
@@ -998,7 +940,7 @@ Metatranscriptome Workflow (v0.0.2)
 Summary
 -------
 
-MetaT is a workflow designed to analyze metatranscriptomes, building on top of already existing NMDC workflows for processing input. The metatranscriptoimics workflow takes in raw data and starts by quality filtering the reads using the `RQC worfklow <https://github.com/microbiomedata/ReadsQC>`__. With filtered reads, the workflow filters out rRNA reads (and separates the interleaved file into separate files for the pairs) using bbduk (BBTools). After the filtering steps, reads are assembled into transcripts and using MEGAHIT and annotated using the `Metagenome Anotation Workflow <https://github.com/microbiomedata/mg_annotation>`_; producing GFF funtional annotation files. Features are counted with `Subread's featureCounts <http://subread.sourceforge.net/>`_ which assigns mapped reads to genomic features and generating RPKMs for each feature in a GFF file for sense and antisense reads. 
+MetaT is a workflow designed to analyze metatranscriptomes building on top of already existing NMDC workflows for processing input. The metatranscriptomics workflow takes in raw data and starts by quality filtering the reads using the `ReadsQC worfklow <https://github.com/microbiomedata/ReadsQC>`__. Then the workflow filters out rRNA reads (and separates the interleaved file into separate files for the pairs) using bbduk (BBTools). After the filtering steps, reads are assembled into transcripts using MEGAHIT and annotated using the `Metagenome Anotation Workflow <https://github.com/microbiomedata/mg_annotation>`_ producing a funtional annotation file in GFF format. Features are counted with `Subread's featureCounts <http://subread.sourceforge.net/>`_ which assigns mapped reads to genomic features and generates RPKMs for each feature in the GFF file for both sense and antisense reads. 
 
 
 
@@ -1006,7 +948,7 @@ MetaT is a workflow designed to analyze metatranscriptomes, building on top of a
 Workflow Diagram
 ------------------
 
-.. image:: ../_static/images/reference/workflows/6_MetaT_metaT_figure.png
+.. image:: ../_static/images/reference/workflows/6_MetaT_workflow_metatranscriptomics.png
    :scale: 25%
    :alt: Metatranscriptome workflow
 
@@ -1170,6 +1112,8 @@ Points of contact
 - Author: Migun Shakya <migun@lanl.gov>
 
 
+
+
 Metaproteomic Workflow (v1.0.0)
 ==============================
 
@@ -1303,7 +1247,8 @@ Point of contact
 Package maintainer: Anubhav <anubhav@pnnl.gov>
 
 
-Metabolomics Workflow
+
+Metabolomics Workflow (v2.1.0)
 ==============================
 
 Summary
@@ -1331,7 +1276,7 @@ Third party software
 
 Database 
 ~~~~~~~~~~~~~~~~
-- PNNL Metabolomics GC-MS Spectral Database
+- PNNL GC-MS Spectral Database
 
 Workflow Availability
 ---------------------
@@ -1358,18 +1303,15 @@ Execution Details
 
 Please refer to: 
 
-https://github.com/microbiomedata/metaMS#metams-installation
+https://github.com/microbiomedata/metaMS/blob/master/README.md#usage
 
 Inputs
 ~~~~~~~~
 
-- Supported format for low resolution GC-MS data:  
-   - ANDI NetCDF for GC-MS (.cdf)
-- Fatty Acid Methyl Esters Calibration File:
-   - ANDI NetCDF for GC-MS (.cdf) - C8 to C30
-- Parameters:
-    - CoreMS Parameter File (.json)
-    - MetaMS Parameter File (.json)
+- ANDI NetCDF for GC-MS (.cdf)
+- CoreMS Hierarchical Data Format (.hdf5)
+- CoreMS Parameter File (.JSON)
+- MetaMS Parameter File (.JSON)
 
 Outputs
 ~~~~~~~~
@@ -1385,8 +1327,6 @@ Requirements for Execution
 --------------------------
 
 - Docker Container Runtime
-  
-  or  
 - Python Environment >= 3.6
 - Python Dependencies are listed on requirements.txt
 
@@ -1394,106 +1334,7 @@ Requirements for Execution
 Version History
 ---------------
 
-- 2.1.3
-
-Point of contact
-----------------
-
-Package maintainer: Yuri E. Corilo <corilo@pnnl.gov>
-
-
-
-Natural Organic Matter Workflow
-================================
-
-Summary
--------
-
-Direct Infusion Fourier Transform mass spectrometry (DI FT-MS) data undergoes signal processing and molecular formula assignment leveraging EMSL’s CoreMS framework. Raw time domain data is transformed into the m/z domain using Fourier Transform and Ledford equation. Data is denoised followed by peak picking, recalibration using an external reference list of known compounds, and searched against a dynamically generated molecular formula library with a defined molecular search space. The confidence scores for all the molecular formula candidates are calculated based on the mass accuracy and fine isotopic structure, and the best candidate assigned as the highest score.
-
-Workflow Diagram
-------------------
-
-.. image:: ../_static/images/reference/workflows/9_NOM_enviromsworkflow.png
-
-
-Workflow Dependencies
----------------------
-
-Third party software
-~~~~~~~~~~~~~~~~~~~~
-
-- CoreMS (2-clause BSD)
-- Click (BSD 3-Clause "New" or "Revised" License)
-
-Database 
-~~~~~~~~~~~~~~~~
-- CoreMS dynamic molecular database search and generator
-
-Workflow Availability
----------------------
-
-The workflow is available in GitHub:
-https://github.com/microbiomedata/enviroMS
-
-The container is available at Docker Hub (microbiomedata/metaMS):
-https://hub.docker.com/r/microbiomedata/enviroms
-
-The python package is available on PyPi:
-https://pypi.org/project/enviroMS/
-
-The databases are available by request.
-Please contact NMDC (support@microbiomedata.org) for access.
-
-Test datasets
--------------
-https://github.com/microbiomedata/enviroMS/tree/master/data
-
-
-Execution Details
----------------------
-
-Please refer to: 
-
-https://github.com/microbiomedata/enviroMS#enviroms-installation
-
-Inputs
-~~~~~~~~
-
-- Supported format for Direct Infusion FT-MS data:  
-   - Thermo raw file (.raw)  
-   - Bruker raw file (.d)
-   - Generic mass list in profile and/or centroid mode (inclusive of all delimiters types and Excel formats)
-- Calibration File:
-    - Molecular Formula Reference (.ref) 
-- Parameters:
-    - CoreMS Parameter File (.json)
-    - EnviroMS Parameter File (.json)
-  
-Outputs
-~~~~~~~~
-
-- Molecular Formula Data-Table, containing m/z measuments, Peak height, Peak Area, Molecular Formula Identification, Ion Type, Confidence Score, etc.  
-    - CSV, TAB-SEPARATED TXT
-    - HDF: CoreMS HDF5 format
-    - XLSX : Microsoft Excel
-- Workflow Metadata:
-    - JSON
-
-Requirements for Execution
---------------------------
-
-- Docker Container Runtime
-  or 
-- Python Environment >= 3.8
-  and 
-- Python Dependencies are listed on requirements.txt
-
-
-Version History
----------------
-
-- 4.1.5
+- 2.1.0
 
 Point of contact
 ----------------
