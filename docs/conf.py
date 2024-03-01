@@ -34,11 +34,8 @@ release = '0.1'
 extensions = [
    'recommonmark',
    'sphinx_markdown_tables',
-   'sphinxcontrib.mermaid',
-   'sphinx.ext.autosectionlabel',
 ]
-# Make sure the target is unique
-autosectionlabel_prefix_document = True
+
 # source_suffix = '.rst'
 source_suffix = ['.rst', '.md']
 # Add any paths that contain templates here, relative to this directory.
@@ -47,7 +44,7 @@ source_suffix = ['.rst', '.md']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build']
+exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
 
