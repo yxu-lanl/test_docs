@@ -34,9 +34,11 @@ release = '0.1'
 extensions = [
    'myst_parser',
    'sphinx_markdown_tables',
-   'sphinxcontrib.mermaid'
+   'sphinxcontrib.mermaid',
+   'sphinx.ext.autosectionlabel',
 ]
-
+# Make sure the target is unique
+   autosectionlabel_prefix_document = True
 # source_suffix = '.rst'
 source_suffix = ['.rst', '.md']
 # Add any paths that contain templates here, relative to this directory.
