@@ -38,7 +38,7 @@ extensions = [
    'sphinx.ext.autosectionlabel',
 ]
 # Make sure the target is unique
-   autosectionlabel_prefix_document = True
+autosectionlabel_prefix_document = True
 # source_suffix = '.rst'
 source_suffix = ['.rst', '.md']
 # Add any paths that contain templates here, relative to this directory.
