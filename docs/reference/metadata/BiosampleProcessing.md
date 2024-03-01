@@ -1,53 +1,447 @@
-
-# Class: biosample processing
-
-
-A process that takes one or more biosamples as inputs and generates one or as outputs. Examples of outputs include samples cultivated from another sample or data objects created by instruments runs.
-
-URI: [nmdc:BiosampleProcessing](https://microbiomedata/meta/BiosampleProcessing)
+# Class: BiosampleProcessing
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OmicsProcessing],[NamedThing],[Biosample]<has%20input%200..*-%20[BiosampleProcessing&#124;id(i):string;name(i):string%20%3F;description(i):string%20%3F;alternative_identifiers(i):string%20*],[BiosampleProcessing]^-[OmicsProcessing],[NamedThing]^-[BiosampleProcessing],[Biosample])](https://yuml.me/diagram/nofunky;dir:TB/class/[OmicsProcessing],[NamedThing],[Biosample]<has%20input%200..*-%20[BiosampleProcessing&#124;id(i):string;name(i):string%20%3F;description(i):string%20%3F;alternative_identifiers(i):string%20*],[BiosampleProcessing]^-[OmicsProcessing],[NamedThing]^-[BiosampleProcessing],[Biosample])
-
-## Parents
-
- *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
-
-## Children
-
- * [OmicsProcessing](OmicsProcessing.md) - The methods and processes used to generate omics data from a biosample or organism.
-
-## Referenced by Class
+_A process that takes one or more biosamples as inputs and generates one or more biosamples as outputs. An example of an output includes samples cultivated from another sample._
 
 
-## Attributes
 
 
-### Own
 
- * [biosample processing➞has input](biosample_processing_has_input.md)  <sub>0..\*</sub>
-     * Description: An input to a process.
-     * Range: [Biosample](Biosample.md)
+URI: [nmdc:BiosampleProcessing](https://w3id.org/nmdc/BiosampleProcessing)
 
-### Inherited from named thing:
 
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
- * [name](name.md)  <sub>0..1</sub>
-     * Description: A human readable label for an entity
-     * Range: [String](types/String.md)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of a thing
-     * Range: [String](types/String.md)
- * [alternative identifiers](alternative_identifiers.md)  <sub>0..\*</sub>
-     * Description: A list of alternative identifiers for the entity.
-     * Range: [String](types/String.md)
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | material processing |
-| **Broad Mappings:** | | OBI:0000094 |
 
+
+
+
+
+
+
+
+
+
+
+```mermaid
+classDiagram
+  class BiosampleProcessing
+    PlannedProcess <|-- BiosampleProcessing
+    
+
+    BiosampleProcessing <|-- Pooling
+    BiosampleProcessing <|-- LibraryPreparation
+    
+    
+    
+  BiosampleProcessing : alternative_identifiers
+    
+  BiosampleProcessing : description
+    
+  BiosampleProcessing : designated_class
+    
+  BiosampleProcessing : end_date
+    
+  BiosampleProcessing : has_failure_categorization
+    
+    BiosampleProcessing --|> FailureCategorization : has_failure_categorization
+    
+  BiosampleProcessing : has_input
+    
+    BiosampleProcessing --|> Biosample : has_input
+    
+  BiosampleProcessing : has_output
+    
+    BiosampleProcessing --|> NamedThing : has_output
+    
+  BiosampleProcessing : id
+    
+  BiosampleProcessing : instrument_name
+    
+  BiosampleProcessing : name
+    
+  BiosampleProcessing : processing_institution
+    
+    BiosampleProcessing --|> processing_institution_enum : processing_institution
+    
+  BiosampleProcessing : protocol_link
+    
+    BiosampleProcessing --|> Protocol : protocol_link
+    
+  BiosampleProcessing : qc_comment
+    
+  BiosampleProcessing : qc_status
+    
+    BiosampleProcessing --|> StatusEnum : qc_status
+    
+  BiosampleProcessing : start_date
+    
+  
+
+```
+
+
+
+
+
+
+## Inheritance
+* [NamedThing](NamedThing.md)
+    * [PlannedProcess](PlannedProcess.md)
+        * **BiosampleProcessing**
+            * [Pooling](Pooling.md)
+            * [LibraryPreparation](LibraryPreparation.md)
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [has_input](has_input.md) | 0..* <br/> [Biosample](Biosample.md) | An input to a process | direct |
+| [designated_class](designated_class.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) |  | [PlannedProcess](PlannedProcess.md) |
+| [end_date](end_date.md) | 0..1 <br/> [String](String.md) | The date on which any process or activity was ended | [PlannedProcess](PlannedProcess.md) |
+| [has_output](has_output.md) | 0..* <br/> [NamedThing](NamedThing.md) | An output biosample to a processing step | [PlannedProcess](PlannedProcess.md) |
+| [processing_institution](processing_institution.md) | 0..1 <br/> [ProcessingInstitutionEnum](ProcessingInstitutionEnum.md) | The organization that processed the sample | [PlannedProcess](PlannedProcess.md) |
+| [protocol_link](protocol_link.md) | 0..1 <br/> [Protocol](Protocol.md) |  | [PlannedProcess](PlannedProcess.md) |
+| [start_date](start_date.md) | 0..1 <br/> [String](String.md) | The date on which any process or activity was started | [PlannedProcess](PlannedProcess.md) |
+| [instrument_name](instrument_name.md) | 0..1 <br/> [String](String.md) | The name of the instrument that was used for processing the sample | [PlannedProcess](PlannedProcess.md) |
+| [qc_status](qc_status.md) | 0..1 <br/> [StatusEnum](StatusEnum.md) | Stores information about the result of a process (ie the process of sequencin... | [PlannedProcess](PlannedProcess.md) |
+| [qc_comment](qc_comment.md) | 0..1 <br/> [String](String.md) | Slot to store additional comments about laboratory or workflow output | [PlannedProcess](PlannedProcess.md) |
+| [has_failure_categorization](has_failure_categorization.md) | 0..* <br/> [FailureCategorization](FailureCategorization.md) |  | [PlannedProcess](PlannedProcess.md) |
+| [id](id.md) | 1..1 <br/> [Uriorcurie](Uriorcurie.md) | A unique identifier for a thing | [NamedThing](NamedThing.md) |
+| [name](name.md) | 0..1 <br/> [String](String.md) | A human readable label for an entity | [NamedThing](NamedThing.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | a human-readable description of a thing | [NamedThing](NamedThing.md) |
+| [alternative_identifiers](alternative_identifiers.md) | 0..* <br/> [Uriorcurie](Uriorcurie.md) | A list of alternative identifiers for the entity | [NamedThing](NamedThing.md) |
+
+
+
+
+
+
+
+## Aliases
+
+
+* material processing
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | nmdc:BiosampleProcessing |
+| native | nmdc:BiosampleProcessing |
+| broad | OBI:0000094 |
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: BiosampleProcessing
+description: A process that takes one or more biosamples as inputs and generates one
+  or more biosamples as outputs. An example of an output includes samples cultivated
+  from another sample.
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- material processing
+broad_mappings:
+- OBI:0000094
+is_a: PlannedProcess
+slots:
+- has_input
+slot_usage:
+  id:
+    name: id
+    domain_of:
+    - Biosample
+    - Study
+    - NamedThing
+    - Activity
+    required: true
+    structured_pattern:
+      syntax: '{id_nmdc_prefix}:bsmprc-{id_shoulder}-{id_blade}{id_version}{id_locus}'
+      interpolated: true
+  has_input:
+    name: has_input
+    domain_of:
+    - BiosampleProcessing
+    - OmicsProcessing
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: Biosample
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: BiosampleProcessing
+description: A process that takes one or more biosamples as inputs and generates one
+  or more biosamples as outputs. An example of an output includes samples cultivated
+  from another sample.
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- material processing
+broad_mappings:
+- OBI:0000094
+is_a: PlannedProcess
+slot_usage:
+  id:
+    name: id
+    domain_of:
+    - Biosample
+    - Study
+    - NamedThing
+    - Activity
+    required: true
+    structured_pattern:
+      syntax: '{id_nmdc_prefix}:bsmprc-{id_shoulder}-{id_blade}{id_version}{id_locus}'
+      interpolated: true
+  has_input:
+    name: has_input
+    domain_of:
+    - BiosampleProcessing
+    - OmicsProcessing
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: Biosample
+attributes:
+  has_input:
+    name: has_input
+    description: An input to a process.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: NamedThing
+    multivalued: true
+    alias: has_input
+    owner: BiosampleProcessing
+    domain_of:
+    - BiosampleProcessing
+    - OmicsProcessing
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: Biosample
+  designated_class:
+    name: designated_class
+    comments:
+    - required on all instances in a polymorphic Database slot like planned_process_set
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    designates_type: true
+    alias: designated_class
+    owner: BiosampleProcessing
+    domain_of:
+    - PlannedProcess
+    range: uriorcurie
+  end_date:
+    name: end_date
+    description: The date on which any process or activity was ended
+    todos:
+    - add date string validation pattern
+    comments:
+    - We are using string representations of dates until all components of our ecosystem
+      can handle ISO 8610 dates
+    - The date should be formatted as YYYY-MM-DD
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: end_date
+    owner: BiosampleProcessing
+    domain_of:
+    - PlannedProcess
+    range: string
+  has_output:
+    name: has_output
+    description: An output biosample to a processing step
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - output
+    rank: 1000
+    domain: NamedThing
+    multivalued: true
+    alias: has_output
+    owner: BiosampleProcessing
+    domain_of:
+    - OmicsProcessing
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: NamedThing
+  processing_institution:
+    name: processing_institution
+    description: The organization that processed the sample.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: PlannedProcess
+    alias: processing_institution
+    owner: BiosampleProcessing
+    domain_of:
+    - OmicsProcessing
+    - PlannedProcess
+    range: processing_institution_enum
+  protocol_link:
+    name: protocol_link
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: PlannedProcess
+    alias: protocol_link
+    owner: BiosampleProcessing
+    domain_of:
+    - PlannedProcess
+    range: Protocol
+  start_date:
+    name: start_date
+    description: The date on which any process or activity was started
+    todos:
+    - add date string validation pattern
+    comments:
+    - We are using string representations of dates until all components of our ecosystem
+      can handle ISO 8610 dates
+    - The date should be formatted as YYYY-MM-DD
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: start_date
+    owner: BiosampleProcessing
+    domain_of:
+    - PlannedProcess
+    range: string
+  instrument_name:
+    name: instrument_name
+    description: The name of the instrument that was used for processing the sample.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    domain: PlannedProcess
+    alias: instrument_name
+    owner: BiosampleProcessing
+    domain_of:
+    - OmicsProcessing
+    - PlannedProcess
+    range: string
+  qc_status:
+    name: qc_status
+    description: Stores information about the result of a process (ie the process
+      of sequencing a library may have for qc_status of 'fail' if not enough data
+      was generated)
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: qc_status
+    owner: BiosampleProcessing
+    domain_of:
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: StatusEnum
+  qc_comment:
+    name: qc_comment
+    description: Slot to store additional comments about laboratory or workflow output.
+      For workflow output it may describe the particular workflow stage that failed.
+      (ie Failed at call-stage due to a malformed fastq file).
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: qc_comment
+    owner: BiosampleProcessing
+    domain_of:
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: string
+  has_failure_categorization:
+    name: has_failure_categorization
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    multivalued: true
+    alias: has_failure_categorization
+    owner: BiosampleProcessing
+    domain_of:
+    - WorkflowExecutionActivity
+    - PlannedProcess
+    range: FailureCategorization
+  id:
+    name: id
+    description: A unique identifier for a thing. Must be either a CURIE shorthand
+      for a URI or a complete URI
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    identifier: true
+    alias: id
+    owner: BiosampleProcessing
+    domain_of:
+    - Biosample
+    - Study
+    - NamedThing
+    - Activity
+    range: uriorcurie
+    required: true
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
+    structured_pattern:
+      syntax: '{id_nmdc_prefix}:bsmprc-{id_shoulder}-{id_blade}{id_version}{id_locus}'
+      interpolated: true
+  name:
+    name: name
+    description: A human readable label for an entity
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    alias: name
+    owner: BiosampleProcessing
+    domain_of:
+    - Protocol
+    - NamedThing
+    - PersonValue
+    - Activity
+    range: string
+  description:
+    name: description
+    description: a human-readable description of a thing
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    slot_uri: dcterms:description
+    alias: description
+    owner: BiosampleProcessing
+    domain_of:
+    - Study
+    - NamedThing
+    - ImageValue
+    range: string
+  alternative_identifiers:
+    name: alternative_identifiers
+    description: A list of alternative identifiers for the entity.
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 1000
+    multivalued: true
+    alias: alternative_identifiers
+    owner: BiosampleProcessing
+    domain_of:
+    - Biosample
+    - Study
+    - NamedThing
+    - MetaboliteQuantification
+    range: uriorcurie
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
+
+```
+</details>

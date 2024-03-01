@@ -1,23 +1,73 @@
-
-# Slot: output base count
-
-
-After QC analysis nucleotide base count number.
-
-URI: [nmdc:output_base_count](https://microbiomedata/meta/output_base_count)
+# Slot: output_base_count
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
-
-## Parents
-
- *  is_a: [read QC analysis statistic](read_QC_analysis_statistic.md)
-
-## Children
+_After QC analysis nucleotide base count number._
 
 
-## Used by
 
- * [ReadQCAnalysisActivity](ReadQCAnalysisActivity.md)
+URI: [nmdc:output_base_count](https://w3id.org/nmdc/output_base_count)
+
+
+
+
+## Inheritance
+
+* [read_qc_analysis_statistic](read_qc_analysis_statistic.md)
+    * **output_base_count**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[ReadQcAnalysisActivity](ReadQcAnalysisActivity.md) | A workflow execution activity that performs quality control on raw Illumina r... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Float](Float.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: output_base_count
+description: After QC analysis nucleotide base count number.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+is_a: read_qc_analysis_statistic
+alias: output_base_count
+domain_of:
+- ReadQcAnalysisActivity
+range: float
+
+```
+</details>

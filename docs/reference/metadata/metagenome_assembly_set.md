@@ -1,22 +1,80 @@
-
-# Slot: metagenome assembly set
-
-
-This property links a database object to the set of metagenome assembly activities.
-
-URI: [nmdc:metagenome_assembly_set](https://microbiomedata/meta/metagenome_assembly_set)
+# Slot: metagenome_assembly_set
 
 
-## Domain and Range
-
-[Database](Database.md) &#8594;  <sub>0..\*</sub> [MetagenomeAssembly](MetagenomeAssembly.md)
-
-## Parents
+_This property links a database object to the set of metagenome assembly activities._
 
 
-## Children
+
+URI: [nmdc:metagenome_assembly_set](https://w3id.org/nmdc/metagenome_assembly_set)
 
 
-## Used by
 
- * [Database](Database.md)
+
+## Inheritance
+
+* **metagenome_assembly_set** [ [object_set](object_set.md)]
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[Database](Database.md) | An abstract holder for any set of metadata and data |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [MetagenomeAssembly](MetagenomeAssembly.md)
+
+* Multivalued: True
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: metagenome_assembly_set
+description: This property links a database object to the set of metagenome assembly
+  activities.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+mixins:
+- object_set
+domain: Database
+multivalued: true
+alias: metagenome_assembly_set
+domain_of:
+- Database
+range: MetagenomeAssembly
+inlined: true
+inlined_as_list: true
+
+```
+</details>

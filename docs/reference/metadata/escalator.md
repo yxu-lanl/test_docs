@@ -1,30 +1,105 @@
-
-# Slot: escalator
-
-
-The number of escalators within the built structure
-
-URI: [nmdc:escalator](https://microbiomedata/meta/escalator)
+# Slot: escalator count (escalator)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [TextValue](TextValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_The number of escalators within the built structure_
 
 
-## Used by
+
+URI: [MIXS:0000800](https://w3id.org/mixs/0000800)
 
 
-## Other properties
 
-|  |  |  |
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **escalator**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | escalator count |
-| **Mappings:** | | mixs:escalator |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [TextValue](TextValue.md)
+
+
+
+## Aliases
+
+
+* escalator count
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| 4 |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | value || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: escalator
+annotations:
+  expected_value:
+    tag: expected_value
+    value: value
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: The number of escalators within the built structure
+title: escalator count
+examples:
+- value: '4'
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- escalator count
+rank: 1000
+is_a: core field
+slot_uri: MIXS:0000800
+multivalued: false
+alias: escalator
+domain_of:
+- Biosample
+range: TextValue
+
+```
+</details>

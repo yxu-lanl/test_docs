@@ -1,22 +1,72 @@
-
 # Slot: smiles
 
 
-A string encoding of a molecular graph, no chiral or isotopic information. There are usually a large number of valid SMILES which represent a given structure. For example, CCO, OCC and C(O)C all specify the structure of ethanol.
-
-URI: [nmdc:smiles](https://microbiomedata/meta/smiles)
+_A string encoding of a molecular graph, no chiral or isotopic information. There are usually a large number of valid SMILES which represent a given structure. For example, CCO, OCC and C(O)C all specify the structure of ethanol._
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [String](types/String.md)
-
-## Parents
+URI: [nmdc:smiles](https://w3id.org/nmdc/smiles)
 
 
-## Children
 
- *  [chemical entity➞smiles](chemical_entity_smiles.md)
+<!-- no inheritance hierarchy -->
 
-## Used by
 
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[ChemicalEntity](ChemicalEntity.md) | An atom or molecule that can be represented with a chemical formula |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+* Multivalued: True
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: smiles
+description: A string encoding of a molecular graph, no chiral or isotopic information.
+  There are usually a large number of valid SMILES which represent a given structure.
+  For example, CCO, OCC and C(O)C all specify the structure of ethanol.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+multivalued: true
+alias: smiles
+domain_of:
+- ChemicalEntity
+range: string
+
+```
+</details>

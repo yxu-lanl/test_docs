@@ -1,23 +1,73 @@
-
-# Slot: input read count
-
-
-The sequence count number of input reads for QC analysis.
-
-URI: [nmdc:input_read_count](https://microbiomedata/meta/input_read_count)
+# Slot: input_read_count
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
-
-## Parents
-
- *  is_a: [read QC analysis statistic](read_QC_analysis_statistic.md)
-
-## Children
+_The sequence count number of input reads for QC analysis._
 
 
-## Used by
 
- * [ReadQCAnalysisActivity](ReadQCAnalysisActivity.md)
+URI: [nmdc:input_read_count](https://w3id.org/nmdc/input_read_count)
+
+
+
+
+## Inheritance
+
+* [read_qc_analysis_statistic](read_qc_analysis_statistic.md)
+    * **input_read_count**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[ReadQcAnalysisActivity](ReadQcAnalysisActivity.md) | A workflow execution activity that performs quality control on raw Illumina r... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Float](Float.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: input_read_count
+description: The sequence count number of input reads for QC analysis.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+is_a: read_qc_analysis_statistic
+alias: input_read_count
+domain_of:
+- ReadQcAnalysisActivity
+range: float
+
+```
+</details>

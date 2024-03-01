@@ -1,31 +1,108 @@
-
-# Slot: org_nitro
-
-
-Concentration of organic nitrogen
-
-URI: [nmdc:org_nitro](https://microbiomedata/meta/org_nitro)
+# Slot: organic nitrogen (org_nitro)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [QuantityValue](QuantityValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Concentration of organic nitrogen_
 
 
-## Used by
 
- * [Biosample](Biosample.md)
+URI: [MIXS:0000205](https://w3id.org/mixs/0000205)
 
-## Other properties
 
-|  |  |  |
+
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **org_nitro**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | organic nitrogen |
-| **Mappings:** | | mixs:org_nitro |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [QuantityValue](QuantityValue.md)
+
+
+
+## Aliases
+
+
+* organic nitrogen
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| 4 micromole per liter |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | measurement value || preferred_unit | microgram per liter || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: org_nitro
+annotations:
+  expected_value:
+    tag: expected_value
+    value: measurement value
+  preferred_unit:
+    tag: preferred_unit
+    value: microgram per liter
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: Concentration of organic nitrogen
+title: organic nitrogen
+examples:
+- value: 4 micromole per liter
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- organic nitrogen
+rank: 1000
+is_a: core field
+slot_uri: MIXS:0000205
+multivalued: false
+alias: org_nitro
+domain_of:
+- Biosample
+range: QuantityValue
+
+```
+</details>

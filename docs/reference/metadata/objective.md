@@ -1,29 +1,71 @@
-
 # Slot: objective
 
 
-The scientific objectives associated with the entity. It SHOULD correspond to scientific norms for objectives field in a structured abstract.
-
-URI: [nmdc:objective](https://microbiomedata/meta/objective)
+_The scientific objectives associated with the entity. It SHOULD correspond to scientific norms for objectives field in a structured abstract._
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+URI: [nmdc:objective](https://w3id.org/nmdc/objective)
 
 
-## Children
+
+<!-- no inheritance hierarchy -->
 
 
-## Used by
 
- * [Study](Study.md)
 
-## Other properties
+## Applicable Classes
 
-|  |  |  |
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Mappings:** | | sio:000337 |
+[Study](Study.md) | A study summarizes the overall goal of a research initiative and outlines the... |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: objective
+description: The scientific objectives associated with the entity. It SHOULD correspond
+  to scientific norms for objectives field in a structured abstract.
+from_schema: https://w3id.org/nmdc/nmdc
+mappings:
+- SIO:000337
+rank: 1000
+multivalued: false
+alias: objective
+domain_of:
+- Study
+range: string
+
+```
+</details>

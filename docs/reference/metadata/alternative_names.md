@@ -1,30 +1,74 @@
-
-# Slot: alternative names
-
-
-A list of alternative names used to refer to the entity. The distinction between name and alternative names is application-specific.
-
-URI: [nmdc:alternative_names](https://microbiomedata/meta/alternative_names)
+# Slot: alternative_names
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..\*</sub> [String](types/String.md)
-
-## Parents
+_A list of alternative names used to refer to the entity. The distinction between name and alternative names is application-specific._
 
 
-## Children
+
+URI: [nmdc:alternative_names](https://w3id.org/nmdc/alternative_names)
 
 
-## Used by
 
- * [Study](Study.md)
+<!-- no inheritance hierarchy -->
 
-## Other properties
 
-|  |  |  |
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Exact Mappings:** | | dcterms:alternative |
-|  | | skos:altLabel |
+[Study](Study.md) | A study summarizes the overall goal of a research initiative and outlines the... |  yes  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+* Multivalued: True
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: alternative_names
+description: A list of alternative names used to refer to the entity. The distinction
+  between name and alternative names is application-specific.
+from_schema: https://w3id.org/nmdc/nmdc
+exact_mappings:
+- dcterms:alternative
+- skos:altLabel
+rank: 1000
+multivalued: true
+alias: alternative_names
+domain_of:
+- Study
+range: string
+
+```
+</details>

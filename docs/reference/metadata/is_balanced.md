@@ -1,22 +1,61 @@
+# Slot: is_balanced
 
-# Slot: is balanced
-
-
-
-
-URI: [nmdc:is_balanced](https://microbiomedata/meta/is_balanced)
+URI: [nmdc:is_balanced](https://w3id.org/nmdc/is_balanced)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Boolean](types/Boolean.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [reaction➞is balanced](reaction_is_balanced.md)
 
-## Used by
+## Applicable Classes
 
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[Reaction](Reaction.md) | An individual biochemical transformation carried out by a functional unit of ... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Boolean](Boolean.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: is_balanced
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: is_balanced
+domain_of:
+- Reaction
+range: boolean
+
+```
+</details>

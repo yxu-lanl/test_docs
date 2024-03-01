@@ -1,33 +1,80 @@
-
-# Slot: has numeric value
-
-
-Links a quantity value to a number
-
-URI: [nmdc:has_numeric_value](https://microbiomedata/meta/has_numeric_value)
+# Slot: has_numeric_value
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
-
-## Parents
+_Links a quantity value to a number_
 
 
-## Children
 
- *  [has maximum numeric value](has_maximum_numeric_value.md)
- *  [has minimum numeric value](has_minimum_numeric_value.md)
- *  [quantity value➞has numeric value](quantity_value_has_numeric_value.md)
+URI: [nmdc:has_numeric_value](https://w3id.org/nmdc/has_numeric_value)
 
-## Used by
 
- * [IntegerValue](IntegerValue.md)
 
-## Other properties
 
-|  |  |  |
+## Inheritance
+
+* **has_numeric_value**
+    * [has_minimum_numeric_value](has_minimum_numeric_value.md)
+    * [has_maximum_numeric_value](has_maximum_numeric_value.md)
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Mappings:** | | qud:quantityValue |
-|  | | schema:value |
+[QuantityValue](QuantityValue.md) | A simple quantity, e |  yes  |
+[IntegerValue](IntegerValue.md) | A value that is an integer |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [Float](Float.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: has_numeric_value
+description: Links a quantity value to a number
+from_schema: https://w3id.org/nmdc/nmdc
+mappings:
+- qud:quantityValue
+- schema:value
+rank: 1000
+domain: QuantityValue
+multivalued: false
+alias: has_numeric_value
+domain_of:
+- QuantityValue
+- IntegerValue
+range: float
+
+```
+</details>

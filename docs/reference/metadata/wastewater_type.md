@@ -1,30 +1,107 @@
-
-# Slot: wastewater_type
-
-
-The origin of wastewater such as human waste, rainfall, storm drains, etc.
-
-URI: [nmdc:wastewater_type](https://microbiomedata/meta/wastewater_type)
+# Slot: wastewater type (wastewater_type)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [TextValue](TextValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_The origin of wastewater such as human waste, rainfall, storm drains, etc._
 
 
-## Used by
+
+URI: [MIXS:0000353](https://w3id.org/mixs/0000353)
 
 
-## Other properties
 
-|  |  |  |
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **wastewater_type**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | wastewater type |
-| **Mappings:** | | mixs:wastewater_type |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [TextValue](TextValue.md)
+
+
+
+## Aliases
+
+
+* wastewater type
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+|  |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | wastewater type name || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: wastewater_type
+annotations:
+  expected_value:
+    tag: expected_value
+    value: wastewater type name
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: The origin of wastewater such as human waste, rainfall, storm drains,
+  etc.
+title: wastewater type
+examples:
+- value: ''
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- wastewater type
+rank: 1000
+is_a: core field
+string_serialization: '{text}'
+slot_uri: MIXS:0000353
+multivalued: false
+alias: wastewater_type
+domain_of:
+- Biosample
+range: TextValue
+
+```
+</details>

@@ -1,25 +1,59 @@
+# Slot: read_qc_analysis_statistic
 
-# Slot: read QC analysis statistic
-
-
-
-
-URI: [nmdc:read_QC_analysis_statistic](https://microbiomedata/meta/read_QC_analysis_statistic)
+URI: [nmdc:read_qc_analysis_statistic](https://w3id.org/nmdc/read_qc_analysis_statistic)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
 
 
-## Children
+## Inheritance
 
- *  [input base count](input_base_count.md)
- *  [input read count](input_read_count.md)
- *  [output base count](output_base_count.md)
- *  [output read count](output_read_count.md)
+* **read_qc_analysis_statistic**
+    * [input_read_count](input_read_count.md)
+    * [input_base_count](input_base_count.md)
+    * [output_read_count](output_read_count.md)
+    * [output_base_count](output_base_count.md)
 
-## Used by
 
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: read_qc_analysis_statistic
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+abstract: true
+alias: read_qc_analysis_statistic
+range: string
+
+```
+</details>

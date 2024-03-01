@@ -1,22 +1,68 @@
-
-# Slot: has boolean value
-
-
-Links a quantity value to a boolean
-
-URI: [nmdc:has_boolean_value](https://microbiomedata/meta/has_boolean_value)
+# Slot: has_boolean_value
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [Boolean](types/Boolean.md)
-
-## Parents
+_Links a quantity value to a boolean_
 
 
-## Children
+
+URI: [nmdc:has_boolean_value](https://w3id.org/nmdc/has_boolean_value)
 
 
-## Used by
 
- * [BooleanValue](BooleanValue.md)
+<!-- no inheritance hierarchy -->
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[BooleanValue](BooleanValue.md) | A value that is a boolean |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Boolean](Boolean.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: has_boolean_value
+description: Links a quantity value to a boolean
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+multivalued: false
+alias: has_boolean_value
+domain_of:
+- BooleanValue
+range: boolean
+
+```
+</details>

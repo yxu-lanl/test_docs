@@ -1,30 +1,106 @@
-
-# Slot: host_shape
-
-
-Morphological shape of host
-
-URI: [nmdc:host_shape](https://microbiomedata/meta/host_shape)
+# Slot: host shape (host_shape)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [TextValue](TextValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Morphological shape of host_
 
 
-## Used by
+
+URI: [MIXS:0000261](https://w3id.org/mixs/0000261)
 
 
-## Other properties
 
-|  |  |  |
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **host_shape**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | host shape |
-| **Mappings:** | | mixs:host_shape |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [TextValue](TextValue.md)
+
+
+
+## Aliases
+
+
+* host shape
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| round |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | shape || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: host_shape
+annotations:
+  expected_value:
+    tag: expected_value
+    value: shape
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: Morphological shape of host
+title: host shape
+examples:
+- value: round
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- host shape
+rank: 1000
+is_a: core field
+string_serialization: '{text}'
+slot_uri: MIXS:0000261
+multivalued: false
+alias: host_shape
+domain_of:
+- Biosample
+range: TextValue
+
+```
+</details>

@@ -1,30 +1,106 @@
-
-# Slot: avg_occup
-
-
-Daily average  occupancy of room
-
-URI: [nmdc:avg_occup](https://microbiomedata/meta/avg_occup)
+# Slot: average daily occupancy (avg_occup)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [TextValue](TextValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Daily average occupancy of room. Indicate the number of person(s) daily occupying the sampling room._
 
 
-## Used by
+
+URI: [MIXS:0000775](https://w3id.org/mixs/0000775)
 
 
-## Other properties
 
-|  |  |  |
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **avg_occup**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | average daily occupancy |
-| **Mappings:** | | mixs:avg_occup |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [TextValue](TextValue.md)
+
+
+
+## Aliases
+
+
+* average daily occupancy
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| 2 |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | value || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: avg_occup
+annotations:
+  expected_value:
+    tag: expected_value
+    value: value
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: Daily average occupancy of room. Indicate the number of person(s) daily
+  occupying the sampling room.
+title: average daily occupancy
+examples:
+- value: '2'
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- average daily occupancy
+rank: 1000
+is_a: core field
+slot_uri: MIXS:0000775
+multivalued: false
+alias: avg_occup
+domain_of:
+- Biosample
+range: TextValue
+
+```
+</details>

@@ -1,31 +1,76 @@
-
-# Slot: principal investigator
-
-
-Principal Investigator who led the study and/or generated the dataset.
-
-URI: [nmdc:principal_investigator](https://microbiomedata/meta/principal_investigator)
+# Slot: principal_investigator
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [PersonValue](PersonValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Principal Investigator who led the study and/or generated the dataset._
 
 
-## Used by
 
- * [OmicsProcessing](OmicsProcessing.md)
- * [Study](Study.md)
+URI: [nmdc:principal_investigator](https://w3id.org/nmdc/principal_investigator)
 
-## Other properties
 
-|  |  |  |
+
+<!-- no inheritance hierarchy -->
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | PI |
+[Study](Study.md) | A study summarizes the overall goal of a research initiative and outlines the... |  no  |
+[OmicsProcessing](OmicsProcessing.md) | The methods and processes used to generate omics data from a biosample or org... |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [PersonValue](PersonValue.md)
+
+
+
+## Aliases
+
+
+* PI
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: principal_investigator
+description: Principal Investigator who led the study and/or generated the dataset.
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- PI
+rank: 1000
+alias: principal_investigator
+domain_of:
+- Study
+- OmicsProcessing
+range: PersonValue
+
+```
+</details>

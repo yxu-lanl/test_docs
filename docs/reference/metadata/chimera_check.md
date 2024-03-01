@@ -1,32 +1,107 @@
-
-# Slot: chimera_check
-
-
-A chimeric sequence, or chimera for short, is a sequence comprised of two or more phylogenetically distinct parent sequences. Chimeras are usually PCR artifacts thought to occur when a prematurely terminated amplicon reanneals to a foreign DNA strand and is copied to completion in the following PCR cycles. The point at which the chimeric sequence changes from one parent to the next is called the breakpoint or conversion point
-
-URI: [nmdc:chimera_check](https://microbiomedata/meta/chimera_check)
+# Slot: chimera check software (chimera_check)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [TextValue](TextValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Tool(s) used for chimera checking, including version number and parameters, to discover and remove chimeric sequences. A chimeric sequence is comprised of two or more phylogenetically distinct parent sequences._
 
 
-## Used by
 
- * [OmicsProcessing](OmicsProcessing.md)
+URI: [MIXS:0000052](https://w3id.org/mixs/0000052)
 
-## Other properties
 
-|  |  |  |
+
+
+## Inheritance
+
+* [sequencing_field](sequencing_field.md)
+    * **chimera_check**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | chimera check |
-| **Mappings:** | | mixs:chimera_check |
-| **In Subsets:** | | sequencing |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
+[OmicsProcessing](OmicsProcessing.md) | The methods and processes used to generate omics data from a biosample or org... |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [TextValue](TextValue.md)
+
+
+
+## Aliases
+
+
+* chimera check software
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| uchime;v4.1;default parameters |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | name and version of software, parameters used |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: chimera_check
+annotations:
+  expected_value:
+    tag: expected_value
+    value: name and version of software, parameters used
+description: Tool(s) used for chimera checking, including version number and parameters,
+  to discover and remove chimeric sequences. A chimeric sequence is comprised of two
+  or more phylogenetically distinct parent sequences.
+title: chimera check software
+examples:
+- value: uchime;v4.1;default parameters
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- chimera check software
+rank: 1000
+is_a: sequencing field
+string_serialization: '{software};{version};{parameters}'
+slot_uri: MIXS:0000052
+multivalued: false
+alias: chimera_check
+domain_of:
+- Biosample
+- OmicsProcessing
+range: TextValue
+
+```
+</details>

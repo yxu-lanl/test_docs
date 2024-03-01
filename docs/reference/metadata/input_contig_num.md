@@ -1,22 +1,61 @@
+# Slot: input_contig_num
 
-# Slot: input contig num
-
-
-
-
-URI: [nmdc:input_contig_num](https://microbiomedata/meta/input_contig_num)
+URI: [nmdc:input_contig_num](https://w3id.org/nmdc/input_contig_num)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
 
-## Used by
+## Applicable Classes
 
- * [MAGsAnalysisActivity](MAGsAnalysisActivity.md)
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[MagsAnalysisActivity](MagsAnalysisActivity.md) | A workflow execution activity that uses computational binning tools to group ... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Integer](Integer.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: input_contig_num
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: input_contig_num
+domain_of:
+- MagsAnalysisActivity
+range: integer
+
+```
+</details>

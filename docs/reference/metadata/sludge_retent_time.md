@@ -1,30 +1,108 @@
-
-# Slot: sludge_retent_time
-
-
-The time activated sludge remains in reactor
-
-URI: [nmdc:sludge_retent_time](https://microbiomedata/meta/sludge_retent_time)
+# Slot: sludge retention time (sludge_retent_time)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [QuantityValue](QuantityValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_The time activated sludge remains in reactor_
 
 
-## Used by
+
+URI: [MIXS:0000669](https://w3id.org/mixs/0000669)
 
 
-## Other properties
 
-|  |  |  |
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **sludge_retent_time**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | sludge retention time |
-| **Mappings:** | | mixs:sludge_retent_time |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [QuantityValue](QuantityValue.md)
+
+
+
+## Aliases
+
+
+* sludge retention time
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+|  |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | measurement value || preferred_unit | hours || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: sludge_retent_time
+annotations:
+  expected_value:
+    tag: expected_value
+    value: measurement value
+  preferred_unit:
+    tag: preferred_unit
+    value: hours
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: The time activated sludge remains in reactor
+title: sludge retention time
+examples:
+- value: ''
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- sludge retention time
+rank: 1000
+is_a: core field
+slot_uri: MIXS:0000669
+multivalued: false
+alias: sludge_retent_time
+domain_of:
+- Biosample
+range: QuantityValue
+
+```
+</details>

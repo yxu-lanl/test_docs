@@ -1,23 +1,69 @@
-
 # Slot: mod_date
 
 
-The last date on which the database information was modified.
-
-URI: [nmdc:mod_date](https://microbiomedata/meta/mod_date)
+_The last date on which the database information was modified._
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+URI: [nmdc:mod_date](https://w3id.org/nmdc/mod_date)
 
 
-## Children
+
+<!-- no inheritance hierarchy -->
 
 
-## Used by
 
- * [Biosample](Biosample.md)
- * [OmicsProcessing](OmicsProcessing.md)
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
+[OmicsProcessing](OmicsProcessing.md) | The methods and processes used to generate omics data from a biosample or org... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: mod_date
+description: The last date on which the database information was modified.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: mod_date
+domain_of:
+- Biosample
+- OmicsProcessing
+range: string
+
+```
+</details>

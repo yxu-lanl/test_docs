@@ -1,22 +1,68 @@
-
 # Slot: peptide_spectral_count
 
 
-sum of filter passing MS2 spectra associated with the peptide sequence within a given LC-MS/MS data file
-
-URI: [nmdc:peptide_spectral_count](https://microbiomedata/meta/peptide_spectral_count)
+_sum of filter passing MS2 spectra associated with the peptide sequence within a given LC-MS/MS data file_
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
-
-## Parents
+URI: [nmdc:peptide_spectral_count](https://w3id.org/nmdc/peptide_spectral_count)
 
 
-## Children
 
- *  [peptide quantification➞peptide_spectral_count](peptide_quantification_peptide_spectral_count.md)
+<!-- no inheritance hierarchy -->
 
-## Used by
 
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[PeptideQuantification](PeptideQuantification.md) | This is used to link a metaproteomics analysis workflow to a specific peptide... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Integer](Integer.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: peptide_spectral_count
+description: sum of filter passing MS2 spectra associated with the peptide sequence
+  within a given LC-MS/MS data file
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: peptide_spectral_count
+domain_of:
+- PeptideQuantification
+range: integer
+
+```
+</details>

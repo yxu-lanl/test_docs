@@ -1,23 +1,69 @@
-
 # Slot: add_date
 
 
-The date on which the information was added to the database.
-
-URI: [nmdc:add_date](https://microbiomedata/meta/add_date)
+_The date on which the information was added to the database._
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+URI: [nmdc:add_date](https://w3id.org/nmdc/add_date)
 
 
-## Children
+
+<!-- no inheritance hierarchy -->
 
 
-## Used by
 
- * [Biosample](Biosample.md)
- * [OmicsProcessing](OmicsProcessing.md)
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
+[OmicsProcessing](OmicsProcessing.md) | The methods and processes used to generate omics data from a biosample or org... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: add_date
+description: The date on which the information was added to the database.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: add_date
+domain_of:
+- Biosample
+- OmicsProcessing
+range: string
+
+```
+</details>

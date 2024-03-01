@@ -1,29 +1,77 @@
-
 # Slot: phase
 
 
-The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.
-
-URI: [nmdc:phase](https://microbiomedata/meta/phase)
+_The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2._
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
-
-## Parents
+URI: [nmdc:phase](https://w3id.org/nmdc/phase)
 
 
-## Children
 
- *  [genome feature➞phase](genome_feature_phase.md)
-
-## Used by
+<!-- no inheritance hierarchy -->
 
 
-## Other properties
 
-|  |  |  |
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Exact Mappings:** | | biolink:phase |
+[GenomeFeature](GenomeFeature.md) | A feature localized to an interval along a genome |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [Integer](Integer.md)
+
+* Minimum Value: 0
+
+* Maximum Value: 2
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: phase
+description: The phase for a coding sequence entity. For example, phase of a CDS as
+  represented in a GFF3 with a value of 0, 1 or 2.
+from_schema: https://w3id.org/nmdc/nmdc
+exact_mappings:
+- biolink:phase
+rank: 1000
+domain: GenomeFeature
+alias: phase
+domain_of:
+- GenomeFeature
+range: integer
+minimum_value: 0
+maximum_value: 2
+
+```
+</details>

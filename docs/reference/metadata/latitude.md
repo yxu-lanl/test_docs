@@ -1,30 +1,80 @@
-
 # Slot: latitude
 
 
-latitude
-
-URI: [nmdc:latitude](https://microbiomedata/meta/latitude)
+_latitude_
 
 
-## Domain and Range
 
-[GeolocationValue](GeolocationValue.md) &#8594;  <sub>0..1</sub> [DecimalDegree](types/DecimalDegree.md)
-
-## Parents
+URI: [wgs84:lat](http://www.w3.org/2003/01/geo/wgs84_pos#lat)
 
 
-## Children
+
+<!-- no inheritance hierarchy -->
 
 
-## Used by
 
- * [GeolocationValue](GeolocationValue.md)
 
-## Other properties
+## Applicable Classes
 
-|  |  |  |
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Mappings:** | | wgs:lat |
-|  | | schema:latitude |
+[GeolocationValue](GeolocationValue.md) | A normalized value for a location on the earth's surface |  yes  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [DecimalDegree](DecimalDegree.md)
+
+
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| -33.460524 |
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: latitude
+description: latitude
+examples:
+- value: '-33.460524'
+from_schema: https://w3id.org/nmdc/nmdc
+mappings:
+- schema:latitude
+rank: 1000
+domain: GeolocationValue
+slot_uri: wgs84:lat
+alias: latitude
+domain_of:
+- GeolocationValue
+range: decimal degree
+
+```
+</details>

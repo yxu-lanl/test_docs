@@ -1,22 +1,61 @@
-
 # Slot: inchi
 
+URI: [nmdc:inchi](https://w3id.org/nmdc/inchi)
 
 
 
-URI: [nmdc:inchi](https://microbiomedata/meta/inchi)
+<!-- no inheritance hierarchy -->
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
 
 
-## Children
+## Applicable Classes
 
- *  [chemical entity➞inchi](chemical_entity_inchi.md)
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[ChemicalEntity](ChemicalEntity.md) | An atom or molecule that can be represented with a chemical formula |  no  |
 
-## Used by
 
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: inchi
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: inchi
+domain_of:
+- ChemicalEntity
+range: string
+
+```
+</details>

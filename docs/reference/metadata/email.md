@@ -1,29 +1,69 @@
-
 # Slot: email
 
 
-An email address for an entity such as a person. This should be the primarly email address used.
-
-URI: [nmdc:email](https://microbiomedata/meta/email)
+_An email address for an entity such as a person. This should be the primary email address used._
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+URI: [schema:email](http://schema.org/email)
 
 
-## Children
+
+<!-- no inheritance hierarchy -->
 
 
-## Used by
 
- * [PersonValue](PersonValue.md)
 
-## Other properties
+## Applicable Classes
 
-|  |  |  |
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Mappings:** | | schema:email |
+[PersonValue](PersonValue.md) | An attribute value representing a person |  yes  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: email
+description: An email address for an entity such as a person. This should be the primary
+  email address used.
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+slot_uri: schema:email
+alias: email
+domain_of:
+- PersonValue
+range: string
+
+```
+</details>

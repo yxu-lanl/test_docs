@@ -1,31 +1,78 @@
-
-# Slot: has unit
-
-
-Links a quantity value to a unit
-
-URI: [nmdc:has_unit](https://microbiomedata/meta/has_unit)
+# Slot: has_unit
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [Unit](types/Unit.md)
-
-## Parents
+_Links a QuantityValue to a unit_
 
 
-## Children
 
- *  [quantity value➞has unit](quantity_value_has_unit.md)
-
-## Used by
+URI: [nmdc:has_unit](https://w3id.org/nmdc/has_unit)
 
 
-## Other properties
 
-|  |  |  |
+<!-- no inheritance hierarchy -->
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | scale |
-| **Mappings:** | | qud:unit |
-|  | | schema:unitCode |
+[QuantityValue](QuantityValue.md) | A simple quantity, e |  yes  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [Unit](Unit.md)
+
+
+
+## Aliases
+
+
+* scale
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: has_unit
+description: Links a QuantityValue to a unit
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- scale
+mappings:
+- qud:unit
+- schema:unitCode
+rank: 1000
+domain: QuantityValue
+alias: has_unit
+domain_of:
+- QuantityValue
+range: unit
+
+```
+</details>

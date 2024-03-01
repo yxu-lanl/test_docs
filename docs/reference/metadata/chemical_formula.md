@@ -1,22 +1,67 @@
-
-# Slot: chemical formula
-
-
-A generic grouping for miolecular formulae and empirican formulae
-
-URI: [nmdc:chemical_formula](https://microbiomedata/meta/chemical_formula)
+# Slot: chemical_formula
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
+_A generic grouping for molecular formulae and empirical formulae_
 
 
-## Children
 
- *  [chemical entity➞chemical formula](chemical_entity_chemical_formula.md)
+URI: [nmdc:chemical_formula](https://w3id.org/nmdc/chemical_formula)
 
-## Used by
 
+
+<!-- no inheritance hierarchy -->
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[ChemicalEntity](ChemicalEntity.md) | An atom or molecule that can be represented with a chemical formula |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: chemical_formula
+description: A generic grouping for molecular formulae and empirical formulae
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: chemical_formula
+domain_of:
+- ChemicalEntity
+range: string
+
+```
+</details>

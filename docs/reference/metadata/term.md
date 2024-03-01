@@ -1,29 +1,72 @@
-
 # Slot: term
 
 
-pointer to an ontology class
-
-URI: [nmdc:term](https://microbiomedata/meta/term)
+_pointer to an ontology class_
 
 
-## Domain and Range
 
-[ControlledTermValue](ControlledTermValue.md) &#8594;  <sub>0..1</sub> [OntologyClass](OntologyClass.md)
-
-## Parents
+URI: [nmdc:term](https://w3id.org/nmdc/term)
 
 
-## Children
+
+<!-- no inheritance hierarchy -->
 
 
-## Used by
 
- * [ControlledTermValue](ControlledTermValue.md)
 
-## Other properties
+## Applicable Classes
 
-|  |  |  |
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Mappings:** | | rdf:type |
+[ControlledTermValue](ControlledTermValue.md) | A controlled term or class from an ontology |  no  |
+[ControlledIdentifiedTermValue](ControlledIdentifiedTermValue.md) | A controlled term or class from an ontology, requiring the presence of term w... |  yes  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [OntologyClass](OntologyClass.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: term
+description: pointer to an ontology class
+notes:
+- 'removed ''slot_uri: rdf:type'''
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+domain: ControlledTermValue
+alias: term
+domain_of:
+- ControlledTermValue
+range: OntologyClass
+inlined: true
+
+```
+</details>

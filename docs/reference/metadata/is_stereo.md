@@ -1,22 +1,61 @@
+# Slot: is_stereo
 
-# Slot: is stereo
-
-
-
-
-URI: [nmdc:is_stereo](https://microbiomedata/meta/is_stereo)
+URI: [nmdc:is_stereo](https://w3id.org/nmdc/is_stereo)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Boolean](types/Boolean.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [reaction➞is stereo](reaction_is_stereo.md)
 
-## Used by
+## Applicable Classes
 
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[Reaction](Reaction.md) | An individual biochemical transformation carried out by a functional unit of ... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Boolean](Boolean.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: is_stereo
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: is_stereo
+domain_of:
+- Reaction
+range: boolean
+
+```
+</details>

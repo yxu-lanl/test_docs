@@ -1,31 +1,105 @@
-
-# Slot: extreme_event
-
-
-Unusual physical events that may have affected microbial populations
-
-URI: [nmdc:extreme_event](https://microbiomedata/meta/extreme_event)
+# Slot: history/extreme events (extreme_event)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [TimestampValue](TimestampValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Unusual physical events that may have affected microbial populations_
 
 
-## Used by
 
- * [Biosample](Biosample.md)
+URI: [MIXS:0000320](https://w3id.org/mixs/0000320)
 
-## Other properties
 
-|  |  |  |
+
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **extreme_event**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | history/extreme events |
-| **Mappings:** | | mixs:extreme_event |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  yes  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [TimestampValue](TimestampValue.md)
+
+
+
+## Aliases
+
+
+* history/extreme events
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+|  |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | date || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: extreme_event
+annotations:
+  expected_value:
+    tag: expected_value
+    value: date
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: Unusual physical events that may have affected microbial populations
+title: history/extreme events
+examples:
+- value: ''
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- history/extreme events
+rank: 1000
+is_a: core field
+slot_uri: MIXS:0000320
+multivalued: false
+alias: extreme_event
+domain_of:
+- Biosample
+range: TimestampValue
+
+```
+</details>

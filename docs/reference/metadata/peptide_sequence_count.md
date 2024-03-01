@@ -1,22 +1,67 @@
-
 # Slot: peptide_sequence_count
 
 
-count of peptide sequences grouped to the best_protein
-
-URI: [nmdc:peptide_sequence_count](https://microbiomedata/meta/peptide_sequence_count)
+_count of peptide sequences grouped to the best_protein_
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
-
-## Parents
+URI: [nmdc:peptide_sequence_count](https://w3id.org/nmdc/peptide_sequence_count)
 
 
-## Children
 
- *  [protein quantification➞peptide_sequence_count](protein_quantification_peptide_sequence_count.md)
+<!-- no inheritance hierarchy -->
 
-## Used by
 
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[ProteinQuantification](ProteinQuantification.md) | This is used to link a metaproteomics analysis workflow to a specific protein |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Integer](Integer.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: peptide_sequence_count
+description: count of peptide sequences grouped to the best_protein
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: peptide_sequence_count
+domain_of:
+- ProteinQuantification
+range: integer
+
+```
+</details>

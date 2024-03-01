@@ -1,30 +1,109 @@
-
-# Slot: dew_point
-
-
-The temperature to which a given parcel of humid air must be cooled, at constant barometric pressure, for water vapor to condense into water.
-
-URI: [nmdc:dew_point](https://microbiomedata/meta/dew_point)
+# Slot: dew point (dew_point)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [QuantityValue](QuantityValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_The temperature to which a given parcel of humid air must be cooled, at constant barometric pressure, for water vapor to condense into water._
 
 
-## Used by
+
+URI: [MIXS:0000129](https://w3id.org/mixs/0000129)
 
 
-## Other properties
 
-|  |  |  |
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **dew_point**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | dew point |
-| **Mappings:** | | mixs:dew_point |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [QuantityValue](QuantityValue.md)
+
+
+
+## Aliases
+
+
+* dew point
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| 22 degree Celsius |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | measurement value || preferred_unit | degree Celsius || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: dew_point
+annotations:
+  expected_value:
+    tag: expected_value
+    value: measurement value
+  preferred_unit:
+    tag: preferred_unit
+    value: degree Celsius
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: The temperature to which a given parcel of humid air must be cooled,
+  at constant barometric pressure, for water vapor to condense into water.
+title: dew point
+examples:
+- value: 22 degree Celsius
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- dew point
+rank: 1000
+is_a: core field
+slot_uri: MIXS:0000129
+multivalued: false
+alias: dew_point
+domain_of:
+- Biosample
+range: QuantityValue
+
+```
+</details>

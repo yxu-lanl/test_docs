@@ -1,30 +1,78 @@
-
-# Slot: data object type
-
-
-The type of file represented by the data object.
-
-URI: [nmdc:data_object_type](https://microbiomedata/meta/data_object_type)
+# Slot: data_object_type
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [file type enum](file type enum.md)
-
-## Parents
+_The type of file represented by the data object._
 
 
-## Children
+
+URI: [nmdc:data_object_type](https://w3id.org/nmdc/data_object_type)
 
 
-## Used by
 
- * [DataObject](DataObject.md)
+<!-- no inheritance hierarchy -->
 
-## Other properties
 
-|  |  |  |
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Examples:** | | Example(value='FT ICR-MS Analysis Results', description=None) |
-|  | | Example(value='GC-MS Metabolomics Results', description=None) |
+[DataObject](DataObject.md) | An object that primarily consists of symbols that represent information |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [FileTypeEnum](FileTypeEnum.md)
+
+
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| FT ICR-MS Analysis Results |
+| GC-MS Metabolomics Results |
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: data_object_type
+description: The type of file represented by the data object.
+examples:
+- value: FT ICR-MS Analysis Results
+- value: GC-MS Metabolomics Results
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: data_object_type
+domain_of:
+- DataObject
+range: FileTypeEnum
+
+```
+</details>

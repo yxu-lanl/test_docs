@@ -1,22 +1,65 @@
+# Slot: has_metabolite_quantifications
 
-# Slot: has metabolite quantifications
-
-
-
-
-URI: [nmdc:has_metabolite_quantifications](https://microbiomedata/meta/has_metabolite_quantifications)
+URI: [nmdc:has_metabolite_quantifications](https://w3id.org/nmdc/has_metabolite_quantifications)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [MetaboliteQuantification](MetaboliteQuantification.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [metabolomics analysis activity➞has metabolite quantifications](metabolomics_analysis_activity_has_metabolite_quantifications.md)
 
-## Used by
+## Applicable Classes
 
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[MetabolomicsAnalysisActivity](MetabolomicsAnalysisActivity.md) |  |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [MetaboliteQuantification](MetaboliteQuantification.md)
+
+* Multivalued: True
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: has_metabolite_quantifications
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+domain: MetabolomicsAnalysisActivity
+multivalued: true
+alias: has_metabolite_quantifications
+domain_of:
+- MetabolomicsAnalysisActivity
+range: MetaboliteQuantification
+
+```
+</details>

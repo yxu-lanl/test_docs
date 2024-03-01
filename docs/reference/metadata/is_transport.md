@@ -1,22 +1,61 @@
+# Slot: is_transport
 
-# Slot: is transport
-
-
-
-
-URI: [nmdc:is_transport](https://microbiomedata/meta/is_transport)
+URI: [nmdc:is_transport](https://w3id.org/nmdc/is_transport)
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Boolean](types/Boolean.md)
-
-## Parents
+<!-- no inheritance hierarchy -->
 
 
-## Children
 
- *  [reaction➞is transport](reaction_is_transport.md)
 
-## Used by
+## Applicable Classes
 
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[Reaction](Reaction.md) | An individual biochemical transformation carried out by a functional unit of ... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Boolean](Boolean.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: is_transport
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: is_transport
+domain_of:
+- Reaction
+range: boolean
+
+```
+</details>

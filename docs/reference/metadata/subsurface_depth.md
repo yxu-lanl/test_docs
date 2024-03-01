@@ -1,22 +1,61 @@
-
 # Slot: subsurface_depth
 
+URI: [nmdc:subsurface_depth](https://w3id.org/nmdc/subsurface_depth)
 
 
 
-URI: [nmdc:subsurface_depth](https://microbiomedata/meta/subsurface_depth)
+<!-- no inheritance hierarchy -->
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [QuantityValue](QuantityValue.md)
-
-## Parents
 
 
-## Children
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
 
-## Used by
 
- * [Biosample](Biosample.md)
+
+
+
+
+## Properties
+
+* Range: [QuantityValue](QuantityValue.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: subsurface_depth
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: subsurface_depth
+domain_of:
+- Biosample
+range: QuantityValue
+
+```
+</details>

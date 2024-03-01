@@ -1,30 +1,105 @@
-
-# Slot: typ_occup_density
-
-
-Customary or normal density of occupants
-
-URI: [nmdc:typ_occup_density](https://microbiomedata/meta/typ_occup_density)
+# Slot: typical occupant density (typ_occup_density)
 
 
-## Domain and Range
-
-None &#8594;  <sub>0..1</sub> [QuantityValue](QuantityValue.md)
-
-## Parents
-
- *  is_a: [attribute](attribute.md)
-
-## Children
+_Customary or normal density of occupants_
 
 
-## Used by
+
+URI: [MIXS:0000771](https://w3id.org/mixs/0000771)
 
 
-## Other properties
 
-|  |  |  |
+
+## Inheritance
+
+* [core_field](core_field.md)
+    * **typ_occup_density**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
 | --- | --- | --- |
-| **Aliases:** | | typical occupant density |
-| **Mappings:** | | mixs:typ_occup_density |
+[Biosample](Biosample.md) | Biological source material which can be characterized by an experiment |  no  |
 
+
+
+
+
+
+
+## Properties
+
+* Range: [Double](Double.md)
+
+
+
+## Aliases
+
+
+* typical occupant density
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| 25 |
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| expected_value | measurement value || occurrence | 1 |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: typ_occup_density
+annotations:
+  expected_value:
+    tag: expected_value
+    value: measurement value
+  occurrence:
+    tag: occurrence
+    value: '1'
+description: Customary or normal density of occupants
+title: typical occupant density
+examples:
+- value: '25'
+from_schema: https://w3id.org/nmdc/nmdc
+aliases:
+- typical occupant density
+rank: 1000
+is_a: core field
+slot_uri: MIXS:0000771
+multivalued: false
+alias: typ_occup_density
+domain_of:
+- Biosample
+range: double
+
+```
+</details>

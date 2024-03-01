@@ -1,22 +1,67 @@
-
 # Slot: output_read_bases
 
 
-TODO
-
-URI: [nmdc:output_read_bases](https://microbiomedata/meta/output_read_bases)
+_TODO_
 
 
-## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
-
-## Parents
+URI: [nmdc:output_read_bases](https://w3id.org/nmdc/output_read_bases)
 
 
-## Children
 
- *  [read QC analysis activity➞output_read_bases](read_QC_analysis_activity_output_read_bases.md)
+<!-- no inheritance hierarchy -->
 
-## Used by
 
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[ReadQcAnalysisActivity](ReadQcAnalysisActivity.md) | A workflow execution activity that performs quality control on raw Illumina r... |  no  |
+
+
+
+
+
+
+
+## Properties
+
+* Range: [Float](Float.md)
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/nmdc/nmdc
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: output_read_bases
+description: TODO
+from_schema: https://w3id.org/nmdc/nmdc
+rank: 1000
+alias: output_read_bases
+domain_of:
+- ReadQcAnalysisActivity
+range: float
+
+```
+</details>
