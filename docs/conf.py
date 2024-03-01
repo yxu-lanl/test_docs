@@ -33,7 +33,8 @@ release = '0.1'
 # ones.
 extensions = [
    'myst_parser',
-   'sphinx_markdown_tables'
+   'sphinx_markdown_tables',
+   'sphinxcontrib.mermaid'
 ]
 
 # source_suffix = '.rst'
@@ -44,7 +45,7 @@ source_suffix = ['.rst', '.md']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['_build']
 
 # -- Options for HTML output -------------------------------------------------
 
